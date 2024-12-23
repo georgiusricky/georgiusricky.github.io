@@ -23,7 +23,7 @@ To get started with this project, clone the repository and install the dependenc
 
 ```bash
 git clone https://github.com/georgius-ricky/georgius-ricky.github.io.git
-cd georgius-ricky.github.io
+cd georgiusricky.github.io
 npm install
 ```
 
@@ -39,7 +39,7 @@ npm run lint: Lints the project using ESLint.
 ```
 ## Authors
 
-- [@georgius-ricky](https://www.github.com/georgius-ricky)
+- [@georgiusricky](https://www.github.com/georgiusricky)
  
   [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/georgius-ricky/)
 
