@@ -1,36 +1,31 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import './globals.css'
+import { Inter } from 'next/font/google'
+import { ThemeProvider } from '@/components/ThemeProvider'
+import Navigation from '@/components/Navigation'
 
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+const inter = Inter({ subsets: ['latin'] })
 
-export const metadata: Metadata = {
-  title: "Ricky's",
-  description: "Portfolio Created By Ricky",
-};
+export const metadata = {
+  title: "Ricky's Portfolio",
+  description: 'Personal portfolio website of Ricky',
+}
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="en">
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                const savedTheme = localStorage.getItem('theme');
-                if (savedTheme === 'dark') {
-                  document.documentElement.classList.add('dark');
-                }
-              })();
-            `,
-          }}
-        />
-      </head>
-      <body className="bg-gray-300 dark:bg-gray-600 dark:text-gray-200">
-        <Header />
-        <main>{children}</main>
-        <Footer />
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.className}`}>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+          <Navigation />
+          <div className="pt-16">
+            {children}
+          </div>
+        </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }
+

@@ -4,7 +4,7 @@ This project is a personal portfolio for Ricky, showcasing his work and skills a
 
 ## Project Overview
 
-- **Project Name**: `portofolio-ricky`
+- **Project Name**: `georgius-ricky.github.io`
 - **Version**: `0.1.0`
 - **Node.js Version**: `v18.17.1` - `when develop this project`
 

@@ -1,0 +1,106 @@
+{
+    "skills": [
+      { 
+        "icon": "Layout", 
+        "name": "Next.js",
+        "category": "Frontend Framework"
+      },
+      { 
+        "icon": "Code2", 
+        "name": "JavaScript",
+        "category": "Programming Language"
+      },
+      { 
+        "icon": "Database", 
+        "name": "TypeScript",
+        "category": "Programming Language"
+      },
+      { 
+        "icon": "Smartphone", 
+        "name": "React",
+        "category": "Frontend Library"
+      },
+      { 
+        "icon": "Terminal", 
+        "name": "Node.js",
+        "category": "Backend Runtime"
+      },
+      { 
+        "icon": "Palette", 
+        "name": "TailwindCSS",
+        "category": "Styling"
+      }
+    ],
+    "experiences": [
+      {
+        "company": "Google",
+        "logo": "/placeholder.svg?height=30&width=30",
+        "title": "Lead Software Engineer at Google",
+        "period": "Nov 2019 - Present",
+        "description": "As a Senior Software Engineer at Google, I played a pivotal role in developing innovative solutions for Google's core search algorithms. Collaborating with a dynamic team of engineers, I contributed to the enhancement of search accuracy and efficiency, optimizing user experiences for millions of users worldwide.",
+        "cardStyle": "bg-black/20 border border-white/10"
+      },
+      {
+        "company": "Youtube",
+        "logo": "/placeholder.svg?height=30&width=30",
+        "title": "Software Engineer at Youtube",
+        "period": "Jan 2017 - Oct 2019",
+        "description": "At Youtube, I served as a Software Engineer, focusing on the design and implementation of backend systems for the social media giant's dynamic platform. Working on projects that involved large-scale data processing and user engagement features, I leveraged my expertise to ensure seamless functionality and scalability.",
+        "cardStyle": "bg-zinc-800/80 border border-white/10"
+      },
+      {
+        "company": "Apple",
+        "logo": "/placeholder.svg?height=30&width=30",
+        "title": "Junior Software Engineer at Apple",
+        "period": "Jan 2016 - Dec 2017",
+        "description": "During my tenure at Apple, I held the role of Software Architect, where I played a key role in shaping the architecture of mission-critical software projects. Responsible for designing scalable and efficient systems, I provided technical leadership to a cross-functional team.",
+        "cardStyle": "bg-black/20 border border-white/10"
+      }
+    ],
+    "projects": [
+      {
+        "id": "01",
+        "title": "Crypto Screener Application",
+        "description": "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",
+        "fullDescription": "This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.",
+        "technologies": ["Next.js", "TypeScript", "WebSockets", "Chart.js"],
+        "images": [
+          "/placeholder.svg?height=400&width=600",
+          "/placeholder.svg?height=400&width=600",
+          "/placeholder.svg?height=400&width=600"
+        ],
+        "githubLink": "https://github.com/username/crypto-screener",
+        "liveLink": "https://crypto-screener.vercel.app"
+      },
+      {
+        "id": "02", 
+        "title": "E-commerce Website Template",
+        "description": "A modern, responsive e-commerce template built with Next.js and TailwindCSS, featuring a shopping cart, product filtering, and checkout process.",
+        "fullDescription": "A fully responsive e-commerce platform with advanced product filtering, secure checkout, and a clean, modern design. Includes features like product recommendations, user authentication, and responsive mobile layout.",
+        "technologies": ["Next.js", "TailwindCSS", "Stripe", "React Context"],
+        "images": [
+          "/placeholder.svg?height=400&width=600",
+          "/placeholder.svg?height=400&width=600",
+          "/placeholder.svg?height=400&width=600"
+        ],
+        "githubLink": "https://github.com/username/ecommerce-template",
+        "liveLink": "https://ecommerce-template.vercel.app"
+      },
+      {
+        "id": "03",
+        "title": "Blog Website Template",
+        "description": "A minimalist blog template with dark mode support, markdown content, and a custom CMS integration.",
+        "fullDescription": "A sleek, performance-optimized blog platform with built-in dark mode, markdown support, and a headless CMS integration. Features include SEO optimization, responsive design, and easy content management.",
+        "technologies": ["Next.js", "MDX", "Contentful", "Dark Mode"],
+        "images": [
+          "/placeholder.svg?height=400&width=600",
+          "/placeholder.svg?height=400&width=600",
+          "/placeholder.svg?height=400&width=600"
+        ],
+        "githubLink": "https://github.com/username/blog-template",
+        "liveLink": "https://blog-template.vercel.app"
+      }
+    ]
+  }
+  
+  
