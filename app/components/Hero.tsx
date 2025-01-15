@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
         <div className="w-full md:w-1/2 mb-8 md:mb-0">
           <h1 className="text-5xl font-bold mb-4">
-            Hello I'm <span className="block">Ricky</span>
+            {`Hello I'm`} <span className="block">Ricky</span>
           </h1>
           <h2 className="text-3xl font-bold mb-4">
             Frontend <span className="block">Developer</span>
@@ -30,7 +30,7 @@ export default function Hero() {
         </div>
         <div className="w-full md:w-1/2">
           <Image
-            src="/placeholder.svg"
+            src="/placeholder.svg?height=400&width=400"
             alt="Developer illustration"
             width={400}
             height={400}
