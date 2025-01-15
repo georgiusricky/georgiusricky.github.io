@@ -30,7 +30,7 @@ export default function Hero() {
         </div>
         <div className="w-full md:w-1/2">
           <Image
-            src="/placeholder.svg?height=400&width=400"
+            src="/placeholder.svg"
             alt="Developer illustration"
             width={400}
             height={400}

@@ -4,16 +4,16 @@ import Image from 'next/image'
 
 export default function Skills() {
   const skills = [
-    { icon: '/placeholder.svg?height=40&width=40', name: 'Git' },
-    { icon: '/placeholder.svg?height=40&width=40', name: 'Javascript', darkMode: true },
-    { icon: '/placeholder.svg?height=40&width=40', name: 'Sass/Scss' },
-    { icon: '/placeholder.svg?height=40&width=40', name: 'Nest.Js' },
-    { icon: '/placeholder.svg?height=40&width=40', name: 'Storybook' },
-    { icon: '/placeholder.svg?height=40&width=40', name: 'Next.Js' },
-    { icon: '/placeholder.svg?height=40&width=40', name: 'TypeScript' },
-    { icon: '/placeholder.svg?height=40&width=40', name: 'React' },
-    { icon: '/placeholder.svg?height=40&width=40', name: 'Socket.io' },
-    { icon: '/placeholder.svg?height=40&width=40', name: 'TailwindCSS' }
+    { icon: '/placeholder.svg', name: 'Git' },
+    { icon: '/placeholder.svg', name: 'Javascript', darkMode: true },
+    { icon: '/placeholder.svg', name: 'Sass/Scss' },
+    { icon: '/placeholder.svg', name: 'Nest.Js' },
+    { icon: '/placeholder.svg', name: 'Storybook' },
+    { icon: '/placeholder.svg', name: 'Next.Js' },
+    { icon: '/placeholder.svg', name: 'TypeScript' },
+    { icon: '/placeholder.svg', name: 'React' },
+    { icon: '/placeholder.svg', name: 'Socket.io' },
+    { icon: '/placeholder.svg', name: 'TailwindCSS' }
   ]
 
   return (

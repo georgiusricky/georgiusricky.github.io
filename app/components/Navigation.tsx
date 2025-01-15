@@ -13,6 +13,7 @@ export default function Navigation() {
   const router = useRouter()
   const pathname = usePathname()
   const { theme, setTheme } = useTheme()
+  const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,6 +37,10 @@ export default function Navigation() {
       document.removeEventListener('click', handleOutsideClick);
     };
   }, [isMobileMenuOpen]);
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
 
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId)
@@ -76,6 +81,10 @@ export default function Navigation() {
   ]
 
   const bgClass = isScrolled ? 'bg-white/60 dark:bg-black/50' : 'bg-white/90 dark:bg-black/90'
+
+  if (!isClient) {
+    return null
+  }
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${bgClass} backdrop-blur-md`}>

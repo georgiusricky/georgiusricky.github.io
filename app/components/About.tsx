@@ -5,13 +5,13 @@ export default function About() {
     <section className="container mx-auto px-4 py-16" id="about">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         <div className="w-full md:w-1/2">
-          <Image
-            src="/placeholder.svg?height=400&width=400"
+          {/* <Image
+            src="/placeholder.svg"
             alt="About me illustration"
             width={400}
             height={400}
             className="w-full"
-          />
+          /> */}
         </div>
         <div className="w-full md:w-1/2">
           <h2 className="text-2xl font-bold mb-6">About Me</h2>

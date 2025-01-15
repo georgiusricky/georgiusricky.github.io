@@ -5,17 +5,17 @@ export default function Projects() {
     {
       title: 'Project One',
       description: 'A modern web application built with Next.js and TypeScript.',
-      image: '/placeholder.svg?height=400&width=600'
+      image: '/placeholder.svg'
     },
     {
       title: 'Project Two',
       description: 'Mobile-first responsive design implementation.',
-      image: '/placeholder.svg?height=400&width=600'
+      image: '/placeholder.svg'
     },
     {
       title: 'Project Three',
       description: 'Full-stack application with real-time features.',
-      image: '/placeholder.svg?height=400&width=600'
+      image: '/placeholder.svg'
     }
   ]
 

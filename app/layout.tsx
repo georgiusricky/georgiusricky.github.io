@@ -17,12 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} bg-white dark:bg-black text-black dark:text-white`}>
-        <ThemeProvider attribute="class" enableSystem>
+      <body className={inter.className}>
+        <ThemeProvider>
           <Navigation />
-          <div className="pt-16">
-            {children}
-          </div>
+          <main>{children}</main>
         </ThemeProvider>
       </body>
     </html>

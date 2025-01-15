@@ -34,7 +34,7 @@
     "experiences": [
       {
         "company": "Google",
-        "logo": "/placeholder.svg?height=30&width=30",
+        "logo": "/placeholder.svg",
         "title": "Lead Software Engineer at Google",
         "period": "Nov 2019 - Present",
         "description": "As a Senior Software Engineer at Google, I played a pivotal role in developing innovative solutions for Google's core search algorithms. Collaborating with a dynamic team of engineers, I contributed to the enhancement of search accuracy and efficiency, optimizing user experiences for millions of users worldwide.",
@@ -42,7 +42,7 @@
       },
       {
         "company": "Youtube",
-        "logo": "/placeholder.svg?height=30&width=30",
+        "logo": "/placeholder.svg",
         "title": "Software Engineer at Youtube",
         "period": "Jan 2017 - Oct 2019",
         "description": "At Youtube, I served as a Software Engineer, focusing on the design and implementation of backend systems for the social media giant's dynamic platform. Working on projects that involved large-scale data processing and user engagement features, I leveraged my expertise to ensure seamless functionality and scalability.",
@@ -50,7 +50,7 @@
       },
       {
         "company": "Apple",
-        "logo": "/placeholder.svg?height=30&width=30",
+        "logo": "/placeholder.svg",
         "title": "Junior Software Engineer at Apple",
         "period": "Jan 2016 - Dec 2017",
         "description": "During my tenure at Apple, I held the role of Software Architect, where I played a key role in shaping the architecture of mission-critical software projects. Responsible for designing scalable and efficient systems, I provided technical leadership to a cross-functional team.",
@@ -65,9 +65,9 @@
         "fullDescription": "This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.",
         "technologies": ["Next.js", "TypeScript", "WebSockets", "Chart.js"],
         "images": [
-          "/placeholder.svg?height=400&width=600",
-          "/placeholder.svg?height=400&width=600",
-          "/placeholder.svg?height=400&width=600"
+          "/placeholder.svg",
+          "/placeholder.svg",
+          "/placeholder.svg"
         ],
         "githubLink": "https://github.com/username/crypto-screener",
         "liveLink": "https://crypto-screener.vercel.app"
@@ -79,9 +79,9 @@
         "fullDescription": "A fully responsive e-commerce platform with advanced product filtering, secure checkout, and a clean, modern design. Includes features like product recommendations, user authentication, and responsive mobile layout.",
         "technologies": ["Next.js", "TailwindCSS", "Stripe", "React Context"],
         "images": [
-          "/placeholder.svg?height=400&width=600",
-          "/placeholder.svg?height=400&width=600",
-          "/placeholder.svg?height=400&width=600"
+          "/placeholder.svg",
+          "/placeholder.svg",
+          "/placeholder.svg"
         ],
         "githubLink": "https://github.com/username/ecommerce-template",
         "liveLink": "https://ecommerce-template.vercel.app"
@@ -93,9 +93,9 @@
         "fullDescription": "A sleek, performance-optimized blog platform with built-in dark mode, markdown support, and a headless CMS integration. Features include SEO optimization, responsive design, and easy content management.",
         "technologies": ["Next.js", "MDX", "Contentful", "Dark Mode"],
         "images": [
-          "/placeholder.svg?height=400&width=600",
-          "/placeholder.svg?height=400&width=600",
-          "/placeholder.svg?height=400&width=600"
+          "/placeholder.svg",
+          "/placeholder.svg",
+          "/placeholder.svg"
         ],
         "githubLink": "https://github.com/username/blog-template",
         "liveLink": "https://blog-template.vercel.app"
