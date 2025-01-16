@@ -150,7 +150,7 @@ export default function Navigation() {
           <Button
             variant="default"
             className="bg-black text-white dark:bg-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200"
-            onClick={() => window.open('/resume.pdf', '_blank')}
+            onClick={() => window.open('/resume_ricky.pdf', '_blank')}
           >
             CV <Download className="ml-2 h-4 w-4" />
           </Button>
