@@ -91,7 +91,7 @@ export default function Navigation() {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link 
           href="/" 
-          className="text-2xl font-bold" 
+          className="text-5xl font-bold font-stitchParty tracking-wide" 
           onClick={(e) => {
             e.preventDefault();
             scrollToTop();
