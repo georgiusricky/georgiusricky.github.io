@@ -10,7 +10,7 @@ export default function Projects() {
     {
       title: 'Project Two',
       description: 'Mobile-first responsive design implementation.',
-      image: '/placeholder.svg'
+      image: '/placeholder.svg' 
     },
     {
       title: 'Project Three',
