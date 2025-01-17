@@ -39,7 +39,7 @@ export function ProjectDialog({
     <>
       <Dialog open={open} onOpenChange={onOpenChange}>
         <DialogContent 
-          className="max-w-6xl bg-white/60 dark:bg-black/60 backdrop-blur-md"
+          className="max-w-6xl bg-white/40 backdrop-blur-md"
         >
           <DialogHeader>
             <DialogTitle className="text-black dark:text-white text-4xl">{project.title}</DialogTitle>
@@ -76,7 +76,7 @@ export function ProjectDialog({
                     width={800}
                     height={400}
                     className="flex-shrink-0 rounded-lg object-cover cursor-pointer"
-                    onClick={() => setZoomedImage(src)} // Open zoomed popup
+                    onClick={() => setZoomedImage(src)}
                     style={{ 
                       maxWidth: '80%', 
                       height: 'auto', 

@@ -1,5 +1,7 @@
 {
     "socials":{
+      "wa":"6287885857375",
+      "email":"ricky.georgius@gmail.com",
       "github":"https://github.com/georgiusricky",
       "linkedin":"https://www.linkedin.com/in/georgius-ricky/"
     },
@@ -161,6 +163,21 @@
       },
       {
         "id": "03",
+        "title": "Zuuonsol Website",
+        "description": "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",
+        "fullDescription": "This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.",
+        "technologies": ["Nuxt.js", "Javascript", "TailwindCSS"],
+        "preview": "/projects/zuuonsol/zuuonsol.png",
+        "assets": [
+          "/projects/zuuonsol/1.png",
+          "/projects/zuuonsol/2.png"
+        ],
+        "githubLink": "",
+        "demoLink": "https://zuuonsol.vercel.app",
+        "liveLink": "https://zuuonsol.com"
+      },
+      {
+        "id": "04",
         "title": "Calt Supremacy Website",
         "description": "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",
         "fullDescription": "This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.",
@@ -175,7 +192,7 @@
         "liveLink": "https://caltsupremacy.com/"
       },
       {
-        "id": "04",
+        "id": "05",
         "title": "Mewlord Website",
         "description": "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",
         "fullDescription": "This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.",
@@ -187,21 +204,6 @@
         "githubLink": "",
         "demoLink": "https://mewlord.vercel.app",
         "liveLink": "https://mewlord.fun"
-      },
-      {
-        "id": "05",
-        "title": "Zuuonsol Website",
-        "description": "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",
-        "fullDescription": "This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.",
-        "technologies": ["Nuxt.js", "Javascript", "TailwindCSS"],
-        "preview": "/projects/zuuonsol/zuuonsol.png",
-        "assets": [
-          "/projects/zuuonsol/1.png",
-          "/projects/zuuonsol/2.png"
-        ],
-        "githubLink": "",
-        "demoLink": "https://zuuonsol.vercel.app",
-        "liveLink": "https://zuuonsol.com"
       },
       {
         "id": "06",

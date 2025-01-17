@@ -55,7 +55,6 @@ export default function Navigation() {
       scrollToSection(sectionId)
     } else {
       router.push(`/#${sectionId}`)
-      // Add a small delay to allow the page to load before scrolling
       setTimeout(() => scrollToSection(sectionId), 100)
     }
     setIsMobileMenuOpen(false)
@@ -64,13 +63,6 @@ export default function Navigation() {
   const toggleMobileMenu = (event: React.MouseEvent) => {
     event.stopPropagation();
     setIsMobileMenuOpen(prev => !prev)
-  }
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
   }
 
   const navItems = [
