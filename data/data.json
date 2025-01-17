@@ -1,4 +1,8 @@
 {
+    "socials":{
+      "github":"https://github.com/georgiusricky",
+      "linkedin":"https://www.linkedin.com/in/georgius-ricky/"
+    },
     "skills": [
       { 
         "icon": "Layout", 

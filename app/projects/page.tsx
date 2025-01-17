@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { ArrowRight } from 'lucide-react'
 import { ProjectDialog } from '../components/ProjectDialog'
-import projectData from '@/data/portofolio-data.json'
+import projectData from '@/data/data.json'
 
 export default function ProjectsPage() {
   const [selectedProject, setSelectedProject] = useState<any>(null)

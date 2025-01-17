@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ArrowRight } from 'lucide-react'
 import { ProjectDialog } from './ProjectDialog'
-import projectData from '@/data/portofolio-data.json'
+import projectData from '@/data/data.json'
 
 export default function ProjectsPreview() {
   const [selectedProject, setSelectedProject] = useState<any>(null)

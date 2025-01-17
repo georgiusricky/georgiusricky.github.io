@@ -64,7 +64,8 @@ module.exports = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
 		fontFamily:{
-			stitchParty: ['stitch-party']
+			stitchParty: ['stitch-party'],
+			kalam: ['kalam']
 		},
   		keyframes: {
   			'accordion-down': {

@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import experienceData from '@/data/portofolio-data.json'
+import experienceData from '@/data/data.json'
 
 export default function Experience() {
   const experiences = experienceData.experiences

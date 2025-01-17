@@ -62,3 +62,8 @@
   font-family: 'stitch-party';
   src: url("./fonts/StitchParty.ttf");
 }
+
+@font-face {
+  font-family: 'kalam';
+  src: url("./fonts/Kalam.ttf");
+}
