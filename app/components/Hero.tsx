@@ -9,14 +9,7 @@ import globeAnimation from '../lotties/earth-lottie.json'
 
 export default function Hero() {
   const socials = data.socials
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: globeAnimation,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice'
-    }
-  }
+ 
   return (
     <section className="container mx-auto px-4 pt-32 pb-16">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
