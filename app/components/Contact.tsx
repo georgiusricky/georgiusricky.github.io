@@ -9,10 +9,10 @@ export default function Contact() {
       <div className="container px-4 md:px-6">
         <div className="space-y-8 text-center">
           <h3 className="text-sm uppercase tracking-wider text-muted-foreground">
-            LET'S GET IN TOUCH
+            {`LET'S GET IN TOUCH`}
           </h3>
           <h2 className="text-3xl font-bold tracking-tighter md:text-5xl">
-            Contact me and let's work together
+            {`Contact me and let's work together`}
           </h2>
         </div>
         <div className="mx-auto grid max-w-5xl gap-8 mt-12 md:grid-cols-3">
