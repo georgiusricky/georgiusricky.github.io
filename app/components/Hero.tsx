@@ -22,7 +22,7 @@ export default function Hero() {
           </h2>
           <p className="text-gray-600 dark:text-gray-400 mb-8 flex items-center">
             Based in Earth 
-            <Lottie loop animationData={globeAnimation} play className='w-12' />
+            <Lottie loop animationData={globeAnimation} play className='w-20' />
           </p>
           <div className="flex space-x-4">
             <Link href={socials.github} className="p-2 border border-gray-300 dark:border-gray-700 rounded-sm hover:bg-gray-100 dark:hover:bg-gray-800">

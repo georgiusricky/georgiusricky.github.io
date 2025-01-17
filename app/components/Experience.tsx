@@ -18,9 +18,7 @@ export default function Experience() {
             {experiences.map((exp, index) => (
               <div 
                 key={index} 
-                className={`rounded-2xl border border-white/10 dark:border-black/10 p-8 ${
-                  index === 1 ? 'bg-zinc-800 dark:bg-zinc-200' : 'bg-black/20 dark:bg-white/20'
-                }`}
+                className={`rounded-2xl border border-white/10 dark:border-black/10 p-8 hover:bg-zinc-800 hover:dark:bg-zinc-200 bg-black/20 dark:bg-white/20`}
               >
                 <div className="flex flex-col gap-4">
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 sm:gap-0">
@@ -34,12 +32,16 @@ export default function Experience() {
                           className="object-contain"
                         />
                       </div>
-                      <h2 className="text-xl font-semibold text-white dark:text-black">
-                        {exp.title}
+                      <h2 className="text-lg font-semibold text-white dark:text-black">
+                        {exp.company}
                       </h2>
                     </div>
-                    <span className="text-gray-400 dark:text-gray-600 text-sm">
-                      {exp.period}
+                  
+                  </div>
+                  <div className="text-md font-semibold flex justify-between text-white/90 dark:text-black/90">
+                      {exp.title}
+                      <span className="text-gray-400 dark:text-gray-600 text-sm">
+                        {exp.period}
                     </span>
                   </div>
                   <p className="text-gray-300 dark:text-gray-700 leading-relaxed text-base">

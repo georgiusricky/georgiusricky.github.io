@@ -46,7 +46,7 @@
       },
       { 
         "icon": "/img/skills/nuxtjs.webp", 
-        "name": "NuxtJs"
+        "name": "Nuxt"
       },
       { 
         "icon": "/img/skills/react.webp", 
@@ -54,7 +54,7 @@
       },
       { 
         "icon": "/img/skills/nextjs.webp", 
-        "name": "NextJs"
+        "name": "Next"
       },
       { 
         "icon": "/img/skills/angular.webp", 
@@ -81,10 +81,6 @@
         "name": "Java"
       },
       { 
-        "icon": "/img/skills/scoketio.webp", 
-        "name": "Socket.io"
-      },
-      { 
         "icon": "/img/skills/python.webp", 
         "name": "Python"
       },
@@ -100,28 +96,32 @@
     ],
     "experiences": [
       {
-        "company": "Google",
-        "logo": "/img/placeholder.svg",
-        "title": "Lead Software Engineer at Google",
-        "period": "Nov 2019 - Present",
-        "description": "As a Senior Software Engineer at Google, I played a pivotal role in developing innovative solutions for Google's core search algorithms. Collaborating with a dynamic team of engineers, I contributed to the enhancement of search accuracy and efficiency, optimizing user experiences for millions of users worldwide.",
-        "cardStyle": "bg-black/20 border border-white/10"
+        "company": "Indodax Nasional Indonesia",
+        "logo": "/img/logo/indodax.png",
+        "title": "Frontend Software Engineer",
+        "period": "Oct 2023 - Present",
+        "description": "Manage the frontend web of projects using Vue.js, Nuxt, and CodeIgniter. Integrate frontend applications with backend APIs, work closely with the UI/UX team to implement designs, and convert Figma designs into responsive websites."
       },
       {
-        "company": "Youtube",
-        "logo": "/img/placeholder.svg",
-        "title": "Software Engineer at Youtube",
-        "period": "Jan 2017 - Oct 2019",
-        "description": "At Youtube, I served as a Software Engineer, focusing on the design and implementation of backend systems for the social media giant's dynamic platform. Working on projects that involved large-scale data processing and user engagement features, I leveraged my expertise to ensure seamless functionality and scalability.",
-        "cardStyle": "bg-zinc-800/80 border border-white/10"
+        "company": "BPJS Ketenagakerjaan",
+        "logo": "/img/logo/bpjstk.png",
+        "title": "Fullstack Engineer",
+        "period": "Oct 2022 - Oct 2023",
+        "description": "Handled backend development using Express.js and frontend development with Vue.js, React.js, and PHP. Conducted User Acceptance Testing (UAT) and fixed issues identified during testing and penetration testing. Worked on both internal core applications and external applications for BPJS."
       },
       {
-        "company": "Apple",
-        "logo": "/img/placeholder.svg",
-        "title": "Junior Software Engineer at Apple",
-        "period": "Jan 2016 - Dec 2017",
-        "description": "During my tenure at Apple, I held the role of Software Architect, where I played a key role in shaping the architecture of mission-critical software projects. Responsible for designing scalable and efficient systems, I provided technical leadership to a cross-functional team.",
-        "cardStyle": "bg-black/20 border border-white/10"
+        "company": "Citra Cantik Nusantara (Beautybell)",
+        "logo": "/img/logo/beautybell.png",
+        "title": "Frontend Engineer",
+        "period": "Dec 2021 - Oct 2022",
+        "description": "Installed and set up web projects, developed dashboards using Vue.js (Nuxt.js) and AngularJS, and created website apps based on Figma designs. Integrated frontend applications with backend APIs for seamless functionality."
+      },
+      {
+        "company": "Edconnect Solusi Integrasi",
+        "logo": "/img/logo/edconnect.png",
+        "title": "Software Engineer - Fullstack",
+        "period": "Sept 2019 - Nov 2021",
+        "description": "Developed and maintained school management systems, designed databases using MySQL, and debugged and deployed applications. Created responsive websites with Vue.js and conducted research on new web technologies to recommend design and development improvements."
       }
     ],
     "projects": [

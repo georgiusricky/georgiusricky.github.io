@@ -14,7 +14,7 @@ export default function Skills() {
             <span className="font-light">My</span>{' '}
             <span className="font-extrabold">Skills</span>
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-8 gap-6">
+          <div className="grid grid-cols-3 md:grid-cols-8 gap-6">
             {skills.map((skill, index) => (
               <div 
                 key={index} 
@@ -27,10 +27,10 @@ export default function Skills() {
                     src={skill.icon}
                     alt={skill.name}
                     fill
-                    className="object-contain"
+                    className="object-contain dark:drop-shadow-[0_0_1px_white]"
                   />
                 </div>
-                <span className={`text-sm font-medium transition-colors group-hover:text-white group-hover:dark:text-black`}>
+                <span className={`text-xs md:text-sm font-medium transition-colors group-hover:text-white group-hover:dark:text-black `}>
                   {skill.name}
                 </span>
               </div>
