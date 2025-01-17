@@ -16,7 +16,7 @@ export default function ProjectsPage() {
   }, [])
 
   return (
-    <div className="container mx-auto px-4 py-16 bg-white dark:bg-black">
+    <div className="container mt-12 mx-auto px-4 py-16 bg-white dark:bg-black">
       <h1 className="text-3xl font-bold mb-12 text-black dark:text-white">All Projects</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
         {projects.map((project) => (
@@ -25,11 +25,11 @@ export default function ProjectsPage() {
             className="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden"
           >
             <Image
-              src={project.images[0]}
+              src={project.preview}
               alt={project.title}
               width={600}
               height={400}
-              className="w-full h-48 object-cover"
+              className="w-full h-fit object-cover"
             />
             <div className="p-6">
               <h2 className="text-xl font-bold mb-2 text-black dark:text-white">

@@ -127,45 +127,112 @@
     "projects": [
       {
         "id": "01",
-        "title": "Crypto Screener Application",
+        "title": "Gambajak Website",
         "description": "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",
         "fullDescription": "This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.",
-        "technologies": ["Next.js", "TypeScript", "WebSockets", "Chart.js"],
-        "images": [
-          "/img/placeholder.svg",
-          "/img/placeholder.svg",
-          "/img/placeholder.svg"
+        "technologies": ["Next.js", "TypeScript", "TailwindCSS"],
+        "preview": "/projects/gambajak/gambajak.png",
+        "assets": [
+          "/projects/gambajak/preload.webm",
+          "/projects/gambajak/1.png",
+          "/projects/gambajak/2.png",
+          "/projects/gambajak/3.png"
         ],
-        "githubLink": "https://github.com/username/crypto-screener",
-        "liveLink": "https://crypto-screener.vercel.app"
+        "githubLink": "",
+        "demoLink": "https://gambajak.vercel.app",
+        "liveLink": "https://gambajak.com"
       },
       {
-        "id": "02", 
-        "title": "E-commerce Website Template",
-        "description": "A modern, responsive e-commerce template built with Next.js and TailwindCSS, featuring a shopping cart, product filtering, and checkout process.",
-        "fullDescription": "A fully responsive e-commerce platform with advanced product filtering, secure checkout, and a clean, modern design. Includes features like product recommendations, user authentication, and responsive mobile layout.",
-        "technologies": ["Next.js", "TailwindCSS", "Stripe", "React Context"],
-        "images": [
-          "/img/placeholder.svg",
-          "/img/placeholder.svg",
-          "/img/placeholder.svg"
+        "id": "02",
+        "title": "Gachavista Website",
+        "description": "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",
+        "fullDescription": "This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.",
+        "technologies": ["Next.js", "TypeScript", "TailwindCSS"],
+        "preview": "/projects/gacha/gacha.png",
+        "assets": [
+          "/projects/gacha/demo.webm",
+          "/projects/gacha/1.png",
+          "/projects/gacha/2.png",
+          "/projects/gacha/3.png"
         ],
-        "githubLink": "https://github.com/username/ecommerce-template",
-        "liveLink": "https://ecommerce-template.vercel.app"
+        "githubLink": "",
+        "demoLink": "https://gambajak.vercel.app",
+        "liveLink": "https://gambajak.com"
       },
       {
         "id": "03",
-        "title": "Blog Website Template",
-        "description": "A minimalist blog template with dark mode support, markdown content, and a custom CMS integration.",
-        "fullDescription": "A sleek, performance-optimized blog platform with built-in dark mode, markdown support, and a headless CMS integration. Features include SEO optimization, responsive design, and easy content management.",
-        "technologies": ["Next.js", "MDX", "Contentful", "Dark Mode"],
-        "images": [
-          "/img/placeholder.svg",
-          "/img/placeholder.svg",
-          "/img/placeholder.svg"
+        "title": "Calt Supremacy Website",
+        "description": "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",
+        "fullDescription": "This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.",
+        "technologies": ["Next.js", "TypeScript", "TailwindCSS"],
+        "preview": "/projects/calt/calt.png",
+        "assets": [
+          "/projects/calt/1.png",
+          "/projects/calt/2.png"
         ],
-        "githubLink": "https://github.com/username/blog-template",
-        "liveLink": "https://blog-template.vercel.app"
+        "githubLink": "",
+        "demoLink": "https://caltsupremacy.vercel.app",
+        "liveLink": "https://caltsupremacy.com/"
+      },
+      {
+        "id": "04",
+        "title": "Mewlord Website",
+        "description": "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",
+        "fullDescription": "This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.",
+        "technologies": ["Next.js", "TypeScript", "TailwindCSS"],
+        "preview": "/projects/mewlord/mewlord.png",
+        "assets": [
+          "/projects/mewlord/1.png"
+        ],
+        "githubLink": "",
+        "demoLink": "https://mewlord.vercel.app",
+        "liveLink": "https://mewlord.fun"
+      },
+      {
+        "id": "05",
+        "title": "Zuuonsol Website",
+        "description": "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",
+        "fullDescription": "This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.",
+        "technologies": ["Nuxt.js", "Javascript", "TailwindCSS"],
+        "preview": "/projects/zuuonsol/zuuonsol.png",
+        "assets": [
+          "/projects/zuuonsol/1.png",
+          "/projects/zuuonsol/2.png"
+        ],
+        "githubLink": "",
+        "demoLink": "https://zuuonsol.vercel.app",
+        "liveLink": "https://zuuonsol.com"
+      },
+      {
+        "id": "06",
+        "title": "Bun Website",
+        "description": "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",
+        "fullDescription": "This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.",
+        "technologies": ["Next.js", "TypeScript", "TailwindCSS"],
+        "preview": "/projects/bun/bun.png",
+        "assets": [
+          "/projects/bun/1.png",
+          "/projects/bun/2.png",
+          "/projects/bun/3.png"
+        ],
+        "githubLink": "",
+        "demoLink": "",
+        "liveLink": "https://bun.meme"
+      },
+      {
+        "id": "07",
+        "title": "Rosiensta Website",
+        "description": "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",
+        "fullDescription": "This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.",
+        "technologies": ["Nuxt.js", "Javascript", "TailwindCSS"],
+        "preview": "/projects/rosiensta/rosiensta.png",
+        "assets": [
+          "/projects/rosiensta/1.png",
+          "/projects/rosiensta/2.png"
+        ],
+        "githubLink": "",
+        "demoLink": "https://rosieoninsta.vercel.app",
+        "liveLink": "https://rosieoninsta.com/"
       }
     ]
   }

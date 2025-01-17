@@ -92,10 +92,6 @@ export default function Navigation() {
         <Link 
           href="/" 
           className="text-5xl font-bold font-stitchParty tracking-wide" 
-          onClick={(e) => {
-            e.preventDefault();
-            scrollToTop();
-          }}
         >
           Ricky
         </Link>

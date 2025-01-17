@@ -1,5 +1,6 @@
 'use client'
 
+import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { 
@@ -18,8 +19,9 @@ interface ProjectDialogProps {
     title: string
     fullDescription: string
     technologies: string[]
-    images: string[]
+    assets: string[]
     githubLink: string
+    demoLink: string
     liveLink: string
   }
   open: boolean
@@ -31,68 +33,118 @@ export function ProjectDialog({
   open, 
   onOpenChange 
 }: ProjectDialogProps) {
-  return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent 
-        className="max-w-4xl bg-white/60 dark:bg-black/60 backdrop-blur-md"
-      >
-        <DialogHeader>
-          <DialogTitle className="text-black dark:text-white">{project.title}</DialogTitle>
-          <DialogDescription className="text-gray-700 dark:text-gray-300">
-            {project.fullDescription}
-          </DialogDescription>
-        </DialogHeader>
-        
-        {/* Horizontal scrollable image gallery */}
-        <div className="w-full overflow-x-auto">
-          <div className="flex space-x-4 pb-4">
-            {project.images.map((image, index) => (
-              <Image 
-                key={index}
-                src={image} 
-                alt={`${project.title} screenshot ${index + 1}`}
-                width={600}
-                height={400}
-                className="flex-shrink-0 rounded-lg object-cover"
-                style={{ 
-                  maxWidth: '80%', 
-                  height: 'auto', 
-                  aspectRatio: '16/9' 
-                }}
-              />
-            ))}
-          </div>
-        </div>
+  const [zoomedImage, setZoomedImage] = useState<string | null>(null);
 
-        <div className="grid md:grid-cols-2 gap-4">
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-black dark:text-white">Technologies Used</h3>
-            <div className="flex flex-wrap gap-2">
-              {project.technologies.map((tech, index) => (
-                <span 
-                  key={index} 
-                  className="bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-2 py-1 rounded-md text-sm"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-            <div className="flex space-x-4 mt-4">
-              <Link href={project.githubLink} target="_blank">
-                <Button variant="outline" className="text-black dark:text-white border-black dark:border-white">
-                  <Github className="mr-2 h-4 w-4" /> GitHub
-                </Button>
-              </Link>
-              <Link href={project.liveLink} target="_blank">
-                <Button variant="outline" className="text-black dark:text-white border-black dark:border-white">
-                  <ExternalLink className="mr-2 h-4 w-4" /> Live Site
-                </Button>
-              </Link>
+  return (
+    <>
+      <Dialog open={open} onOpenChange={onOpenChange}>
+        <DialogContent 
+          className="max-w-6xl bg-white/60 dark:bg-black/60 backdrop-blur-md"
+        >
+          <DialogHeader>
+            <DialogTitle className="text-black dark:text-white text-4xl">{project.title}</DialogTitle>
+            <DialogDescription className="text-lg text-gray-700 dark:text-gray-300">
+              {project.fullDescription}
+            </DialogDescription>
+          </DialogHeader>
+          
+          {/* Horizontal scrollable image gallery */}
+          <div className="w-full overflow-x-auto">
+            <div className="flex space-x-4 pb-4">
+              {project.assets.map((src, index) => {
+                const isVideo = src.endsWith('.webm') || src.endsWith('.mp4');
+
+                return isVideo ? (
+                  <video
+                    key={index}
+                    src={src}
+                    width={800}
+                    height={400}
+                    autoPlay
+                    controls
+                    loop
+                    muted
+                    className="flex-shrink-0 rounded-lg object-cover"
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <Image
+                    key={index}
+                    src={src}
+                    alt={`${project.title} screenshot ${index + 1}`}
+                    width={800}
+                    height={400}
+                    className="flex-shrink-0 rounded-lg object-cover cursor-pointer"
+                    onClick={() => setZoomedImage(src)} // Open zoomed popup
+                    style={{ 
+                      maxWidth: '80%', 
+                      height: 'auto', 
+                      aspectRatio: '16/9' 
+                    }}
+                  />
+                );
+              })}
             </div>
           </div>
-        </div>
-      </DialogContent>
-    </Dialog>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold text-black dark:text-white">Technologies Used</h3>
+              <div className="flex flex-wrap gap-2">
+                {project.technologies.map((tech, index) => (
+                  <span 
+                    key={index} 
+                    className="bg-gray-200 dark:bg-gray-700 text-black dark:text-white px-2 py-1 rounded-md text-sm"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+              <div className="flex space-x-4 mt-4">
+                { project.githubLink && (
+                   <Link href={project.githubLink} target="_blank">
+                    <Button variant="outline" className="text-black dark:text-white border-black dark:border-white">
+                      <Github className="mr-2 h-4 w-4" /> GitHub
+                    </Button>
+                  </Link>
+                )}
+                { project.demoLink && (
+                  <Link href={project.demoLink} target="_blank">
+                    <Button variant="outline" className="text-black dark:text-white border-black dark:border-white">
+                      <ExternalLink className="mr-2 h-4 w-4" /> Demo Site
+                    </Button>
+                  </Link>
+                )}
+                { project.liveLink && (
+                  <Link href={project.liveLink} target="_blank">
+                    <Button variant="outline" className="text-black dark:text-white border-black dark:border-white">
+                      <ExternalLink className="mr-2 h-4 w-4" /> Live Site
+                    </Button>
+                  </Link>
+                )}
+              </div>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Zoomed Image Modal */}
+      {zoomedImage && (
+        <Dialog open={true} onOpenChange={() => setZoomedImage(null)}>
+          <DialogContent 
+            className="max-w-6xl bg-black/80 backdrop-blur-md p-4"
+          >
+            <Image
+              src={zoomedImage}
+              alt="Zoomed Image"
+              width={1200}
+              height={800}
+              className="rounded-lg object-contain"
+            />
+          </DialogContent>
+        </Dialog>
+      )}
+    </>
   )
 }
-
