@@ -34,7 +34,7 @@ export default function Hero() {
           </div>
         </div>
         <div className="w-full md:w-4/12">
-         <ProfileCircle></ProfileCircle>
+         <ProfileCircle/>
         </div>
       </div>
     </section>

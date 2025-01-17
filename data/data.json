@@ -5,35 +5,98 @@
     },
     "skills": [
       { 
-        "icon": "Layout", 
-        "name": "Next.js",
-        "category": "Frontend Framework"
+        "icon": "/img/skills/html.webp", 
+        "name": "HTML"
       },
       { 
-        "icon": "Code2", 
-        "name": "JavaScript",
-        "category": "Programming Language"
+        "icon": "/img/skills/css.webp", 
+        "name": "CSS"
       },
       { 
-        "icon": "Database", 
-        "name": "TypeScript",
-        "category": "Programming Language"
+        "icon": "/img/skills/javascript.webp", 
+        "name": "Javascript"
       },
       { 
-        "icon": "Smartphone", 
-        "name": "React",
-        "category": "Frontend Library"
+        "icon": "/img/skills/typescript.webp", 
+        "name": "TypeScript"
       },
       { 
-        "icon": "Terminal", 
-        "name": "Node.js",
-        "category": "Backend Runtime"
+        "icon": "/img/skills/github.webp", 
+        "name": "Github"
       },
       { 
-        "icon": "Palette", 
-        "name": "TailwindCSS",
-        "category": "Styling"
+        "icon": "/img/skills/gitlab.webp", 
+        "name": "Gitlab"
+      },
+      { 
+        "icon": "/img/skills/bitbucket.webp", 
+        "name": "Bitbucket"
+      },
+      { 
+        "icon": "/img/skills/nodejs.webp", 
+        "name": "NodeJs"
+      },
+      { 
+        "icon": "/img/skills/mysql.webp", 
+        "name": "MySql"
+      },
+      { 
+        "icon": "/img/skills/vue.webp", 
+        "name": "Vue"
+      },
+      { 
+        "icon": "/img/skills/nuxtjs.webp", 
+        "name": "NuxtJs"
+      },
+      { 
+        "icon": "/img/skills/react.webp", 
+        "name": "React"
+      },
+      { 
+        "icon": "/img/skills/nextjs.webp", 
+        "name": "NextJs"
+      },
+      { 
+        "icon": "/img/skills/angular.webp", 
+        "name": "Angular"
+      },
+      { 
+        "icon": "/img/skills/svelte.webp", 
+        "name": "Svelte"
+      },
+      { 
+        "icon": "/img/skills/bootstrap.webp", 
+        "name": "Bootstrap"
+      },
+      { 
+        "icon": "/img/skills/tailwind.webp", 
+        "name": "Tailwind"
+      },
+      { 
+        "icon": "/img/skills/scoketio.webp", 
+        "name": "Socket.io"
+      },
+      { 
+        "icon": "/img/skills/java.webp", 
+        "name": "Java"
+      },
+      { 
+        "icon": "/img/skills/scoketio.webp", 
+        "name": "Socket.io"
+      },
+      { 
+        "icon": "/img/skills/python.webp", 
+        "name": "Python"
+      },
+      { 
+        "icon": "/img/skills/cpp.webp", 
+        "name": "C++"
+      },
+      { 
+        "icon": "/img/skills/hourglass.webp", 
+        "name": "etc"
       }
+      
     ],
     "experiences": [
       {
