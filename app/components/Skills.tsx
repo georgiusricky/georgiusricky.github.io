@@ -4,16 +4,16 @@ import Image from 'next/image'
 
 export default function Skills() {
   const skills = [
-    { icon: '/placeholder.svg', name: 'Git' },
-    { icon: '/placeholder.svg', name: 'Javascript', darkMode: true },
-    { icon: '/placeholder.svg', name: 'Sass/Scss' },
-    { icon: '/placeholder.svg', name: 'Nest.Js' },
-    { icon: '/placeholder.svg', name: 'Storybook' },
-    { icon: '/placeholder.svg', name: 'Next.Js' },
-    { icon: '/placeholder.svg', name: 'TypeScript' },
-    { icon: '/placeholder.svg', name: 'React' },
-    { icon: '/placeholder.svg', name: 'Socket.io' },
-    { icon: '/placeholder.svg', name: 'TailwindCSS' }
+    { icon: '/img/placeholder.svg', name: 'Git' },
+    { icon: '/img/placeholder.svg', name: 'Javascript', darkMode: true },
+    { icon: '/img/placeholder.svg', name: 'Sass/Scss' },
+    { icon: '/img/placeholder.svg', name: 'Nest.Js' },
+    { icon: '/img/placeholder.svg', name: 'Storybook' },
+    { icon: '/img/placeholder.svg', name: 'Next.Js' },
+    { icon: '/img/placeholder.svg', name: 'TypeScript' },
+    { icon: '/img/placeholder.svg', name: 'React' },
+    { icon: '/img/placeholder.svg', name: 'Socket.io' },
+    { icon: '/img/placeholder.svg', name: 'TailwindCSS' }
   ]
 
   return (

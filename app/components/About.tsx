@@ -6,7 +6,7 @@ export default function About() {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         <div className="w-full md:w-1/2">
           <Image
-            src="/placeholder.svg"
+            src="/img/placeholder.svg"
             alt="About me illustration"
             width={400}
             height={400}
