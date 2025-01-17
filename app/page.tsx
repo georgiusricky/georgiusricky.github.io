@@ -13,7 +13,7 @@ export default function Home() {
       <div id="about"><About /></div>
       <div id="skills"><Skills /></div>
       <Experience />
-      //<ProjectsPreview />
+      { //<ProjectsPreview /> }
       <div id="contact"><Contact /></div>
       <Footer />
     </main>
