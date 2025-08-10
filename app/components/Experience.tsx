@@ -1,10 +1,9 @@
 'use client'
 
 import Image from 'next/image'
-import experienceData from '@/data/data.json'
+import {experiences} from '@/data/data.json'
 
 export default function Experience() {
-  const experiences = experienceData.experiences
 
   return (
     <section className="bg-black dark:bg-white py-32" id="experience">
@@ -41,7 +40,7 @@ export default function Experience() {
                   <div className="text-md font-semibold flex justify-between text-white/90 dark:text-black/90">
                       {exp.title}
                       <span className="text-gray-400 dark:text-gray-600 text-sm">
-                        {exp.period}
+                        {exp.period.start} - {exp.period.end}
                     </span>
                   </div>
                   <p className="text-gray-300 dark:text-gray-700 leading-relaxed text-base">

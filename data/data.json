@@ -99,30 +99,42 @@
     "experiences": [
       {
         "company": "Indodax Nasional Indonesia",
-        "logo": "/img/logo/indodax.png",
+        "logo": "/img/logo/indodax.webp",
         "title": "Frontend Software Engineer",
-        "period": "Oct 2023 - Present",
+        "period": {
+          "start":"Oct 2023",
+          "end":"Jun 2025"
+        },
         "description": "Manage the frontend web of projects using Vue.js, Nuxt, and CodeIgniter. Integrate frontend applications with backend APIs, work closely with the UI/UX team to implement designs, and convert Figma designs into responsive websites."
       },
       {
         "company": "BPJS Ketenagakerjaan",
-        "logo": "/img/logo/bpjstk.png",
+        "logo": "/img/logo/bpjstk.webp",
         "title": "Fullstack Engineer",
-        "period": "Oct 2022 - Oct 2023",
+        "period": {
+          "start":"Oct 2022",
+          "end":"Oct 2023"
+        },
         "description": "Handled backend development using Express.js and frontend development with Vue.js, React.js, and PHP. Conducted User Acceptance Testing (UAT) and fixed issues identified during testing and penetration testing. Worked on both internal core applications and external applications for BPJS."
       },
       {
         "company": "Citra Cantik Nusantara (Beautybell)",
-        "logo": "/img/logo/beautybell.png",
+        "logo": "/img/logo/beautybell.webp",
         "title": "Frontend Engineer",
-        "period": "Dec 2021 - Oct 2022",
+        "period": {
+          "start":"Dec 2021",
+          "end":"Jul 2022"
+        },
         "description": "Installed and set up web projects, developed dashboards using Vue.js (Nuxt.js) and AngularJS, and created website apps based on Figma designs. Integrated frontend applications with backend APIs for seamless functionality."
       },
       {
         "company": "Edconnect Solusi Integrasi",
-        "logo": "/img/logo/edconnect.png",
+        "logo": "/img/logo/edconnect.webp",
         "title": "Software Engineer - Fullstack",
-        "period": "Sept 2019 - Nov 2021",
+        "period": {
+          "start":"Sept 2019",
+          "end":"Nov 2022"
+        },
         "description": "Developed and maintained school management systems, designed databases using MySQL, and debugged and deployed applications. Created responsive websites with Vue.js and conducted research on new web technologies to recommend design and development improvements."
       }
     ],
