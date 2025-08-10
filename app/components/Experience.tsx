@@ -1,7 +1,8 @@
 'use client'
 
 import Image from 'next/image'
-import {experiences} from '@/data/data.json'
+import data from '@/data/data.json'
+const experiences = data.experiences
 
 export default function Experience() {
 
@@ -11,7 +12,7 @@ export default function Experience() {
         <div className="max-w-6xl mx-auto">
           <h1 className="text-5xl font-bold mb-16 text-center text-white dark:text-black">
             <span className="font-light">Where </span>
-            <span className="font-extrabold">I've Been</span>
+            <span className="font-extrabold">{`I've Been`}</span>
           </h1>
           <div className="space-y-6">
             {experiences.map((exp, index) => (

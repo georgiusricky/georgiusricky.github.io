@@ -1,5 +1,6 @@
 import Polaroid from './Polaroid'
-import { experiences } from '@/data/data.json'
+import data from '@/data/data.json'
+const experiences = data.experiences
 
 export default function About() {
   const firstYear = Number(experiences.at(-1)?.period.start.split(' ')[1])
