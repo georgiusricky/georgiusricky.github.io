@@ -5,7 +5,7 @@ export default function ProfileCircle() {
     <div className="w-full aspect-square mx-auto mt-5">
       <div className="relative w-full pb-[100%] rounded-full bg-black dark:bg-white overflow-hidden">
             <Image
-                src="/img/profile.png"
+                src="/img/profile.webp"
                 alt="Profile photo"
                 fill
                 className="object-cover object-[center_20%] drop-shadow-[0_5px_15px_white] dark:drop-shadow-[0_5px_15px_black]" 
