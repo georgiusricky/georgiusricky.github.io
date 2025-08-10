@@ -7,12 +7,12 @@ export default function Contact() {
   return (
     <section className="w-full py-12 md:py-24 bg-background">
       <div className="container px-4 md:px-6">
-        <div className="space-y-8 text-center">
-          <h3 className="text-sm uppercase tracking-wider text-muted-foreground">
-            {`LET'S GET IN TOUCH`}
+        <div className="space-y-4 text-center">
+          <h3 className="text-2xl uppercase tracking-wider text-muted-foreground md:text-4xl">
+            {`Let’s Connect`}
           </h3>
           <h2 className="text-3xl font-bold tracking-tighter md:text-5xl">
-            {`Contact me and let's work together`}
+            {`Build Something Together`}
           </h2>
         </div>
         <div className="mx-auto grid max-w-5xl gap-8 mt-12 md:grid-cols-3">

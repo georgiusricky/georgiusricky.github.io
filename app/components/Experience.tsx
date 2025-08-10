@@ -10,8 +10,8 @@ export default function Experience() {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-5xl font-bold mb-16 text-center text-white dark:text-black">
-            <span className="font-light">My</span>{' '}
-            <span className="font-extrabold">Experience</span>
+            <span className="font-light">Where </span>
+            <span className="font-extrabold">I've Been</span>
           </h1>
           <div className="space-y-6">
             {experiences.map((exp, index) => (

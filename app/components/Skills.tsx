@@ -11,8 +11,8 @@ export default function Skills() {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-5xl mb-16 text-center text-black dark:text-white">
-            <span className="font-light">My</span>{' '}
-            <span className="font-extrabold">Skills</span>
+            <span className="font-light">Things </span>
+            <span className="font-extrabold">I'm Exploring </span>
           </h2>
           <div className="grid grid-cols-3 md:grid-cols-8 gap-6">
             {skills.map((skill, index) => (

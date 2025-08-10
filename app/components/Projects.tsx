@@ -17,8 +17,8 @@ export default function Projects() {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-5xl mb-16 text-center text-black dark:text-white">
-            <span className="font-light">My</span>
-            <span className="font-extrabold">Projects</span>
+            <span className="font-light">Side </span>
+            <span className="font-extrabold">Hustles</span>
           </h2>
             <div className="space-y-24">
             {projects.map((project, index) => (
