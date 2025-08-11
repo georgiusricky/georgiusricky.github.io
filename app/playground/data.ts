@@ -3,12 +3,12 @@ import { PlaygroundItem } from "./types";
 
 export const playgroundItems: PlaygroundItem[] = [
   {
-    id: "HelloWorld",
-    title: "Hello World",
-    description: "A simple Hello World component",
+    id: "CodeChallenge",
+    title: "Code Challenge",
+    description: "Solving coding challenges to improve skills and explore new ideas.",
   },
 ];
 
 export const componentMap: Record<string, any> = {
-  HelloWorld: dynamic(() => import("./components/HelloWorld/page")),
+  CodeChallenge: dynamic(() => import("./components/CodeChallenge/page")),
 };

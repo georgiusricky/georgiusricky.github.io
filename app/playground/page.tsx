@@ -17,15 +17,15 @@ export default function PlaygroundPage() {
       </div>
 
      
-      <div className="grid gap-6 md:grid-cols-4">
+      <div className="grid gap-6 md:grid-cols-4 ">
         {playgroundItems.map((item) => (
           <Link
             key={item.id}
             href={`/playground/${item.id}`} 
-            className="p-4 border rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+            className="p-4 border rounded-lg bg-card  hover:bg-card-hover"
           >
             <h2 className="text-lg font-semibold">{item.title}</h2>
-            <p className="text-sm text-muted-foreground">{item.description}</p>
+            <p className="text-sm py-2 text-muted-foreground">{item.description}</p>
           </Link>
         ))}
       </div>
