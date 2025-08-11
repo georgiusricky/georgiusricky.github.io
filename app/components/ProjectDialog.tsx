@@ -39,16 +39,15 @@ export function ProjectDialog({
     <>
       <Dialog open={open} onOpenChange={onOpenChange}>
         <DialogContent 
-          className="max-w-6xl bg-white/40 backdrop-blur-md"
+          className="max-w-6xl bg-card hover:bg-card-hover  backdrop-blur-md"
         >
           <DialogHeader>
-            <DialogTitle className="text-black dark:text-white text-4xl">{project.title}</DialogTitle>
+            <DialogTitle className="text-black dark:text-white text-4xl mb-4">{project.title}</DialogTitle>
             <DialogDescription className="text-lg text-gray-700 dark:text-gray-300">
               {project.fullDescription}
             </DialogDescription>
           </DialogHeader>
           
-          {/* Horizontal scrollable image gallery */}
           <div className="w-full overflow-x-auto">
             <div className="flex space-x-4 pb-4">
               {project.assets.map((src, index) => {
@@ -73,7 +72,7 @@ export function ProjectDialog({
                     key={index}
                     src={src}
                     alt={`${project.title} screenshot ${index + 1}`}
-                    width={800}
+                    width={1000}
                     height={400}
                     className="flex-shrink-0 rounded-lg object-cover cursor-pointer"
                     onClick={() => setZoomedImage(src)}
@@ -132,14 +131,18 @@ export function ProjectDialog({
       {/* Zoomed Image Modal */}
       {zoomedImage && (
         <Dialog open={true} onOpenChange={() => setZoomedImage(null)}>
-          <DialogContent 
-            className="max-w-6xl bg-black/80 backdrop-blur-md p-4"
-          >
+          <DialogContent className="max-w-[80vw] bg-black/80 backdrop-blur-md p-4">
+            <DialogTitle></DialogTitle>
             <Image
               src={zoomedImage}
               alt="Zoomed Image"
-              width={1200}
-              height={800}
+              width={0} // required but can be 0 if using style
+              height={0}
+              sizes="80vw"
+              style={{
+                width: "80vw",
+                height: "auto",
+              }}
               className="rounded-lg object-contain"
             />
           </DialogContent>

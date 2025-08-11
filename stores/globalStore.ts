@@ -1,0 +1,236 @@
+import { create } from 'zustand'
+
+interface Socials {
+  wa: string
+  email: string
+  github: string
+  linkedin: string
+}
+
+interface Skill {
+  icon: string
+  name: string
+}
+
+interface Experience {
+  company: string
+  logo: string
+  title: string
+  period: {
+    start: string
+    end: string
+  }
+  description: string
+}
+
+interface Project {
+  id: string
+  title: string
+  description: string
+  fullDescription: string
+  technologies: string[]
+  preview: string
+  assets: string[]
+  githubLink: string
+  demoLink: string
+  liveLink: string
+}
+
+interface GlobalState {
+  socials: Socials
+  skills: Skill[]
+  experiences: Experience[]
+  projects: Project[]
+  setSocials: (socials: Partial<Socials>) => void
+  setSkills: (skills: Skill[]) => void
+  setExperiences: (experiences: Experience[]) => void
+  setProjects: (projects: Project[]) => void
+}
+
+export const useGlobalStore = create<GlobalState>((set) => ({
+  socials: {
+    wa: '6282177752911',
+    email: 'ricky.georgius@gmail.com',
+    github: 'https://github.com/georgiusricky',
+    linkedin: 'https://www.linkedin.com/in/georgius-ricky/',
+  },
+  skills: [
+    { icon: '/img/skills/html.webp', name: 'HTML' },
+    { icon: '/img/skills/css.webp', name: 'CSS' },
+    { icon: '/img/skills/javascript.webp', name: 'Javascript' },
+    { icon: '/img/skills/typescript.webp', name: 'TypeScript' },
+    { icon: '/img/skills/github.webp', name: 'Github' },
+    { icon: '/img/skills/gitlab.webp', name: 'Gitlab' },
+    { icon: '/img/skills/bitbucket.webp', name: 'Bitbucket' },
+    { icon: '/img/skills/nodejs.webp', name: 'NodeJs' },
+    { icon: '/img/skills/mysql.webp', name: 'MySql' },
+    { icon: '/img/skills/vue.webp', name: 'Vue' },
+    { icon: '/img/skills/nuxtjs.webp', name: 'Nuxt' },
+    { icon: '/img/skills/react.webp', name: 'React' },
+    { icon: '/img/skills/nextjs.webp', name: 'Next' },
+    { icon: '/img/skills/angular.webp', name: 'Angular' },
+    { icon: '/img/skills/svelte.webp', name: 'Svelte' },
+    { icon: '/img/skills/bootstrap.webp', name: 'Bootstrap' },
+    { icon: '/img/skills/tailwind.webp', name: 'Tailwind' },
+    { icon: '/img/skills/scoketio.webp', name: 'Socket.io' },
+    { icon: '/img/skills/java.webp', name: 'Java' },
+    { icon: '/img/skills/python.webp', name: 'Python' },
+    { icon: '/img/skills/cpp.webp', name: 'C++' },
+    { icon: '/img/skills/hourglass.webp', name: 'etc' },
+  ],
+  experiences: [
+    {
+      company: 'Indodax Nasional Indonesia',
+      logo: '/img/logo/indodax.webp',
+      title: 'Frontend Software Engineer',
+      period: { start: 'Oct 2023', end: 'Jun 2025' },
+      description:
+        'Manage the frontend web of projects using Vue.js, Nuxt, and CodeIgniter. Integrate frontend applications with backend APIs, work closely with the UI/UX team to implement designs, and convert Figma designs into responsive websites.',
+    },
+    {
+      company: 'BPJS Ketenagakerjaan',
+      logo: '/img/logo/bpjstk.webp',
+      title: 'Fullstack Engineer',
+      period: { start: 'Oct 2022', end: 'Oct 2023' },
+      description:
+        'Handled backend development using Express.js and frontend development with Vue.js, React.js, and PHP. Conducted User Acceptance Testing (UAT) and fixed issues identified during testing and penetration testing. Worked on both internal core applications and external applications for BPJS.',
+    },
+    {
+      company: 'Citra Cantik Nusantara (Beautybell)',
+      logo: '/img/logo/beautybell.webp',
+      title: 'Frontend Engineer',
+      period: { start: 'Dec 2021', end: 'Jul 2022' },
+      description:
+        'Installed and set up web projects, developed dashboards using Vue.js (Nuxt.js) and AngularJS, and created website apps based on Figma designs. Integrated frontend applications with backend APIs for seamless functionality.',
+    },
+    {
+      company: 'Edconnect Solusi Integrasi',
+      logo: '/img/logo/edconnect.webp',
+      title: 'Software Engineer - Fullstack',
+      period: { start: 'Sept 2019', end: 'Nov 2022' },
+      description:
+        'Developed and maintained school management systems, designed databases using MySQL, and debugged and deployed applications. Created responsive websites with Vue.js and conducted research on new web technologies to recommend design and development improvements.',
+    },
+  ],
+  projects: [
+    {
+      id: "01",
+      title: "Gambajak Website",
+      description:
+        "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",
+      fullDescription:
+        "This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.",
+      technologies: ["Next.js", "TypeScript", "TailwindCSS"],
+      preview: "/projects/gambajak/gambajak.png",
+      assets: [
+        "/projects/gambajak/preload.webm",
+        "/projects/gambajak/1.png",
+        "/projects/gambajak/2.png",
+        "/projects/gambajak/3.png"
+      ],
+      githubLink: "",
+      demoLink: "https://gambajak.vercel.app",
+      liveLink: "https://gambajak.com"
+    },
+    {
+      id: "02",
+      title: "Gachavista Website",
+      description:
+        "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",
+      fullDescription:
+        "This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.",
+      technologies: ["Next.js", "TypeScript", "TailwindCSS"],
+      preview: "/projects/gacha/gacha.png",
+      assets: [
+        "/projects/gacha/demo.webm",
+        "/projects/gacha/1.png",
+        "/projects/gacha/2.png",
+        "/projects/gacha/3.png"
+      ],
+      githubLink: "",
+      demoLink: "https://gambajak.vercel.app",
+      liveLink: "https://gambajak.com"
+    },
+    {
+      id: "03",
+      title: "Zuuonsol Website",
+      description:
+        "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",
+      fullDescription:
+        "This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.",
+      technologies: ["Nuxt.js", "Javascript", "TailwindCSS"],
+      preview: "/projects/zuuonsol/zuuonsol.png",
+      assets: ["/projects/zuuonsol/1.png", "/projects/zuuonsol/2.png"],
+      githubLink: "",
+      demoLink: "https://zuuonsol.vercel.app",
+      liveLink: "https://zuuonsol.com"
+    },
+    {
+      id: "04",
+      title: "Calt Supremacy Website",
+      description:
+        "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",
+      fullDescription:
+        "This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.",
+      technologies: ["Next.js", "TypeScript", "TailwindCSS"],
+      preview: "/projects/calt/calt.png",
+      assets: ["/projects/calt/1.png", "/projects/calt/2.png"],
+      githubLink: "",
+      demoLink: "https://caltsupremacy.vercel.app",
+      liveLink: "https://caltsupremacy.com/"
+    },
+    {
+      id: "05",
+      title: "Mewlord Website",
+      description:
+        "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",
+      fullDescription:
+        "This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.",
+      technologies: ["Next.js", "TypeScript", "TailwindCSS"],
+      preview: "/projects/mewlord/mewlord.png",
+      assets: ["/projects/mewlord/1.png"],
+      githubLink: "",
+      demoLink: "https://mewlord.vercel.app",
+      liveLink: "https://mewlord.fun"
+    },
+    {
+      id: "06",
+      title: "Bun Website",
+      description:
+        "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",
+      fullDescription:
+        "This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.",
+      technologies: ["Next.js", "TypeScript", "TailwindCSS"],
+      preview: "/projects/bun/bun.png",
+      assets: [
+        "/projects/bun/1.png",
+        "/projects/bun/2.png",
+        "/projects/bun/3.png"
+      ],
+      githubLink: "",
+      demoLink: "",
+      liveLink: "https://bun.meme"
+    },
+    {
+      id: "07",
+      title: "Rosiensta Website",
+      description:
+        "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",
+      fullDescription:
+        "This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.",
+      technologies: ["Nuxt.js", "Javascript", "TailwindCSS"],
+      preview: "/projects/rosiensta/rosiensta.png",
+      assets: ["/projects/rosiensta/1.png", "/projects/rosiensta/2.png"],
+      githubLink: "",
+      demoLink: "https://rosieoninsta.vercel.app",
+      liveLink: "https://rosieoninsta.com/"
+    }
+  ],
+
+  // setters
+  setSocials: (socials) =>
+    set((state) => ({ socials: { ...state.socials, ...socials } })),
+  setSkills: (skills) => set(() => ({ skills })),
+  setExperiences: (experiences) => set(() => ({ experiences })),
+  setProjects: (projects) => set(() => ({ projects })),
+}))

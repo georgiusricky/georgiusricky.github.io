@@ -1,8 +1,12 @@
+"use client"
+
 import Polaroid from './Polaroid'
-import data from '@/data/data.json'
-const experiences = data.experiences
+import { useGlobalStore } from '@/stores/globalStore'
+
 
 export default function About() {
+  const experiences = useGlobalStore((state) => state.experiences)
+
   const firstYear = Number(experiences.at(-1)?.period.start.split(' ')[1])
   const lastYear = Number(experiences[0]?.period.end.split(' ')[1])
   const totalExpYear = lastYear - firstYear

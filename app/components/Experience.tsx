@@ -1,10 +1,10 @@
 'use client'
 
 import Image from 'next/image'
-import data from '@/data/data.json'
-const experiences = data.experiences
+import { useGlobalStore } from '@/stores/globalStore'
 
 export default function Experience() {
+  const experiences = useGlobalStore((state) => state.experiences)
 
   return (
     <section className="bg-black dark:bg-white py-32" id="experience">

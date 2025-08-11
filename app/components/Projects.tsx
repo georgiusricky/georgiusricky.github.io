@@ -6,11 +6,12 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ArrowRight } from 'lucide-react'
 import { ProjectDialog } from './ProjectDialog'
-import projectData from '@/data/data.json'
+import { useGlobalStore } from '@/stores/globalStore'
 
 export default function Projects() {
+  const projects = useGlobalStore((state) => state.projects).slice(0, 3)
+
   const [selectedProject, setSelectedProject] = useState<any>(null)
-  const projects = projectData.projects.slice(0, 3)
 
   return (
     <section className="bg-white dark:bg-black py-16" id="projects">
@@ -20,7 +21,7 @@ export default function Projects() {
             <span className="font-light">Side </span>
             <span className="font-extrabold">Hustles</span>
           </h2>
-            <div className="space-y-24">
+          <div className="space-y-24">
             {projects.map((project, index) => (
               <div 
                 key={project.id} 

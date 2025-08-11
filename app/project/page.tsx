@@ -2,14 +2,12 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import { Button } from '@/components/ui/button'
-import { ArrowRight } from 'lucide-react'
 import { ProjectDialog } from '../components/ProjectDialog'
-import projectData from '@/data/data.json'
+import { useGlobalStore } from '@/stores/globalStore'
 
 export default function ProjectsPage() {
   const [selectedProject, setSelectedProject] = useState<any>(null)
-  const projects = projectData.projects
+  const projects = useGlobalStore((state) => state.projects)
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -22,14 +20,15 @@ export default function ProjectsPage() {
         {projects.map((project) => (
           <div 
             key={project.id} 
-            className="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden"
+            className="bg-card hover:bg-card-hover rounded-lg overflow-hidden cursor-pointer"
+            onClick={() => setSelectedProject(project)}
           >
             <Image
               src={project.preview}
               alt={project.title}
               width={600}
               height={400}
-              className="w-full h-fit object-cover"
+              className="w-full h-fit object-cover mt-4"
             />
             <div className="p-6">
               <h2 className="text-xl font-bold mb-2 text-black dark:text-white">
@@ -38,14 +37,6 @@ export default function ProjectsPage() {
               <p className="text-gray-600 dark:text-gray-300 mb-4">
                 {project.description}
               </p>
-              <Button 
-                variant="outline" 
-                className="text-black dark:text-white border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
-                onClick={() => setSelectedProject(project)}
-              >
-                View Project
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
             </div>
           </div>
         ))}

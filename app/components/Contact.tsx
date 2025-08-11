@@ -1,8 +1,10 @@
+"use client"
+
 import { Linkedin, Mail, MessageSquare } from 'lucide-react'
-import data from '@/data/data.json'
+import { useGlobalStore } from '@/stores/globalStore'
 
 export default function Contact() {
-  const socials = data.socials
+  const socials = useGlobalStore((state) => state.socials)
 
   const items = [
     {
@@ -20,7 +22,7 @@ export default function Contact() {
     {
       icon: <Linkedin className="h-7 w-7 text-primary" />,
       title: 'Visit My LinkedIn',
-      desc: socials.linkedin.replace(/^https?:\/\/(www\.)?/, ""),
+      desc: socials.linkedin.replace(/^https?:\/\/(www\.)?/, ''),
       link: socials.linkedin,
     },
   ]
@@ -48,7 +50,7 @@ export default function Contact() {
               href={item.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-card/80 backdrop-blur-sm border border-border rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6 flex flex-col items-center text-center"
+              className="group bg-card hover:bg-card-hover backdrop-blur-sm border border-border rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6 flex flex-col items-center text-center"
             >
               <div className="mb-4 flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
                 {item.icon}

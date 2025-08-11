@@ -3,13 +3,13 @@
 import { Github, Linkedin } from 'lucide-react'
 import Link from 'next/link'
 import ProfileCircle from './ProfileCircle'
-import data from '@/data/data.json'
 import Lottie from 'react-lottie-player'
 import globeAnimation from '../lotties/earth-lottie.json'
+import { useGlobalStore } from '@/stores/globalStore'
 
 export default function Hero() {
-  const socials = data.socials
- 
+  const socials = useGlobalStore((state) => state.socials)
+
   return (
     <section className="container mx-auto px-4 pt-32 pb-16">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
