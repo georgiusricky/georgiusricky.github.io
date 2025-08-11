@@ -4,73 +4,59 @@ import data from '@/data/data.json'
 export default function Contact() {
   const socials = data.socials
 
+  const items = [
+    {
+      icon: <MessageSquare className="h-7 w-7 text-primary" />,
+      title: 'Text or WhatsApp Me',
+      desc: `+${socials.wa}`,
+      link: `https://wa.me/${socials.wa}`,
+    },
+    {
+      icon: <Mail className="h-7 w-7 text-primary" />,
+      title: 'Send Me An Email',
+      desc: socials.email,
+      link: `mailto:${socials.email}`,
+    },
+    {
+      icon: <Linkedin className="h-7 w-7 text-primary" />,
+      title: 'Visit My LinkedIn',
+      desc: socials.linkedin.replace(/^https?:\/\/(www\.)?/, ""),
+      link: socials.linkedin,
+    },
+  ]
+
   return (
-    <section className="w-full py-12 md:py-24 bg-background">
+    <section className="w-full py-16 bg-background">
       <div className="container px-4 md:px-6">
-        <div className="space-y-4 text-center">
-          <h3 className="text-2xl uppercase tracking-wider text-muted-foreground md:text-4xl">
-            {`Let’s Connect`}
+        {/* Header */}
+        <div className="space-y-3 text-center">
+          <h3 className="text-sm uppercase tracking-[0.3em] text-primary font-medium">
+            Let’s Connect
           </h3>
-          <h2 className="text-3xl font-bold tracking-tighter md:text-5xl">
-            {`Build Something Together`}
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+            Build Something Together
           </h2>
+          <p className="text-muted-foreground max-w-lg mx-auto text-sm md:text-base">
+            Whether you have a project in mind or just want to say hi, feel free to reach out.
+          </p>
         </div>
-        <div className="mx-auto grid max-w-5xl gap-8 mt-12 md:grid-cols-3">
-          <div className="bg-card text-card-foreground rounded-lg shadow-md overflow-hidden">
-            <div className="p-3 md:p-6">
-              <h3 className="text-lg md:text-xl font-semibold flex items-center justify-center space-x-2 mb-4">
-                <MessageSquare className="h-6 w-6 text-primary" />
-                <span>Text or WhatsApp Me</span>
-              </h3>
-              <div className="text-center">
-                <p className="text-muted-foreground">+{socials.wa}</p>
-                <a 
-                  href={`https://wa.me/${socials.wa}`} 
-                  className="text-primary hover:underline mt-2 inline-block"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Open WhatsApp
-                </a>
+
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((item, idx) => (
+            <a
+              key={idx}
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-card/80 backdrop-blur-sm border border-border rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6 flex flex-col items-center text-center"
+            >
+              <div className="mb-4 flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
+                {item.icon}
               </div>
-            </div>
-          </div>
-          <div className="bg-card text-card-foreground rounded-lg shadow-md overflow-hidden">
-            <div className="p-6">
-              <h3 className="text-xl font-semibold flex items-center justify-center space-x-2 mb-4">
-                <Mail className="h-6 w-6 text-primary" />
-                <span>Send Me An Email</span>
-              </h3>
-              <div className="text-center">
-                <p className="text-muted-foreground">{socials.email}</p>
-                <a 
-                  href={`mailto:${socials.email}`} 
-                  className="text-primary hover:underline mt-2 inline-block"
-                >
-                  Send Email
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="bg-card text-card-foreground rounded-lg shadow-md overflow-hidden">
-            <div className="p-6">
-              <h3 className="text-xl font-semibold flex items-center justify-center space-x-2 mb-4">
-                <Linkedin className="h-6 w-6 text-primary" />
-                <span>Visit My LinkedIn</span>
-              </h3>
-              <div className="text-center">
-                <p className="text-muted-foreground">Connect with me</p>
-                <a 
-                  href={socials.linkedin}
-                  className="text-primary hover:underline mt-2 inline-block"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Profile
-                </a>
-              </div>
-            </div>
-          </div>
+              <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+              <p className="text-muted-foreground text-sm">{item.desc}</p>
+            </a>
+          ))}
         </div>
       </div>
     </section>
