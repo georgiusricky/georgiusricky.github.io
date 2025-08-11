@@ -1,25 +1,12 @@
-'use client'
+'use client';
 
-import { useEffect } from 'react'
 import Link from "next/link";
-import { PlaygroundItem } from "./types";
-
-const playgroundItems: PlaygroundItem[] = [
-  {
-    title: "Tic Tac Toe",
-    description: "A simple Tic Tac Toe game",
-    href: "/playground/features/tictactoe",
-  },
-];
+import { playgroundItems } from "./data";
 
 export default function PlaygroundPage() {
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
-
   return (
     <div className="container mt-12 mx-auto px-4 py-16 bg-white dark:bg-black">
-       <div className="mb-12 mt-6">
+      <div className="mb-12 mt-6">
         <h1 className="text-3xl mb-2 font-bold text-black dark:text-white">
           My Playground
         </h1>
@@ -29,18 +16,19 @@ export default function PlaygroundPage() {
         </p>
       </div>
 
-       <div className="grid gap-6 md:grid-cols-4">
-        {playgroundItems.map((item, idx) => (
+     
+      <div className="grid gap-6 md:grid-cols-4">
+        {playgroundItems.map((item) => (
           <Link
-            key={idx}
-            href={item.href}
-            className="p-4 border rounded-lg shadow hover:shadow-lg transition"
+            key={item.id}
+            href={`/playground/${item.id}`} 
+            className="p-4 border rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
           >
-            <h2 className="text-xl font-semibold">{item.title}</h2>
-            <p className="text-gray-600">{item.description}</p>
+            <h2 className="text-lg font-semibold">{item.title}</h2>
+            <p className="text-sm text-muted-foreground">{item.description}</p>
           </Link>
         ))}
       </div>
     </div>
-  )
+  );
 }
