@@ -1,10 +1,18 @@
 "use client"
 
-import { Linkedin, Mail, MessageSquare } from 'lucide-react'
+import { useState } from 'react'
+import { Linkedin, Mail, MessageSquare, Copy, Check } from 'lucide-react'
 import { useGlobalStore } from '@/stores/globalStore'
 
 export default function Contact() {
   const socials = useGlobalStore((state) => state.socials)
+  const [copiedIndex, setCopiedIndex] = useState<number | null>(null)
+
+  const handleCopy = async (text: string, index: number) => {
+    await navigator.clipboard.writeText(text)
+    setCopiedIndex(index)
+    setTimeout(() => setCopiedIndex(null), 1500)
+  }
 
   const items = [
     {
@@ -30,10 +38,9 @@ export default function Contact() {
   return (
     <section className="w-full py-16 bg-background">
       <div className="container px-4 md:px-6">
-        {/* Header */}
         <div className="space-y-3 text-center">
           <h3 className="text-sm uppercase tracking-[0.3em] text-primary font-medium">
-            Let’s Connect
+            {`Let’s Connect`}
           </h3>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
             Build Something Together
@@ -56,7 +63,24 @@ export default function Contact() {
                 {item.icon}
               </div>
               <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-              <p className="text-muted-foreground text-sm">{item.desc}</p>
+              <div className="flex items-center gap-2 text-muted-foreground text-md">
+                <span className="select-text">{item.desc}</span>
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.preventDefault() // prevent <a> from navigating
+                    handleCopy(item.desc, idx)
+                  }}
+                  className="p-1 rounded hover:bg-primary/10"
+                  aria-label="Copy to clipboard"
+                >
+                  {copiedIndex === idx ? (
+                    <Check className="h-5 w-5 text-green-500" />
+                  ) : (
+                    <Copy className="h-5 w-5 text-muted-foreground" />
+                  )}
+                </button>
+              </div>
             </a>
           ))}
         </div>
