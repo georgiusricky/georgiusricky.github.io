@@ -14,15 +14,15 @@ export default function Skills() {
             <span className="font-light">Things </span>
             <span className="font-extrabold">{`I'm Exploring`}</span>
           </h2>
-          <div className="grid grid-cols-3 md:grid-cols-8 gap-6">
+          <div className="grid grid-cols-5 md:grid-cols-8 gap-6">
             {skills.map((skill, index) => (
               <div 
                 key={index} 
-                className={`aspect-square flex flex-col items-center justify-center p-6 border border-gray-200 dark:border-gray-800 
+                className={`aspect-square flex flex-col items-center justify-center p-2 md:p-6 border border-gray-200 dark:border-gray-800 
                   hover:bg-black hover:text-white hover:dark:bg-white hover:dark:text-black transition-colors
                 `}
               >
-                <div className="w-3/6 h-3/6 relative mb-4">
+                <div className="w-5/6 h-5/6 md:w-3/6 md:h-3/6 relative mb-4">
                   <Image
                     src={skill.icon}
                     alt={skill.name}

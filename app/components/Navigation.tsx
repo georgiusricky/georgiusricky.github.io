@@ -68,7 +68,8 @@ export default function Navigation() {
   const navItems = [
     { href: '#about', label: 'About Me' },
     { href: '#skills', label: 'Skills' },
-    { href: '/projects', label: 'Projects' },
+    { href: '/project', label: 'Projects' },
+    { href: '/playground', label: 'Playground' },
     { href: '#contact', label: 'Contact Me' },
   ]
 

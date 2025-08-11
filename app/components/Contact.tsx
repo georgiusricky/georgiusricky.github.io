@@ -17,8 +17,8 @@ export default function Contact() {
         </div>
         <div className="mx-auto grid max-w-5xl gap-8 mt-12 md:grid-cols-3">
           <div className="bg-card text-card-foreground rounded-lg shadow-md overflow-hidden">
-            <div className="p-6">
-              <h3 className="text-xl font-semibold flex items-center justify-center space-x-2 mb-4">
+            <div className="p-3 md:p-6">
+              <h3 className="text-lg md:text-xl font-semibold flex items-center justify-center space-x-2 mb-4">
                 <MessageSquare className="h-6 w-6 text-primary" />
                 <span>Text or WhatsApp Me</span>
               </h3>
