@@ -18,7 +18,10 @@ export default function About() {
           <Polaroid src="/img/underwater.jpg" alt="underwater" caption="23-02-2020"/>
         </div>
         <div className="w-full md:w-3/5">
-          <h2 className="text-2xl font-bold mb-6">About Me</h2>
+          <h2 className="text-2xl font-bold mb-2 dark:text-white text-black">
+            <span className="font-extrabold">Hi </span>
+            <span className="font-light">there</span>
+          </h2>
           <p className="text-gray-600 dark:text-gray-400 mb-4">
             {`I’m a passionate web developer who began my journey in 2019. Over ${totalExpYear} years of experience, I’ve embraced modern development practices, continuously improving my skills to deliver exceptional user experiences. I thrive on taking on new challenges and enjoy learning something new to stay ahead in the ever-evolving tech landscape.`}
           </p>
