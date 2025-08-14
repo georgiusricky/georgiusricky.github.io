@@ -2,6 +2,7 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import Navigation from './components/Navigation'
+import LoadingOverlay from './components/LoadingOverlay'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,9 +22,9 @@ export default function RootLayout({
         <ThemeProvider>
           <Navigation />
           <main>{children}</main>
+          <LoadingOverlay />
         </ThemeProvider>
       </body>
     </html>
   )
 }
-

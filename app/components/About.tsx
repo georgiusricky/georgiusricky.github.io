@@ -2,15 +2,16 @@
 
 import Polaroid from './Polaroid'
 import { useGlobalStore } from '@/stores/globalStore'
-
+// import { useLoadingStore } from "@/stores/loadingStore";
 
 export default function About() {
   const experiences = useGlobalStore((state) => state.experiences)
+  // const setLoading = useLoadingStore((state) => state.setLoading);
+  // setLoading(true)
 
   const firstYear = Number(experiences.at(-1)?.period.start.split(' ')[1])
   const lastYear = Number(experiences[0]?.period.end.split(' ')[1])
   const totalExpYear = lastYear - firstYear
-  
   return (
     <section className="container mx-auto px-4 py-16" id="about">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
