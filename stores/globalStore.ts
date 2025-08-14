@@ -121,12 +121,12 @@ export const useGlobalStore = create<GlobalState>((set) => ({
       fullDescription:
         "This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.",
       technologies: ["Next.js", "TypeScript", "TailwindCSS"],
-      preview: "/projects/gambajak/gambajak.png",
+      preview: "/projects/gambajak/gambajak.webp",
       assets: [
         "/projects/gambajak/preload.webm",
-        "/projects/gambajak/1.png",
-        "/projects/gambajak/2.png",
-        "/projects/gambajak/3.png"
+        "/projects/gambajak/1.webp",
+        "/projects/gambajak/2.webp",
+        "/projects/gambajak/3.webp"
       ],
       githubLink: "",
       demoLink: "https://gambajak.vercel.app",
@@ -140,12 +140,12 @@ export const useGlobalStore = create<GlobalState>((set) => ({
       fullDescription:
         "This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.",
       technologies: ["Next.js", "TypeScript", "TailwindCSS"],
-      preview: "/projects/gacha/gacha.png",
+      preview: "/projects/gacha/gacha.webp",
       assets: [
         "/projects/gacha/demo.webm",
-        "/projects/gacha/1.png",
-        "/projects/gacha/2.png",
-        "/projects/gacha/3.png"
+        "/projects/gacha/1.webp",
+        "/projects/gacha/2.webp",
+        "/projects/gacha/3.webp"
       ],
       githubLink: "",
       demoLink: "https://gambajak.vercel.app",
@@ -159,8 +159,8 @@ export const useGlobalStore = create<GlobalState>((set) => ({
       fullDescription:
         "This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.",
       technologies: ["Nuxt.js", "Javascript", "TailwindCSS"],
-      preview: "/projects/zuuonsol/zuuonsol.png",
-      assets: ["/projects/zuuonsol/1.png", "/projects/zuuonsol/2.png"],
+      preview: "/projects/zuuonsol/zuuonsol.webp",
+      assets: ["/projects/zuuonsol/1.webp", "/projects/zuuonsol/2.webp"],
       githubLink: "",
       demoLink: "https://zuuonsol.vercel.app",
       liveLink: "https://zuuonsol.com"
@@ -173,8 +173,8 @@ export const useGlobalStore = create<GlobalState>((set) => ({
       fullDescription:
         "This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.",
       technologies: ["Next.js", "TypeScript", "TailwindCSS"],
-      preview: "/projects/calt/calt.png",
-      assets: ["/projects/calt/1.png", "/projects/calt/2.png"],
+      preview: "/projects/calt/calt.webp",
+      assets: ["/projects/calt/1.webp", "/projects/calt/2.webp"],
       githubLink: "",
       demoLink: "https://caltsupremacy.vercel.app",
       liveLink: "https://caltsupremacy.com/"
@@ -187,8 +187,8 @@ export const useGlobalStore = create<GlobalState>((set) => ({
       fullDescription:
         "This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.",
       technologies: ["Next.js", "TypeScript", "TailwindCSS"],
-      preview: "/projects/mewlord/mewlord.png",
-      assets: ["/projects/mewlord/1.png"],
+      preview: "/projects/mewlord/mewlord.webp",
+      assets: ["/projects/mewlord/1.webp"],
       githubLink: "",
       demoLink: "https://mewlord.vercel.app",
       liveLink: "https://mewlord.fun"
@@ -201,11 +201,11 @@ export const useGlobalStore = create<GlobalState>((set) => ({
       fullDescription:
         "This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.",
       technologies: ["Next.js", "TypeScript", "TailwindCSS"],
-      preview: "/projects/bun/bun.png",
+      preview: "/projects/bun/bun.webp",
       assets: [
-        "/projects/bun/1.png",
-        "/projects/bun/2.png",
-        "/projects/bun/3.png"
+        "/projects/bun/1.webp",
+        "/projects/bun/2.webp",
+        "/projects/bun/3.webp"
       ],
       githubLink: "",
       demoLink: "",
@@ -219,8 +219,8 @@ export const useGlobalStore = create<GlobalState>((set) => ({
       fullDescription:
         "This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.",
       technologies: ["Nuxt.js", "Javascript", "TailwindCSS"],
-      preview: "/projects/rosiensta/rosiensta.png",
-      assets: ["/projects/rosiensta/1.png", "/projects/rosiensta/2.png"],
+      preview: "/projects/rosiensta/rosiensta.webp",
+      assets: ["/projects/rosiensta/1.webp", "/projects/rosiensta/2.webp"],
       githubLink: "",
       demoLink: "https://rosieoninsta.vercel.app",
       liveLink: "https://rosieoninsta.com/"
