@@ -5,13 +5,11 @@ import Image from 'next/image'
 export interface PolaroidProps {
     src: string
     alt: string
-    caption?: string
 }
 
 export default function Polaroid({
     src,
     alt,
-    caption = '',
   }: PolaroidProps) {
 
   return (
