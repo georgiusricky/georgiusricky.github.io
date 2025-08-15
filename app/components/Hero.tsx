@@ -2,9 +2,8 @@
 
 import { Github, Linkedin } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 import ProfileCircle from './ProfileCircle'
-import Lottie from 'react-lottie-player'
-import globeAnimation from '../lotties/earth-lottie.json'
 import { useGlobalStore } from '@/stores/globalStore'
 
 export default function Hero() {
@@ -22,7 +21,12 @@ export default function Hero() {
           </h2>
           <div className="text-gray-600 dark:text-gray-400 mb-8 flex items-center">
             <span>Based in Earth</span>
-            <Lottie loop animationData={globeAnimation} play className="w-20" />
+             <Image
+                src="/img/gif/earth.gif"
+                alt="Earth"
+                width={50}
+                height={50}
+              />
           </div>
           <div className="flex space-x-4">
             <Link
