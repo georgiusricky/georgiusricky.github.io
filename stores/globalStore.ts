@@ -5,6 +5,8 @@ interface Socials {
   email: string
   github: string
   linkedin: string
+  codewars: string
+  hackerrank: string
 }
 
 interface Skill {
@@ -53,6 +55,8 @@ export const useGlobalStore = create<GlobalState>((set) => ({
     email: 'ricky.georgius@gmail.com',
     github: 'https://github.com/georgiusricky',
     linkedin: 'https://www.linkedin.com/in/georgius-ricky/',
+    codewars: 'https://www.codewars.com/users/georgiusricky',
+    hackerrank: 'https://www.hackerrank.com/profile/georgiusricky',
   },
   skills: [
     { icon: '/img/svg/html.svg', name: 'HTML' },
