@@ -66,7 +66,6 @@ export default function Navigation() {
   const handleMobileNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault()
     if (href.startsWith('#')) {
-      // Handle anchor links (About, Skills, Contact)
       const sectionId = href.slice(1)
       if (pathname === '/') {
         scrollToSection(sectionId)
@@ -75,7 +74,6 @@ export default function Navigation() {
         setTimeout(() => scrollToSection(sectionId), 100)
       }
     } else {
-      // Handle regular navigation links (Projects, Playground)
       router.push(href)
     }
     setIsMobileMenuOpen(false)
@@ -205,7 +203,6 @@ export default function Navigation() {
         <div className={`absolute top-0 right-0 w-80 h-full bg-white/60 dark:bg-black/50 backdrop-blur-md border-l border-gray-200/20 dark:border-gray-700/20 shadow-2xl transform transition-transform duration-500 ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}>
-          {/* Navigation Items */}
           <div className="p-4 space-y-2">
             {navItems.map((item, index) => (
               <a
@@ -230,7 +227,6 @@ export default function Navigation() {
             ))}
           </div>
           
-          {/* Footer */}
           <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-gray-200/20 dark:border-gray-700/20">
             <div className="text-center text-sm text-gray-500 dark:text-gray-400">
               <p>© 2024 Ricky</p>

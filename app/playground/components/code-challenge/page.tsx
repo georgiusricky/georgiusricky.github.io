@@ -20,7 +20,6 @@ export default function CodeChallenge() {
         You can check out my solutions and explanations in my GitHub repository.
       </p>
 
-      {/* Profile Links */}
       <div className="flex flex-col gap-2 mt-5">
         <Link
           href={socials.codewars}
@@ -51,10 +50,8 @@ export default function CodeChallenge() {
         </Link>
       </div>
 
-      {/* Divider */}
       <div className="my-4 border-t border-muted"></div>
 
-      {/* GitHub Link */}
       <Link
         href="https://github.com/georgiusricky/code-challenge"
         target="_blank"
