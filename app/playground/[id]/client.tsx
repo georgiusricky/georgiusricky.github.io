@@ -29,7 +29,7 @@ export default function Client({ item }: { item: PlaygroundItem }) {
         </BreadcrumbList>
       </Breadcrumb>
 
-      <div className="m-8 p-8 rounded-2xl shadow-sm border border-border bg-card">
+      <div className="my-8 p-4 md:p-8 rounded-2xl shadow-sm border border-border bg-card">
         <DynamicComponent  />
       </div>
     </div>
