@@ -25,15 +25,23 @@ export default function Hero() {
             <Lottie loop animationData={globeAnimation} play className="w-20" />
           </div>
           <div className="flex space-x-4">
-            <Link href={socials.github} className="p-2 border border-gray-300 dark:border-gray-700 rounded-sm hover:bg-gray-100 dark:hover:bg-gray-800">
-              <Github className="w-5 h-5" />
+            <Link
+              href={socials.github}
+              aria-label="Visit my GitHub profile"
+              className="p-2 border border-gray-300 dark:border-gray-700 rounded-sm hover:bg-gray-100 dark:hover:bg-gray-800"
+            >
+              <Github className="w-5 h-5" aria-hidden="true" />
             </Link>
-            <Link href={socials.linkedin} className="p-2 border border-gray-300 dark:border-gray-700 rounded-sm hover:bg-gray-100 dark:hover:bg-gray-800">
-              <Linkedin className="w-5 h-5" />
+            <Link
+              href={socials.linkedin}
+              aria-label="Visit my LinkedIn profile"
+              className="p-2 border border-gray-300 dark:border-gray-700 rounded-sm hover:bg-gray-100 dark:hover:bg-gray-800"
+            >
+              <Linkedin className="w-5 h-5" aria-hidden="true" />
             </Link>
           </div>
         </div>
-        <div className="w-full md:w-4/12">
+        <div className="w-8/12 md:w-4/12">
          <ProfileCircle/>
         </div>
       </div>
