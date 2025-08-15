@@ -3,12 +3,12 @@ import { PlaygroundItem } from "./types";
 
 export const playgroundItems: PlaygroundItem[] = [
   {
-    id: "CodeChallenge",
+    id: "code-challenge",
     title: "Code Challenge",
     description: "Solving coding challenges to improve skills and explore new ideas.",
   },
 ];
 
 export const componentMap: Record<string, any> = {
-  CodeChallenge: dynamic(() => import("./components/CodeChallenge/page")),
+  "code-challenge": dynamic(() => import("./components/code-challenge/page")),
 };
