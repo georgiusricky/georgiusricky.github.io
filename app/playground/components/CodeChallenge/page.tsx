@@ -61,7 +61,7 @@ export default function CodeChallenge() {
         className="flex items-center gap-3 px-5 py-2 rounded-lg transition-all hover:bg-accent hover:scale-[1.02]"
       >
         <Github className="h-7 w-7 text-black dark:text-white" />
-        <span>View on GitHub</span>
+        <span>Visit the GitHub repository</span>
       </Link>
     </div>
   );
