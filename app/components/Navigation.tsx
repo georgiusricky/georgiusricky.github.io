@@ -6,6 +6,7 @@ import { useRouter, usePathname } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { Download, Menu, Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
+import Image from "next/image"
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -82,11 +83,14 @@ export default function Navigation() {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${bgClass} backdrop-blur-md`}>
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link 
-          href="/" 
-          className="text-5xl font-bold font-stitchParty tracking-wide" 
-        >
-          Ricky
+       <Link href="/" className="block">
+          <Image
+            src={theme === "dark" ? "/img/svg/logo-light.svg" :"/img/svg/logo-dark.svg"}
+            alt="Ricky Logo"
+            width={160}
+            height={50}
+            priority
+          />
         </Link>
         <div className="hidden md:flex items-center space-x-8">
           {navItems.map((item) => (
