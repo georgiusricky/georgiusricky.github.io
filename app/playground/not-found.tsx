@@ -19,7 +19,7 @@ export default function PlaygroundNotFound() {
             Page Not Found
           </h2>
           <p className="text-muted-foreground text-lg max-w-md">
-            The playground item you're looking for doesn't exist.
+            {`The playground item you're looking for doesn't exist.`}
           </p>
         </div>
         
