@@ -58,7 +58,6 @@ export default function ComingSoon({
   return (
     <div className="lex items-center justify-center p-4">
       <div className="max-w-4xl mx-auto text-center">
-        {/* Main Content */}
         <div className="mb-12">
           <h1 className="text-3xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 mb-6">
             Coming Soon
@@ -75,7 +74,6 @@ export default function ComingSoon({
           )}
         </div>
 
-        {/* Countdown Timer */}
         {showCountdown && (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
             {Object.entries(timeLeft).map(([unit, value]) => (
@@ -91,7 +89,6 @@ export default function ComingSoon({
           </div>
         )}
 
-        {/* Features Preview */}
         {features.length > 0 && (
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {features.map((feature, index) => (
@@ -108,7 +105,6 @@ export default function ComingSoon({
           </div>
         )}
 
-        {/* Newsletter Signup */}
         {showNewsletter && (
           <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/20 dark:border-gray-700/20">
             <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
@@ -130,7 +126,6 @@ export default function ComingSoon({
           </div>
         )}
 
-        {/* Social Links */}
         {showSocial && (
           <div className="mt-12">
             <p className="text-gray-600 dark:text-gray-400 mb-4">Follow our development journey</p>

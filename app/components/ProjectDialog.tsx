@@ -128,7 +128,6 @@ export function ProjectDialog({
         </DialogContent>
       </Dialog>
 
-      {/* Zoomed Image Modal */}
       {zoomedImage && (
         <Dialog open={true} onOpenChange={() => setZoomedImage(null)}>
           <DialogContent className="max-w-[80vw] bg-black/80 backdrop-blur-md p-4">
