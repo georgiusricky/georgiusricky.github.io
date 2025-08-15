@@ -16,7 +16,7 @@ export default function About() {
     <section className="container mx-auto px-4 py-16" id="about">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         <div className="w-full md:w-2/5">
-          <Polaroid src="/img/underwater.jpg" alt="underwater" caption="23-02-2020"/>
+          <Polaroid src="/img/underwater.webp" alt="underwater" caption="23-02-2020"/>
         </div>
         <div className="w-full md:w-3/5">
           <h2 className="text-2xl font-bold mb-2 dark:text-white text-black">
