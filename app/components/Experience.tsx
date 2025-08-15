@@ -32,15 +32,15 @@ export default function Experience() {
                           className="object-contain"
                         />
                       </div>
-                      <h2 className="text-lg font-semibold text-white dark:text-black">
+                      <h2 className="text-md md:text-lg font-semibold text-white dark:text-black">
                         {exp.company}
                       </h2>
                     </div>
                   
                   </div>
-                  <div className="text-md font-semibold flex justify-between text-white/90 dark:text-black/90">
-                      {exp.title}
-                      <span className="text-gray-400 dark:text-gray-600 text-sm">
+                  <div className="text-md font-semibold flex flex-col-reverse md:flex-row justify-between text-white/90 dark:text-black/90">
+                      <span>{exp.title}</span>
+                      <span className="text-gray-300 dark:text-gray-600 text-sm md:mt-0 mt-[-15px] pb-2 md:pb-0 pl-12">
                         {exp.period.start} - {exp.period.end}
                     </span>
                   </div>
