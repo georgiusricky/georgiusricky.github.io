@@ -81,7 +81,7 @@ export const useGlobalStore = create<GlobalState>((set) => ({
   experiences: [
     {
       company: 'Indodax Nasional Indonesia',
-      logo: '/img/logo/indodax.webp',
+      logo: '/img/svg/indodax.svg',
       title: 'Frontend Software Engineer',
       period: { start: 'Oct 2023', end: 'Jun 2025' },
       description:
@@ -89,7 +89,7 @@ export const useGlobalStore = create<GlobalState>((set) => ({
     },
     {
       company: 'BPJS Ketenagakerjaan',
-      logo: '/img/logo/bpjstk.webp',
+      logo: '/img/svg/bpjstk.svg',
       title: 'Fullstack Engineer',
       period: { start: 'Oct 2022', end: 'Oct 2023' },
       description:
@@ -97,7 +97,7 @@ export const useGlobalStore = create<GlobalState>((set) => ({
     },
     {
       company: 'Citra Cantik Nusantara (Beautybell)',
-      logo: '/img/logo/beautybell.webp',
+      logo: '/img/svg/beautybell.svg',
       title: 'Frontend Engineer',
       period: { start: 'Dec 2021', end: 'Jul 2022' },
       description:
@@ -105,7 +105,7 @@ export const useGlobalStore = create<GlobalState>((set) => ({
     },
     {
       company: 'Edconnect Solusi Integrasi',
-      logo: '/img/logo/edconnect.webp',
+      logo: '/img/svg/edconnect.svg',
       title: 'Software Engineer - Fullstack',
       period: { start: 'Sept 2019', end: 'Nov 2022' },
       description:
