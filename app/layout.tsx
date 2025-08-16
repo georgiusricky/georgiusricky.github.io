@@ -7,7 +7,7 @@ import LoadingOverlay from './components/LoadingOverlay'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: "Ricky's Portfolio",
+  title: "Ricky - Software Engineer",
   description: 'Personal portfolio website of Ricky',
 }
 
