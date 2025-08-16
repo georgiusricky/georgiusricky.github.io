@@ -109,6 +109,7 @@ export default function Navigation() {
               width={160}
               height={50}
               priority
+              draggable={false}
             />
           </Link>
           <div className="hidden md:flex items-center space-x-8">
