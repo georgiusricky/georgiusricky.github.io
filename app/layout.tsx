@@ -3,12 +3,18 @@ import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import Navigation from './components/Navigation'
 import LoadingOverlay from './components/LoadingOverlay'
+import ServiceWorkerRegistration from './components/ServiceWorkerRegistration'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: "Ricky - Software Engineer",
   description: 'Personal portfolio website of Ricky',
+  manifest: '/manifest.json',
+  icons: {
+    icon: '/img/svg/logo-light.svg',
+    apple: '/img/svg/logo-light.svg',
+  },
 }
 
 export default function RootLayout({
@@ -23,6 +29,7 @@ export default function RootLayout({
           <Navigation />
           <main>{children}</main>
           <LoadingOverlay />
+          <ServiceWorkerRegistration />
         </ThemeProvider>
       </body>
     </html>
