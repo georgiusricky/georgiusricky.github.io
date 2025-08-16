@@ -172,6 +172,7 @@ export default function Navigation() {
               size="icon" 
               onClick={(e) => toggleMobileMenu(e)}
               className="relative group"
+              aria-label="Toggle mobile menu"
             >
               <div className="relative w-6 h-6 flex items-center justify-center">
                 <span className={`absolute w-6 h-0.5 bg-current transition-all duration-300 ${

@@ -26,6 +26,9 @@ export default function Hero() {
                 alt="Earth"
                 width={50}
                 height={50}
+                sizes="50px"
+                className="w-[50px] h-[50px] object-contain"
+                priority={false}
               />
           </div>
           <div className="flex space-x-4">

@@ -74,6 +74,7 @@ export function ProjectDialog({
                     alt={`${project.title} screenshot ${index + 1}`}
                     width={1000}
                     height={400}
+                    sizes="(max-width: 768px) 80vw, 60vw"
                     className="flex-shrink-0 rounded-lg object-cover cursor-pointer"
                     onClick={() => setZoomedImage(src)}
                     style={{ 

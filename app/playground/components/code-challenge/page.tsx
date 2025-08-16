@@ -31,6 +31,7 @@ export default function CodeChallenge() {
             alt="Codewars Logo"
             width={40}
             height={40}
+            sizes="40px"
           />
           <span>Visit my Codewars Profile</span>
         </Link>
@@ -45,6 +46,7 @@ export default function CodeChallenge() {
             alt="HackerRank Logo"
             width={40}
             height={40}
+            sizes="40px"
           />
           <span>Visit my HackerRank Profile</span>
         </Link>

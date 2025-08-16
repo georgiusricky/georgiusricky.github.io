@@ -29,6 +29,7 @@ export default function Experience() {
                           alt={`${exp.company} logo`}
                           width={30}
                           height={30}
+                          sizes="32px"
                           className="object-contain"
                         />
                       </div>

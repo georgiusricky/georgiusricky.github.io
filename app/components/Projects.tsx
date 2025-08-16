@@ -48,7 +48,9 @@ export default function Projects() {
                     alt={project.title}
                     width={600}
                     height={400}
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="w-full rounded-lg"
+                    priority={index === 0}
                   />
                 </div>
               </div>
