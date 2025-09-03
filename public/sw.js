@@ -2,7 +2,6 @@ const CACHE_NAME = 'ricky-portfolio-v1';
 const STATIC_CACHE = 'static-v1';
 const DYNAMIC_CACHE = 'dynamic-v1';
 
-// Assets to cache immediately
 const STATIC_ASSETS = [
   '/',
   '/offline.html',
@@ -18,7 +17,6 @@ const STATIC_ASSETS = [
   '/pdf/resume_ricky.pdf'
 ];
 
-// Install event - cache static assets
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(STATIC_CACHE)
@@ -32,7 +30,6 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// Activate event - clean up old caches
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
@@ -48,17 +45,14 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Fetch event - serve from cache when possible
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);
 
-  // Skip non-GET requests
   if (request.method !== 'GET') {
     return;
   }
 
-  // Handle different types of requests
   if (request.destination === 'image' || 
       request.destination === 'font' || 
       request.destination === 'document' ||
@@ -69,23 +63,18 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
       caches.match(request)
         .then((response) => {
-          // Return cached version if available
           if (response) {
             return response;
           }
 
-          // Fetch from network and cache
           return fetch(request)
             .then((response) => {
-              // Check if we received a valid response
               if (!response || response.status !== 200 || response.type !== 'basic') {
                 return response;
               }
 
-              // Clone the response
               const responseToCache = response.clone();
 
-              // Cache the response
               caches.open(DYNAMIC_CACHE)
                 .then((cache) => {
                   cache.put(request, responseToCache);
@@ -94,7 +83,6 @@ self.addEventListener('fetch', (event) => {
               return response;
             })
             .catch(() => {
-              // Return fallback for images
               if (request.destination === 'image') {
                 return caches.match('/img/placeholder.svg');
               }
@@ -102,14 +90,11 @@ self.addEventListener('fetch', (event) => {
         })
     );
   } else if (request.destination === 'script' || request.destination === 'style') {
-    // Cache JS and CSS files with network-first strategy
     event.respondWith(
       fetch(request)
         .then((response) => {
-          // Clone the response
           const responseToCache = response.clone();
 
-          // Cache the response
           caches.open(DYNAMIC_CACHE)
             .then((cache) => {
               cache.put(request, responseToCache);
@@ -118,14 +103,12 @@ self.addEventListener('fetch', (event) => {
           return response;
         })
         .catch(() => {
-          // Fallback to cache if network fails
           return caches.match(request);
         })
     );
   }
 });
 
-// Background sync for offline functionality
 self.addEventListener('sync', (event) => {
   if (event.tag === 'background-sync') {
     event.waitUntil(doBackgroundSync());
@@ -134,7 +117,6 @@ self.addEventListener('sync', (event) => {
 
 async function doBackgroundSync() {
   try {
-    // Perform background sync tasks
     console.log('Background sync completed');
   } catch (error) {
     console.log('Background sync failed:', error);
