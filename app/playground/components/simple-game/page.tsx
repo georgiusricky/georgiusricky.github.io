@@ -10,44 +10,44 @@ export default function SimpleFarmingGame() {
 
   // Obstacles
   const obstacles = [
-    { x: 0, y: 160, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 40, y: 160, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 80, y: 160, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 120, y: 160, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 240, y: 160, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 280, y: 160, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 320, y: 160, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 360, y: 160, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 400, y: 160, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 440, y: 160, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 480, y: 160, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 520, y: 160, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 560, y: 160, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 600, y: 160, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 640, y: 160, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 680, y: 160, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 720, y: 160, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 760, y: 160, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 0, y: 280, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 40, y: 280, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 80, y: 280, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 120, y: 280, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 160, y: 280, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 200, y: 280, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 240, y: 280, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 280, y: 280, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 320, y: 280, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 360, y: 280, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 400, y: 280, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 440, y: 280, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 480, y: 280, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 520, y: 280, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 560, y: 280, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 600, y: 280, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 640, y: 280, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 680, y: 280, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 720, y: 280, size: 40, image: "/playground/simple-farming-game/fence.png" },
-    { x: 760, y: 280, size: 40, image: "/playground/simple-farming-game/fence.png" },
+    { x: 0, y: 160, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 40, y: 160, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 80, y: 160, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 120, y: 160, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 240, y: 160, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 280, y: 160, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 320, y: 160, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 360, y: 160, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 400, y: 160, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 440, y: 160, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 480, y: 160, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 520, y: 160, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 560, y: 160, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 600, y: 160, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 640, y: 160, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 680, y: 160, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 720, y: 160, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 760, y: 160, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 0, y: 280, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 40, y: 280, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 80, y: 280, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 120, y: 280, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 160, y: 280, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 200, y: 280, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 240, y: 280, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 280, y: 280, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 320, y: 280, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 360, y: 280, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 400, y: 280, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 440, y: 280, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 480, y: 280, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 520, y: 280, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 560, y: 280, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 600, y: 280, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 640, y: 280, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 680, y: 280, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 720, y: 280, size: 40, image: "/playground/simple-game/fence.png" },
+    { x: 760, y: 280, size: 40, image: "/playground/simple-game/fence.png" },
   ];
 
   const tiles = Array.from({ length: 20 * 20 }, (_, i) => {
@@ -55,10 +55,10 @@ export default function SimpleFarmingGame() {
     const col = i % 20;
 
     if(row == 5 || row == 6 || row== 7){
-      return "/playground/simple-farming-game/texture_land.png";
+      return "/playground/simple-game/texture_land.png";
     }
 
-    return "/playground/simple-farming-game/texture_grass.png";
+    return "/playground/simple-game/texture_grass.png";
   });
 
   useEffect(() => {
@@ -146,10 +146,9 @@ export default function SimpleFarmingGame() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-green-300 to-green-600 p-8">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold text-white text-center mb-8">
-          Simple Farming Game
-        </h1>
-
+        <div className="text-center mt-6 text-white">
+          <p className="text-lg mb-2">Use WASD keys to move your character! ({Math.round(characterPosition.x)},{" "} {Math.round(characterPosition.y)})</p>
+        </div>
         <div
           className="relative border-4 border-green-600 rounded-lg shadow-2xl overflow-hidden"
           style={{ width: "805px", height: "805px", margin: "0 auto" }}
@@ -202,14 +201,6 @@ export default function SimpleFarmingGame() {
               <div className="w-6 h-6 bg-blue-600 rounded-full"></div>
             </div>
           </div>
-        </div>
-
-        <div className="text-center mt-6 text-white">
-          <p className="text-lg mb-2">Use WASD keys to move your character!</p>
-          <p className="text-sm opacity-80">
-            Hold keys for continuous movement • Position: ({characterPosition.x},{" "}
-            {characterPosition.y})
-          </p>
         </div>
       </div>
     </div>
