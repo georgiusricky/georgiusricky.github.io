@@ -44,9 +44,9 @@ export default function SimpleFarmingGame() {
       const moveStep = diagonal ? step / Math.sqrt(2) : step;
 
       if (isUp) y = Math.max(0, y - moveStep);
-      if (isDown) y = Math.min(752, y + moveStep);
+      if (isDown) y = Math.min(757, y + moveStep);
       if (isLeft) x = Math.max(0, x - moveStep);
-      if (isRight) x = Math.min(752, x + moveStep);
+      if (isRight) x = Math.min(757, x + moveStep);
 
       if (x !== positionRef.current.x || y !== positionRef.current.y) {
         positionRef.current = { x, y };
@@ -81,7 +81,7 @@ export default function SimpleFarmingGame() {
 
         <div
           className="relative bg-green-400 border-4 border-green-600 rounded-lg shadow-2xl overflow-hidden"
-          style={{ width: "800px", height: "800px", margin: "0 auto" }}
+          style={{ width: "805px", height: "805px", margin: "0 auto" }}
         >
           {/* Character */}
           <div
@@ -100,15 +100,15 @@ export default function SimpleFarmingGame() {
 
           {/* Grid */}
           <div className="absolute inset-0 opacity-20">
-            {Array.from({ length: 25 }, (_, i) => (
+            {Array.from({ length: 500 }, (_, i) => (
               <div
                 key={i}
                 className="absolute border border-green-500"
                 style={{
-                  left: `${(i % 5) * 100}px`,
-                  top: `${Math.floor(i / 5) * 100}px`,
-                  width: "100px",
-                  height: "100px",
+                  left: `${(i % 20) * 40}px`,
+                  top: `${Math.floor(i / 20) * 40}px`,
+                  width: "40px",
+                  height: "40px",
                 }}
               />
             ))}
