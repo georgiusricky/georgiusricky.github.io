@@ -1,9 +1,6 @@
 export const TILE_SIZE = 40;
 
-export type GroundType = "G" | "L" | "S";        
-// G = Grass, L = Land, S = Soil
-export type ObstacleType = "S" | "T" | "B" | "F" | "X"; 
-// S = Stone, T = Tree, B = Barrel, F = Fence, X = Empty
+import { GroundType, Obstacle, ObstacleType } from "./types";
 
 export const groundSprites: Record<GroundType, string> = {
   G: "/playground/simple-game/texture_grass.png",
@@ -19,6 +16,7 @@ export const obstacleSprites: Record<Exclude<ObstacleType, "X">, string> = {
 };
 
 export const groundMap: GroundType[][] = [
+  ["G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G"],
   ["G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G"],
   ["G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G"],
   ["G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G"],
@@ -48,7 +46,8 @@ export const obstacleMap: ObstacleType[][] = [
   ["X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X"],
   ["X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X"],
   ["X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X"],
-  ["F","F","X","X","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F"],
+  ["X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X"],
+  ["F","F","F","X","X","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","X","X","X","X","X","F"],
   ["X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X"],
   ["X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X"],
   ["F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F"],
@@ -69,3 +68,8 @@ export const obstacleMap: ObstacleType[][] = [
   ["X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X"],
   ["X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X"],
 ];
+
+export const obstacles: Obstacle[] = [
+  { x: 14, y: 0, w: 5, h: 5, image: "/playground/simple-game/house.png" },
+];
+
