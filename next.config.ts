@@ -6,10 +6,11 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   reactStrictMode: true,
-  // For GitHub Pages with custom domain
-  basePath: process.env.GITHUB_PAGES ? '/georgiusricky.github.io' : '',
-  assetPrefix: process.env.GITHUB_PAGES ? '/georgiusricky.github.io/' : '',
+  // For custom domain with GitHub Pages
   trailingSlash: true,
+  // Optional: uncomment if you still have path issues
+  // basePath: process.env.NODE_ENV === 'production' ? '' : '',
+  // assetPrefix: process.env.NODE_ENV === 'production' ? '' : '',
 };
 
 export default nextConfig;
