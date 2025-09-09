@@ -5,13 +5,22 @@ import { groundMap, obstacleMap, obstacles, TILE_SIZE } from "./map";
 import { ObstacleType } from "./types";
 
 export default function SimpleFarmingGame() {
-  const [characterPosition, setCharacterPosition] = useState({ x: 0, y: 240 });
+  const [characterPosition, setCharacterPosition] = useState({ x: 0, y: 160 });
   const positionRef = useRef(characterPosition);
   const pressedKeys = useRef(new Set<string>());
   const animationFrame = useRef<number | null>(null);
 
   const step = 2;
-  const charSize = TILE_SIZE * 0.9;
+  const charWidth = 40;
+  const charHeight = 80;
+
+  // Feet hitbox: bottom half of the sprite
+  const feetHeight = 35;
+  const feetOffsetY = charHeight - feetHeight; // starts 40px below character top
+
+  // Map size
+  const mapWidth = groundMap[0].length * TILE_SIZE;
+  const mapHeight = groundMap.length * TILE_SIZE;
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -48,13 +57,19 @@ export default function SimpleFarmingGame() {
       let newY = y;
 
       if (isUp) newY = Math.max(0, newY - moveStep);
-      if (isDown) newY = Math.min(765, newY + moveStep);
+      if (isDown) newY = Math.min(mapHeight - charHeight, newY + moveStep);
       if (isLeft) newX = Math.max(0, newX - moveStep);
-      if (isRight) newX = Math.min(765, newX + moveStep);
+      if (isRight) newX = Math.min(mapWidth - charWidth, newX + moveStep);
 
-      const offset = (TILE_SIZE - charSize) / 2;
+      // Feet hitbox
+      const feetBox = {
+        x: newX,
+        y: newY + feetOffsetY,
+        w: charWidth,
+        h: feetHeight,
+      };
 
-      // --- Collision with small obstacles ---
+      // Collision with small obstacles
       const collidesSmall = obstacleMap.some((row, rowIndex) =>
         row.some((cell: ObstacleType, colIndex) => {
           if (cell === "X") return false;
@@ -63,15 +78,15 @@ export default function SimpleFarmingGame() {
           const obsSize = TILE_SIZE;
 
           return (
-            newX + offset < obsX + obsSize &&
-            newX + offset + charSize > obsX &&
-            newY + offset < obsY + obsSize &&
-            newY + offset + charSize > obsY
+            feetBox.x < obsX + obsSize &&
+            feetBox.x + feetBox.w > obsX &&
+            feetBox.y < obsY + obsSize &&
+            feetBox.y + feetBox.h > obsY
           );
         })
       );
 
-      // --- Collision with big obstacles ---
+      // Collision with big obstacles
       const collidesBig = obstacles.some((obs) => {
         const obsX = obs.x * TILE_SIZE;
         const obsY = obs.y * TILE_SIZE;
@@ -79,10 +94,10 @@ export default function SimpleFarmingGame() {
         const obsH = obs.h * TILE_SIZE;
 
         return (
-          newX + offset < obsX + obsW &&
-          newX + offset + charSize > obsX &&
-          newY + offset < obsY + obsH &&
-          newY + offset + charSize > obsY
+          feetBox.x < obsX + obsW &&
+          feetBox.x + feetBox.w > obsX &&
+          feetBox.y < obsY + obsH &&
+          feetBox.y + feetBox.h > obsY
         );
       });
 
@@ -113,11 +128,11 @@ export default function SimpleFarmingGame() {
         cancelAnimationFrame(animationFrame.current);
       }
     };
-  }, []);
+  }, [mapWidth, mapHeight]);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-green-300 to-green-600 p-8">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <div className="text-center mt-6 text-white">
           <p className="text-lg mb-2">
             Use WASD keys to move your character! (
@@ -126,7 +141,7 @@ export default function SimpleFarmingGame() {
         </div>
         <div
           className="relative border-4 border-green-600 rounded-lg shadow-2xl overflow-hidden select-none"
-          style={{ width: "805px", height: "805px", margin: "0 auto" }}
+          style={{ width: `${mapWidth}px`, height: `${mapHeight}px`, margin: "0 auto" }}
         >
           {/* Ground */}
           {groundMap.map((row, rowIndex) =>
@@ -177,6 +192,7 @@ export default function SimpleFarmingGame() {
                     width: `${TILE_SIZE}px`,
                     height: `${TILE_SIZE}px`,
                     objectFit: "cover",
+                    zIndex: 20,
                   }}
                 />
               );
@@ -196,6 +212,7 @@ export default function SimpleFarmingGame() {
                 width: `${obs.w * TILE_SIZE}px`,
                 height: `${obs.h * TILE_SIZE}px`,
                 objectFit: "cover",
+                zIndex: 10,
               }}
             />
           ))}
@@ -206,11 +223,12 @@ export default function SimpleFarmingGame() {
             style={{
               left: `${characterPosition.x}px`,
               top: `${characterPosition.y}px`,
-              width: `${charSize}px`,
-              height: `${charSize}px`,
+              width: `${charWidth}px`,
+              height: `${charHeight}px`,
+              zIndex: 30,
             }}
           >
-            <div className="w-full h-full bg-blue-400 rounded flex items-center justify-center">
+            <div className="w-full h-full bg-blue-400 flex items-center justify-center">
               <div className="w-6 h-6 bg-blue-600 rounded-full"></div>
             </div>
           </div>
