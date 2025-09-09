@@ -37,6 +37,94 @@ export default function SimpleFarmingGame() {
   }, [mapWidth, mapHeight]);
 
   // --- Movement logic ---
+  const moveCharacter = () => {
+    let { x, y } = positionRef.current;
+
+    const isUp =
+      pressedKeys.current.has("w") ||
+      pressedKeys.current.has("top") ||
+      pressedKeys.current.has("lefttop") ||
+      pressedKeys.current.has("righttop");
+    const isDown =
+      pressedKeys.current.has("s") ||
+      pressedKeys.current.has("bottom") ||
+      pressedKeys.current.has("leftbottom") ||
+      pressedKeys.current.has("rightbottom");
+    const isLeft =
+      pressedKeys.current.has("a") ||
+      pressedKeys.current.has("left") ||
+      pressedKeys.current.has("lefttop") ||
+      pressedKeys.current.has("leftbottom");
+    const isRight =
+      pressedKeys.current.has("d") ||
+      pressedKeys.current.has("right") ||
+      pressedKeys.current.has("righttop") ||
+      pressedKeys.current.has("rightbottom");
+
+    const diagonal = (isUp || isDown) && (isLeft || isRight);
+    const moveStep = diagonal ? step / Math.sqrt(2) : step;
+
+    let newX = x;
+    let newY = y;
+
+    if (isUp) newY = Math.max(0, newY - moveStep);
+    if (isDown) newY = Math.min(mapHeight - charHeight, newY + moveStep);
+    if (isLeft) newX = Math.max(0, newX - moveStep);
+    if (isRight) newX = Math.min(mapWidth - charWidth, newX + moveStep);
+
+    // --- Character feet hitbox ---
+    const feetBox = { x: newX, y: newY + (charHeight - feetHeight), w: charWidth, h: feetHeight };
+
+    // --- Collision with small obstacles ---
+    const collidesSmall = obstacleMap.some((row, rowIndex) =>
+      row.some((cell: ObstacleType, colIndex) => {
+        if (cell === "X") return false;
+        const obsX = colIndex * TILE_SIZE;
+        const obsY = rowIndex * TILE_SIZE;
+        const obsW = TILE_SIZE;
+        const obsH = TILE_SIZE;
+        const obsFeetH = obstacleSprites[cell]?.feetHeight ?? 0;
+        const feetArea = { x: obsX, y: obsY + (obsH - obsFeetH), w: obsW, h: obsFeetH };
+        return (
+          feetBox.x < feetArea.x + feetArea.w &&
+          feetBox.x + feetBox.w > feetArea.x &&
+          feetBox.y + feetBox.h > feetArea.y &&
+          feetBox.y < feetArea.y + feetArea.h
+        );
+      })
+    );
+
+    // --- Collision with big obstacles ---
+    const collidesBig = obstacles.some((obs) => {
+      const obsX = obs.x * TILE_SIZE;
+      const obsY = obs.y * TILE_SIZE;
+      const obsW = obs.w * TILE_SIZE;
+      const obsH = obs.h * TILE_SIZE;
+      return (
+        feetBox.x < obsX + obsW &&
+        feetBox.x + feetBox.w > obsX &&
+        feetBox.y < obsY + obsH &&
+        feetBox.y + feetBox.h > obsY
+      );
+    });
+
+    if (!collidesSmall && !collidesBig) {
+      x = newX;
+      y = newY;
+    }
+
+    if (x !== positionRef.current.x || y !== positionRef.current.y) {
+      positionRef.current = { x, y };
+      setCharacterPosition({ x, y });
+    }
+
+    if (pressedKeys.current.size > 0) {
+      animationFrame.current = requestAnimationFrame(moveCharacter);
+    } else {
+      animationFrame.current = null;
+    }
+  };
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       const key = event.key.toLowerCase();
@@ -55,94 +143,6 @@ export default function SimpleFarmingGame() {
       }
     };
 
-    const moveCharacter = () => {
-      let { x, y } = positionRef.current;
-
-      const isUp =
-        pressedKeys.current.has("w") ||
-        pressedKeys.current.has("top") ||
-        pressedKeys.current.has("lefttop") ||
-        pressedKeys.current.has("righttop");
-      const isDown =
-        pressedKeys.current.has("s") ||
-        pressedKeys.current.has("bottom") ||
-        pressedKeys.current.has("leftbottom") ||
-        pressedKeys.current.has("rightbottom");
-      const isLeft =
-        pressedKeys.current.has("a") ||
-        pressedKeys.current.has("left") ||
-        pressedKeys.current.has("lefttop") ||
-        pressedKeys.current.has("leftbottom");
-      const isRight =
-        pressedKeys.current.has("d") ||
-        pressedKeys.current.has("right") ||
-        pressedKeys.current.has("righttop") ||
-        pressedKeys.current.has("rightbottom");
-
-      const diagonal = (isUp || isDown) && (isLeft || isRight);
-      const moveStep = diagonal ? step / Math.sqrt(2) : step;
-
-      let newX = x;
-      let newY = y;
-
-      if (isUp) newY = Math.max(0, newY - moveStep);
-      if (isDown) newY = Math.min(mapHeight - charHeight, newY + moveStep);
-      if (isLeft) newX = Math.max(0, newX - moveStep);
-      if (isRight) newX = Math.min(mapWidth - charWidth, newX + moveStep);
-
-      // --- Character feet hitbox ---
-      const feetBox = { x: newX, y: newY + (charHeight - feetHeight), w: charWidth, h: feetHeight };
-
-      // --- Collision with small obstacles ---
-      const collidesSmall = obstacleMap.some((row, rowIndex) =>
-        row.some((cell: ObstacleType, colIndex) => {
-          if (cell === "X") return false;
-          const obsX = colIndex * TILE_SIZE;
-          const obsY = rowIndex * TILE_SIZE;
-          const obsW = TILE_SIZE;
-          const obsH = TILE_SIZE;
-          const obsFeetH = obstacleSprites[cell]?.feetHeight ?? 0;
-          const feetArea = { x: obsX, y: obsY + (obsH - obsFeetH), w: obsW, h: obsFeetH };
-          return (
-            feetBox.x < feetArea.x + feetArea.w &&
-            feetBox.x + feetBox.w > feetArea.x &&
-            feetBox.y + feetBox.h > feetArea.y &&
-            feetBox.y < feetArea.y + feetArea.h
-          );
-        })
-      );
-
-      // --- Collision with big obstacles ---
-      const collidesBig = obstacles.some((obs) => {
-        const obsX = obs.x * TILE_SIZE;
-        const obsY = obs.y * TILE_SIZE;
-        const obsW = obs.w * TILE_SIZE;
-        const obsH = obs.h * TILE_SIZE;
-        return (
-          feetBox.x < obsX + obsW &&
-          feetBox.x + feetBox.w > obsX &&
-          feetBox.y < obsY + obsH &&
-          feetBox.y + feetBox.h > obsY
-        );
-      });
-
-      if (!collidesSmall && !collidesBig) {
-        x = newX;
-        y = newY;
-      }
-
-      if (x !== positionRef.current.x || y !== positionRef.current.y) {
-        positionRef.current = { x, y };
-        setCharacterPosition({ x, y });
-      }
-
-      if (pressedKeys.current.size > 0) {
-        animationFrame.current = requestAnimationFrame(moveCharacter);
-      } else {
-        animationFrame.current = null;
-      }
-    };
-
     window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("keyup", handleKeyUp);
 
@@ -155,9 +155,12 @@ export default function SimpleFarmingGame() {
 
   // --- Mobile button helper ---
   const handleMobilePress = (key: string, isDown: boolean) => {
+    console.log('Mobile button pressed:', key, isDown);
     if (isDown) {
       pressedKeys.current.add(key);
-      if (!animationFrame.current) animationFrame.current = requestAnimationFrame(() => {}); // start animation
+      if (!animationFrame.current) {
+        animationFrame.current = requestAnimationFrame(moveCharacter);
+      }
     } else {
       pressedKeys.current.delete(key);
     }
@@ -169,7 +172,7 @@ export default function SimpleFarmingGame() {
     <div className="min-h-screen bg-gradient-to-b from-green-300 to-green-600 p-4 flex flex-col items-center">
       <div className="text-center text-black mb-4">
         <p className="text-lg">
-          Use <span className="font-bold">{isMobile ? 'mobile buttons' : 'WASD'}</span> to move! (
+          Use <span className="font-bold">{isMobile ? 'the buttons below' : 'WASD keys'}</span> to move! (
           {Math.round(characterPosition.x)}, {Math.round(characterPosition.y)})
         </p>
       </div>
@@ -263,7 +266,7 @@ export default function SimpleFarmingGame() {
       </div>
         {/* --- Mobile buttons --- */}
         {isMobile && (
-          <div className="mt-10 grid grid-cols-3 gap-2 z-50">
+          <div className="mt-10 grid grid-cols-3 gap-2">
             {[
               ["↖", "lefttop"],
               ["↑", "top"],
@@ -277,9 +280,18 @@ export default function SimpleFarmingGame() {
             ].map(([symbol, key]) => (
               <button
                 key={key}
-                onTouchStart={() => handleMobilePress(key, true)}
-                onTouchEnd={() => handleMobilePress(key, false)}
-                className="w-14 h-14 bg-gray-800/60 text-white rounded-full flex items-center justify-center select-none backdrop-blur-sm"
+                onMouseDown={() => handleMobilePress(key, true)}
+                onMouseUp={() => handleMobilePress(key, false)}
+                onTouchStart={(e) => {
+                  e.preventDefault();
+                  handleMobilePress(key, true);
+                }}
+                onTouchEnd={(e) => {
+                  e.preventDefault();
+                  handleMobilePress(key, false);
+                }}
+                onMouseLeave={() => handleMobilePress(key, false)}
+                className="w-14 h-14 bg-gray-800/60 text-white rounded-full flex items-center justify-center select-none backdrop-blur-sm hover:bg-gray-700/60 active:bg-gray-900/60"
               >
                 {symbol}
               </button>
