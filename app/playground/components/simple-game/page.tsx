@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { groundMap, obstacleMap, obstacles, TILE_SIZE, obstacleSprites } from "./map";
+import { groundMap, obstacleMap, obstacles, TILE_SIZE, groundSprites, obstacleSprites } from "./map";
 import { ObstacleType } from "./types";
 
 export default function SimpleFarmingGame() {
@@ -151,7 +151,7 @@ export default function SimpleFarmingGame() {
             row.map((cell, colIndex) => (
               <img
                 key={`ground-${rowIndex}-${colIndex}`}
-                src={cell === "G" ? "/playground/simple-game/texture_grass.png" : "/playground/simple-game/texture_land.png"}
+                src={groundSprites[cell]}
                 alt="ground"
                 className="absolute select-none pointer-events-none"
                 style={{

@@ -6,39 +6,40 @@ export const groundSprites: Record<GroundType, string> = {
   G: "/playground/simple-game/texture_grass.png",
   L: "/playground/simple-game/texture_land.png",
   S: "/playground/simple-game/texture_soil.png",
+  W: "/playground/simple-game/texture_water.gif",
 };
 
 export const obstacleSprites: Record<Exclude<ObstacleType, "X">, { image: string; feetHeight?: number }> = {
-  S: { image: "" },   // full blocking
-  T: { image: "" },    // full blocking
-  B: { image: "" },    // full blocking
+  S: { image: "" },   
+  T: { image: "" },    
+  B: { image: "" },    
   F: { image: "/playground/simple-game/fence.png", feetHeight: 10 }, // only bottom 10px blocks
 };
 
 
 export const groundMap: GroundType[][] = [
-  ["G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G"],
-  ["G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G"],
-  ["G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G"],
-  ["G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G"],
-  ["G","G","L","L","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G"],
+  ["G","G","G","G","G","G","G","G","L","L","G","G","G","W","W","W","W","W","W","W","W","W","W","W","G"],
+  ["G","G","G","G","G","G","G","G","L","L","G","G","G","W","W","W","W","W","W","W","W","W","W","W","G"],
+  ["G","G","G","G","G","G","G","G","L","L","G","G","G","W","W","W","W","W","W","W","W","W","W","W","G"],
+  ["G","G","G","G","G","G","G","G","L","L","G","G","G","W","W","W","W","W","W","W","W","W","W","W","G"],
+  ["G","G","G","G","G","G","G","G","L","L","G","G","G","W","W","W","W","W","W","W","W","W","W","W","G"],
+  ["G","G","L","L","G","G","G","G","L","L","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G"],
   ["L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L"],
   ["L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L","L"],
-  ["G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G"],
-  ["G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G"],
-  ["G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G"],
-  ["G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G"],
-  ["G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G"],
-  ["G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G"],
-  ["G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G"],
-  ["G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G"],
-  ["G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G"],
-  ["G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G"],
-  ["G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G"],
-  ["G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G"],
-  ["G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G"],
-  ["G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G"],
-  ["G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G"],
+  ["G","G","G","G","G","G","G","G","G","G","L","L","G","G","G","G","G","G","G","G","G","G","G","G","G"],
+  ["G","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","G"],
+  ["G","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","G"],
+  ["G","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","G"],
+  ["G","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","G"],
+  ["G","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","G"],
+  ["G","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","G"],
+  ["G","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","G"],
+  ["G","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","G"],
+  ["G","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","G"],
+  ["G","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","G"],
+  ["G","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","G"],
+  ["G","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","G"],
+  ["G","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","G"],
   ["G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G","G"],
 ];
 
@@ -47,7 +48,8 @@ export const obstacleMap: ObstacleType[][] = [
   ["X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X"],
   ["X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X"],
   ["X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X"],
-  ["F","F","X","X","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F"],
+  ["X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X"],
+  ["F","F","X","X","F","F","F","F","X","X","F","F","F","F","F","F","F","F","F","F","F","F","F","F","F"],
   ["X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X"],
   ["F","F","F","F","F","F","F","F","F","F","X","X","F","F","F","F","F","F","F","F","F","F","F","F","F"],
   ["X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X"],
@@ -71,5 +73,18 @@ export const obstacleMap: ObstacleType[][] = [
 
 export const obstacles: Obstacle[] = [
   { x: 1, y: 0, w: 5, h: 5, image: "/playground/simple-game/house.png" },
+  { x: -1.5, y: 1.4, w: 4, h: 4, image: "/playground/simple-game/orange_tree.png" },
+  { x: 10.5, y: -0.8, w: 3.5, h: 3.5, image: "/playground/simple-game/orange_tree.png" },
+  { x: 10.5, y:0.5, w: 3.5, h: 3.5, image: "/playground/simple-game/orange_tree.png" },
+  { x: 9.8, y: 1.5, w: 3.5, h: 3.5, image: "/playground/simple-game/orange_tree.png" },
+  { x: 11.3, y: 2, w: 3.5, h: 3.5, image: "/playground/simple-game/orange_tree.png" },
+  { x: 13, y: 2, w: 3.5, h: 3.5, image: "/playground/simple-game/orange_tree.png" },
+  { x: 14.5, y: 2, w: 3.5, h: 3.5, image: "/playground/simple-game/orange_tree.png" },
+  { x: 16, y: 2, w: 3.5, h: 3.5, image: "/playground/simple-game/orange_tree.png" },
+  { x: 17.5, y: 2, w: 3.5, h: 3.5, image: "/playground/simple-game/orange_tree.png" },
+  { x: 19, y: 2, w: 3.5, h: 3.5, image: "/playground/simple-game/orange_tree.png" },
+  { x: 20.7, y: 2, w: 3.5, h: 3.5, image: "/playground/simple-game/orange_tree.png" },
+  { x: 22.3, y: 2, w: 3.5, h: 3.5, image: "/playground/simple-game/orange_tree.png" },
+  { x: 23, y: -0.3, w: 3.5, h: 3.5, image: "/playground/simple-game/orange_tree.png" },
 ];
 
