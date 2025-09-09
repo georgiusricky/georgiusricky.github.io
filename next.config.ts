@@ -4,7 +4,6 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  // 👇 USE basepath for github pages
-  basePath: '/georgiusricky.github.io', // or just '/'
+  reactStrictMode: true,
 };
 export default nextConfig;
