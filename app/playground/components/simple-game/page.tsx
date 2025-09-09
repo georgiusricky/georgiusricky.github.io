@@ -136,9 +136,9 @@ export default function SimpleFarmingGame() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-green-300 to-green-600 p-8">
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mt-6 text-white">
-          <p className="text-lg mb-2">
-            Use WASD keys to move your character! (
+        <div className="text-center mt-6 text-black ">
+          <p className="text-lg mb-2 ">
+            Use <span className="font-bold">WASD</span> keys to move your character! (
             {Math.round(characterPosition.x)}, {Math.round(characterPosition.y)})
           </p>
         </div>

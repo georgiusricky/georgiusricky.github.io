@@ -10,7 +10,8 @@ export const playgroundItems: PlaygroundItem[] = [
   {
     id: "simple-game",
     title: "Simple Game",
-    description: "A Simple game where you can move character in textured land",
+    thumbnail: "/playground/simple-game/simple-game.webp",
+    description: "A Simple game where you can move character in textured tiles",
   },
 ];
 
