@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main] 
+    branches: [main]
 
 permissions:
   contents: read
@@ -24,18 +24,18 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20  # Use a Node version compatible with your Next.js (e.g., 18 or 20)
+          node-version: 20
 
       - name: Cache dependencies
         id: cache_dependencies
         uses: actions/cache@v3
         with:
           path: node_modules
-          key: node-modules-${{ hashFiles('package-lock.json') }}  # Or yarn.lock if using Yarn
+          key: node-modules-${{ hashFiles('package-lock.json') }}
 
       - name: Install dependencies
         if: steps.cache_dependencies.outputs.cache-hit != 'true'
-        run: npm ci  # Or yarn install if using Yarn
+        run: npm ci
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -43,7 +43,9 @@ jobs:
           static_site_generator: next
 
       - name: Build with Next.js
-        run: npm run build  # This will export to 'out' due to output: 'export'
+        run: |
+          npm run build
+          ls -la out || echo "out directory not found"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
