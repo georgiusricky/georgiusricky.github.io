@@ -9,24 +9,41 @@ export default function SimpleFarmingGame() {
   const positionRef = useRef(characterPosition);
   const pressedKeys = useRef(new Set<string>());
   const animationFrame = useRef<number | null>(null);
+  const [scale, setScale] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
 
   const step = 2;
   const charWidth = 40;
   const charHeight = 80;
-  const feetHeight = 20; // bottom 40px of character
+  const feetHeight = 20;
 
   const mapWidth = groundMap[0].length * TILE_SIZE;
   const mapHeight = groundMap.length * TILE_SIZE;
 
+  // --- Responsive scaling + mobile detection ---
+  useEffect(() => {
+    const updateScale = () => {
+      const containerWidth = window.innerWidth - 32;
+      const containerHeight = window.innerHeight - 32;
+      const scaleX = containerWidth / mapWidth;
+      const scaleY = containerHeight / mapHeight;
+      setScale(Math.min(scaleX, scaleY));
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    updateScale();
+    window.addEventListener("resize", updateScale);
+    return () => window.removeEventListener("resize", updateScale);
+  }, [mapWidth, mapHeight]);
+
+  // --- Movement logic ---
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       const key = event.key.toLowerCase();
       if (["w", "a", "s", "d"].includes(key)) {
         pressedKeys.current.add(key);
         event.preventDefault();
-        if (!animationFrame.current) {
-          animationFrame.current = requestAnimationFrame(moveCharacter);
-        }
+        if (!animationFrame.current) animationFrame.current = requestAnimationFrame(moveCharacter);
       }
     };
 
@@ -41,10 +58,26 @@ export default function SimpleFarmingGame() {
     const moveCharacter = () => {
       let { x, y } = positionRef.current;
 
-      const isUp = pressedKeys.current.has("w");
-      const isDown = pressedKeys.current.has("s");
-      const isLeft = pressedKeys.current.has("a");
-      const isRight = pressedKeys.current.has("d");
+      const isUp =
+        pressedKeys.current.has("w") ||
+        pressedKeys.current.has("top") ||
+        pressedKeys.current.has("lefttop") ||
+        pressedKeys.current.has("righttop");
+      const isDown =
+        pressedKeys.current.has("s") ||
+        pressedKeys.current.has("bottom") ||
+        pressedKeys.current.has("leftbottom") ||
+        pressedKeys.current.has("rightbottom");
+      const isLeft =
+        pressedKeys.current.has("a") ||
+        pressedKeys.current.has("left") ||
+        pressedKeys.current.has("lefttop") ||
+        pressedKeys.current.has("leftbottom");
+      const isRight =
+        pressedKeys.current.has("d") ||
+        pressedKeys.current.has("right") ||
+        pressedKeys.current.has("righttop") ||
+        pressedKeys.current.has("rightbottom");
 
       const diagonal = (isUp || isDown) && (isLeft || isRight);
       const moveStep = diagonal ? step / Math.sqrt(2) : step;
@@ -57,29 +90,19 @@ export default function SimpleFarmingGame() {
       if (isLeft) newX = Math.max(0, newX - moveStep);
       if (isRight) newX = Math.min(mapWidth - charWidth, newX + moveStep);
 
-      // --- Character feet hitbox (bottom 40px only) ---
+      // --- Character feet hitbox ---
       const feetBox = { x: newX, y: newY + (charHeight - feetHeight), w: charWidth, h: feetHeight };
 
       // --- Collision with small obstacles ---
       const collidesSmall = obstacleMap.some((row, rowIndex) =>
         row.some((cell: ObstacleType, colIndex) => {
           if (cell === "X") return false;
-
           const obsX = colIndex * TILE_SIZE;
           const obsY = rowIndex * TILE_SIZE;
           const obsW = TILE_SIZE;
           const obsH = TILE_SIZE;
-
-          // Get small obstacle feet height if defined, default to 0
           const obsFeetH = obstacleSprites[cell]?.feetHeight ?? 0;
-
-          const feetArea = {
-            x: obsX,
-            y: obsY + (obsH - obsFeetH),
-            w: obsW,
-            h: obsFeetH,
-          };
-
+          const feetArea = { x: obsX, y: obsY + (obsH - obsFeetH), w: obsW, h: obsFeetH };
           return (
             feetBox.x < feetArea.x + feetArea.w &&
             feetBox.x + feetBox.w > feetArea.x &&
@@ -95,7 +118,6 @@ export default function SimpleFarmingGame() {
         const obsY = obs.y * TILE_SIZE;
         const obsW = obs.w * TILE_SIZE;
         const obsH = obs.h * TILE_SIZE;
-
         return (
           feetBox.x < obsX + obsW &&
           feetBox.x + feetBox.w > obsX &&
@@ -131,20 +153,36 @@ export default function SimpleFarmingGame() {
     };
   }, [mapWidth, mapHeight]);
 
+  // --- Mobile button helper ---
+  const handleMobilePress = (key: string, isDown: boolean) => {
+    if (isDown) {
+      pressedKeys.current.add(key);
+      if (!animationFrame.current) animationFrame.current = requestAnimationFrame(() => {}); // start animation
+    } else {
+      pressedKeys.current.delete(key);
+    }
+  };
+
   const getRowZIndex = (yPos: number) => Math.floor((yPos + charHeight) / TILE_SIZE);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-300 to-green-600 p-8">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mt-6 text-black ">
-          <p className="text-lg mb-2 ">
-            Use <span className="font-bold">WASD</span> keys to move your character! (
-            {Math.round(characterPosition.x)}, {Math.round(characterPosition.y)})
-          </p>
-        </div>
+    <div className="min-h-screen bg-gradient-to-b from-green-300 to-green-600 p-4 flex flex-col items-center">
+      <div className="text-center text-black mb-4">
+        <p className="text-lg">
+          Use <span className="font-bold">{isMobile ? 'mobile buttons' : 'WASD'}</span> to move! (
+          {Math.round(characterPosition.x)}, {Math.round(characterPosition.y)})
+        </p>
+      </div>
+
+      {/* --- Game Container --- */}
+      <div
+        className="relative overflow-hidden border-4 border-green-600 rounded-lg shadow-2xl"
+        style={{ width: "100%", maxWidth: `${mapWidth}px`, aspectRatio: `${mapWidth} / ${mapHeight}` }}
+      >
+        {/* Scaled map */}
         <div
-          className="relative border-4 border-green-600 rounded-lg shadow-2xl overflow-hidden select-none"
-          style={{ width: `${mapWidth}px`, height: `${mapHeight}px`, margin: "0 auto" }}
+          className="absolute top-0 left-0"
+          style={{ width: `${mapWidth}px`, height: `${mapHeight}px`, transform: `scale(${scale})`, transformOrigin: "top left" }}
         >
           {/* Ground */}
           {groundMap.map((row, rowIndex) =>
@@ -209,21 +247,45 @@ export default function SimpleFarmingGame() {
 
           {/* Character */}
           <div
-            className="absolute bg-blue-500 border-2 border-blue-700 rounded shadow-lg"
+            className="absolute bg-blue-500 border-2 border-blue-700 rounded shadow-lg flex items-center justify-center"
             style={{
               left: `${characterPosition.x}px`,
               top: `${characterPosition.y}px`,
               width: `${charWidth}px`,
               height: `${charHeight}px`,
-              zIndex: getRowZIndex(characterPosition.y-40),
+              zIndex: getRowZIndex(characterPosition.y - 40),
             }}
           >
-            <div className="w-full h-full bg-blue-400 flex items-center justify-center">
-              <div className="w-6 h-6 bg-blue-600 rounded-full"></div>
-            </div>
+            <div className="w-6 h-6 bg-blue-600 rounded-full"></div>
           </div>
         </div>
+
       </div>
+        {/* --- Mobile buttons --- */}
+        {isMobile && (
+          <div className="mt-10 grid grid-cols-3 gap-2 z-50">
+            {[
+              ["↖", "lefttop"],
+              ["↑", "top"],
+              ["↗", "righttop"],
+              ["←", "left"],
+              [" ", "center"],
+              ["→", "right"],
+              ["↙", "leftbottom"],
+              ["↓", "bottom"],
+              ["↘", "rightbottom"],
+            ].map(([symbol, key]) => (
+              <button
+                key={key}
+                onTouchStart={() => handleMobilePress(key, true)}
+                onTouchEnd={() => handleMobilePress(key, false)}
+                className="w-14 h-14 bg-gray-800/60 text-white rounded-full flex items-center justify-center select-none backdrop-blur-sm"
+              >
+                {symbol}
+              </button>
+            ))}
+          </div>
+        )}
     </div>
   );
 }
