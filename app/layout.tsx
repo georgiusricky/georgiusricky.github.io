@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import Navigation from './components/Navigation'
 import LoadingOverlay from './components/LoadingOverlay'
-import ServiceWorkerRegistration from './components/ServiceWorkerRegistration'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -112,7 +111,6 @@ export default function RootLayout({
           <Navigation />
           <main>{children}</main>
           <LoadingOverlay />
-          <ServiceWorkerRegistration />
         </ThemeProvider>
       </body>
     </html>
