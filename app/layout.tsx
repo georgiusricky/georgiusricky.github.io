@@ -8,6 +8,7 @@ import ServiceWorkerRegistration from './components/ServiceWorkerRegistration'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
+  metadataBase: new URL('https://rickygeorgius.com'),
   title: "Ricky - Software Engineer & Full Stack Developer",
   description: 'Personal portfolio website of Ricky, a passionate Software Engineer specializing in React, Next.js, TypeScript, and modern web technologies. View projects, skills, and experience.',
   keywords: [
@@ -45,33 +46,33 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
-      openGraph: {
-      type: 'website',
-      locale: 'en_US',
-      url: 'https://rickygeorgius.com',
-      siteName: 'Ricky Portfolio',
-      title: 'Ricky - Software Engineer & Full Stack Developer',
-      description: 'Personal portfolio website of Ricky, a passionate Software Engineer specializing in React, Next.js, TypeScript, and modern web technologies.',
-      images: [
-        {
-          url: '/img/profile.webp',
-          width: 1200,
-          height: 630,
-          alt: 'Ricky - Software Engineer Portfolio',
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: 'Ricky - Software Engineer & Full Stack Developer',
-      description: 'Personal portfolio website of Ricky, a passionate Software Engineer specializing in React, Next.js, TypeScript, and modern web technologies.',
-      images: ['/img/profile.webp'],
-      creator: '@ricky',
-      site: '@ricky',
-    },
-    alternates: {
-      canonical: 'https://rickygeorgius.com',
-    },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://rickygeorgius.com',
+    siteName: 'Ricky Portfolio',
+    title: 'Ricky - Software Engineer & Full Stack Developer',
+    description: 'Personal portfolio website of Ricky, a passionate Software Engineer specializing in React, Next.js, TypeScript, and modern web technologies.',
+    images: [
+      {
+        url: '/img/profile.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Ricky - Software Engineer Portfolio',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ricky - Software Engineer & Full Stack Developer',
+    description: 'Personal portfolio website of Ricky, a passionate Software Engineer specializing in React, Next.js, TypeScript, and modern web technologies.',
+    images: ['/img/profile.webp'],
+    creator: '@ricky',
+    site: '@ricky',
+  },
+  alternates: {
+    canonical: 'https://rickygeorgius.com',
+  },
   category: 'technology',
   classification: 'Portfolio Website',
   manifest: '/manifest.json',
@@ -80,13 +81,8 @@ export const metadata = {
     apple: '/img/svg/logo-light.svg',
     shortcut: '/favicon.ico',
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
-      // Domain already verified via DNS TXT record in Hostinger
-    // No need for HTML verification tags
+  // Domain already verified via DNS TXT record in Hostinger
+  // No need for HTML verification tags
   other: {
     'msapplication-TileColor': '#000000',
     'theme-color': '#000000',
@@ -96,6 +92,12 @@ export const metadata = {
     'format-detection': 'telephone=no',
     'mobile-web-app-capable': 'yes',
   },
+}
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
 }
 
 export default function RootLayout({
