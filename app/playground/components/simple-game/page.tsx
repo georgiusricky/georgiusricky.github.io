@@ -1,11 +1,11 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { groundMap, obstacleMap, obstacles, TILE_SIZE } from "./map";
+import { groundMap, obstacleMap, obstacles, TILE_SIZE, obstacleSprites } from "./map";
 import { ObstacleType } from "./types";
 
 export default function SimpleFarmingGame() {
-  const [characterPosition, setCharacterPosition] = useState({ x: 0, y: 160 });
+  const [characterPosition, setCharacterPosition] = useState({ x: 0, y: 190 });
   const positionRef = useRef(characterPosition);
   const pressedKeys = useRef(new Set<string>());
   const animationFrame = useRef<number | null>(null);
@@ -13,12 +13,8 @@ export default function SimpleFarmingGame() {
   const step = 2;
   const charWidth = 40;
   const charHeight = 80;
+  const feetHeight = 20; // bottom 40px of character
 
-  // Feet hitbox: bottom half of the sprite
-  const feetHeight = 35;
-  const feetOffsetY = charHeight - feetHeight; // starts 40px below character top
-
-  // Map size
   const mapWidth = groundMap[0].length * TILE_SIZE;
   const mapHeight = groundMap.length * TILE_SIZE;
 
@@ -61,32 +57,39 @@ export default function SimpleFarmingGame() {
       if (isLeft) newX = Math.max(0, newX - moveStep);
       if (isRight) newX = Math.min(mapWidth - charWidth, newX + moveStep);
 
-      // Feet hitbox
-      const feetBox = {
-        x: newX,
-        y: newY + feetOffsetY,
-        w: charWidth,
-        h: feetHeight,
-      };
+      // --- Character feet hitbox (bottom 40px only) ---
+      const feetBox = { x: newX, y: newY + (charHeight - feetHeight), w: charWidth, h: feetHeight };
 
-      // Collision with small obstacles
+      // --- Collision with small obstacles ---
       const collidesSmall = obstacleMap.some((row, rowIndex) =>
         row.some((cell: ObstacleType, colIndex) => {
           if (cell === "X") return false;
+
           const obsX = colIndex * TILE_SIZE;
           const obsY = rowIndex * TILE_SIZE;
-          const obsSize = TILE_SIZE;
+          const obsW = TILE_SIZE;
+          const obsH = TILE_SIZE;
+
+          // Get small obstacle feet height if defined, default to 0
+          const obsFeetH = obstacleSprites[cell]?.feetHeight ?? 0;
+
+          const feetArea = {
+            x: obsX,
+            y: obsY + (obsH - obsFeetH),
+            w: obsW,
+            h: obsFeetH,
+          };
 
           return (
-            feetBox.x < obsX + obsSize &&
-            feetBox.x + feetBox.w > obsX &&
-            feetBox.y < obsY + obsSize &&
-            feetBox.y + feetBox.h > obsY
+            feetBox.x < feetArea.x + feetArea.w &&
+            feetBox.x + feetBox.w > feetArea.x &&
+            feetBox.y + feetBox.h > feetArea.y &&
+            feetBox.y < feetArea.y + feetArea.h
           );
         })
       );
 
-      // Collision with big obstacles
+      // --- Collision with big obstacles ---
       const collidesBig = obstacles.some((obs) => {
         const obsX = obs.x * TILE_SIZE;
         const obsY = obs.y * TILE_SIZE;
@@ -124,11 +127,11 @@ export default function SimpleFarmingGame() {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("keyup", handleKeyUp);
-      if (animationFrame.current) {
-        cancelAnimationFrame(animationFrame.current);
-      }
+      if (animationFrame.current) cancelAnimationFrame(animationFrame.current);
     };
   }, [mapWidth, mapHeight]);
+
+  const getRowZIndex = (yPos: number) => Math.floor((yPos + charHeight) / TILE_SIZE);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-green-300 to-green-600 p-8">
@@ -148,11 +151,7 @@ export default function SimpleFarmingGame() {
             row.map((cell, colIndex) => (
               <img
                 key={`ground-${rowIndex}-${colIndex}`}
-                src={
-                  cell === "G"
-                    ? "/playground/simple-game/texture_grass.png"
-                    : "/playground/simple-game/texture_land.png"
-                }
+                src={cell === "G" ? "/playground/simple-game/texture_grass.png" : "/playground/simple-game/texture_land.png"}
                 alt="ground"
                 className="absolute select-none pointer-events-none"
                 style={{
@@ -170,20 +169,11 @@ export default function SimpleFarmingGame() {
           {obstacleMap.map((row, rowIndex) =>
             row.map((cell, colIndex) => {
               if (cell === "X") return null;
-              const img =
-                cell === "S"
-                  ? "/playground/simple-game/stone.png"
-                  : cell === "T"
-                  ? "/playground/simple-game/tree.png"
-                  : cell === "B"
-                  ? "/playground/simple-game/bush.png"
-                  : cell === "F"
-                  ? "/playground/simple-game/fence.png"
-                  : null;
+              const obsData = obstacleSprites[cell];
               return (
                 <img
                   key={`obs-${rowIndex}-${colIndex}`}
-                  src={img!}
+                  src={obsData.image}
                   alt="obstacle"
                   className="absolute select-none pointer-events-none"
                   style={{
@@ -192,7 +182,7 @@ export default function SimpleFarmingGame() {
                     width: `${TILE_SIZE}px`,
                     height: `${TILE_SIZE}px`,
                     objectFit: "cover",
-                    zIndex: 20,
+                    zIndex: rowIndex,
                   }}
                 />
               );
@@ -212,7 +202,7 @@ export default function SimpleFarmingGame() {
                 width: `${obs.w * TILE_SIZE}px`,
                 height: `${obs.h * TILE_SIZE}px`,
                 objectFit: "cover",
-                zIndex: 10,
+                zIndex: obs.y,
               }}
             />
           ))}
@@ -225,7 +215,7 @@ export default function SimpleFarmingGame() {
               top: `${characterPosition.y}px`,
               width: `${charWidth}px`,
               height: `${charHeight}px`,
-              zIndex: 30,
+              zIndex: getRowZIndex(characterPosition.y-40),
             }}
           >
             <div className="w-full h-full bg-blue-400 flex items-center justify-center">
