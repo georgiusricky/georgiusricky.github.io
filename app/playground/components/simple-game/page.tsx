@@ -23,12 +23,18 @@ export default function SimpleFarmingGame() {
   // --- Responsive scaling + mobile detection ---
   useEffect(() => {
     const updateScale = () => {
-      const containerWidth = window.innerWidth - 32;
-      const containerHeight = window.innerHeight - 32;
-      const scaleX = containerWidth / mapWidth;
-      const scaleY = containerHeight / mapHeight;
-      setScale(Math.min(scaleX, scaleY));
-      setIsMobile(window.innerWidth <= 768);
+      const isMobileDevice = window.innerWidth <= 768;
+      setIsMobile(isMobileDevice);
+
+      if (isMobileDevice) {
+        const containerWidth = window.innerWidth - 32;
+        const containerHeight = window.innerHeight - 32;
+        const scaleX = containerWidth / mapWidth;
+        const scaleY = containerHeight / mapHeight;
+        setScale(Math.min(scaleX, scaleY));
+      } else {
+        setScale(1); // Keep scale at 1 for non-mobile devices
+      }
     };
 
     updateScale();
@@ -179,7 +185,7 @@ export default function SimpleFarmingGame() {
 
       {/* --- Game Container --- */}
       <div
-        className="relative overflow-hidden border-4 border-green-600 rounded-lg shadow-2xl"
+        className="relative overflow-hidden border-4 border-green-600 rounded-lg shadow-2xl mx-auto "
         style={{ width: "100%", maxWidth: `${mapWidth}px`, aspectRatio: `${mapWidth} / ${mapHeight}` }}
       >
         {/* Scaled map */}
