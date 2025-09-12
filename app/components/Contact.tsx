@@ -68,7 +68,7 @@ export default function Contact() {
                 <button
                   type="button"
                   onClick={(e) => {
-                    e.preventDefault() // prevent <a> from navigating
+                    e.preventDefault() 
                     handleCopy(item.desc, idx)
                   }}
                   className="p-1 rounded hover:bg-primary/10"
