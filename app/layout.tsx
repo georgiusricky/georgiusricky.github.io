@@ -74,7 +74,6 @@ export const metadata = {
   },
   category: 'technology',
   classification: 'Portfolio Website',
-  manifest: '/manifest.json',
   icons: {
     icon: '/img/svg/logo-light.svg',
     apple: '/img/svg/logo-light.svg',
