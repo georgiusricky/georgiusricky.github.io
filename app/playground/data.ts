@@ -13,9 +13,15 @@ export const playgroundItems: PlaygroundItem[] = [
     thumbnail: "/playground/simple-game/simple-game.webp",
     description: "A Simple game where you can move character in textured tiles",
   },
+  {
+    id:"learn-threejs",
+    title:"Learn Three js",
+    description:"playground where i learn about three js (3js)"
+  }
 ];
 
 export const componentMap: Record<string, any> = {
   "code-challenge": dynamic(() => import("./components/code-challenge/page")),
   "simple-game": dynamic(() => import("./components/simple-game/page")),
+  "learn-threejs": dynamic(() => import("./components/learn-threejs/page")),
 };
