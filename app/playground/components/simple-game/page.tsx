@@ -183,12 +183,10 @@ export default function SimpleFarmingGame() {
         </p>
       </div>
 
-      {/* --- Game Container --- */}
       <div
         className="relative overflow-hidden border-4 border-green-600 rounded-lg shadow-2xl mx-auto "
         style={{ width: "100%", maxWidth: `${mapWidth}px`, aspectRatio: `${mapWidth} / ${mapHeight}` }}
       >
-        {/* Scaled map */}
         <div
           className="absolute top-0 left-0"
           style={{ width: `${mapWidth}px`, height: `${mapHeight}px`, transform: `scale(${scale})`, transformOrigin: "top left" }}
