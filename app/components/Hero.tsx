@@ -34,6 +34,7 @@ export default function Hero() {
           <div className="flex space-x-4">
             <Link
               href={socials.github}
+              target='_blank'
               aria-label="Visit my GitHub profile"
               className="p-2 border border-gray-300 dark:border-gray-700 rounded-sm hover:bg-gray-100 dark:hover:bg-gray-800"
             >
@@ -41,10 +42,19 @@ export default function Hero() {
             </Link>
             <Link
               href={socials.linkedin}
+              target='_blank'
               aria-label="Visit my LinkedIn profile"
               className="p-2 border border-gray-300 dark:border-gray-700 rounded-sm hover:bg-gray-100 dark:hover:bg-gray-800"
             >
               <Linkedin className="w-5 h-5" aria-hidden="true" />
+            </Link>
+            <Link
+              href={socials.upwork}
+              target='_blank'
+              aria-label="Visit my Upwork profile"
+              className="p-2 border border-gray-300 dark:border-gray-700 rounded-sm hover:bg-gray-100 dark:hover:bg-gray-800"
+            >
+              <Image src="/img/svg/upwork.svg" alt="upwork logo" width={50} height={50} className="w-5 h-5 dark:invert dark:brightness-100" aria-hidden="true" />
             </Link>
           </div>
         </div>
