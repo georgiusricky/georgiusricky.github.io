@@ -3,6 +3,7 @@ import { create } from 'zustand'
 interface Socials {
   wa: string
   email: string
+  upwork: string
   github: string
   linkedin: string
   codewars: string
@@ -53,6 +54,7 @@ export const useGlobalStore = create<GlobalState>((set) => ({
   socials: {
     wa: '6282177752911',
     email: 'ricky.georgius@gmail.com',
+    upwork: 'https://www.upwork.com/freelancers/~01c14b28fa7fd62996',
     github: 'https://github.com/georgiusricky',
     linkedin: 'https://www.linkedin.com/in/georgius-ricky/',
     codewars: 'https://www.codewars.com/users/georgiusricky',
