@@ -8,7 +8,7 @@ export default function ProfileCircle() {
                 src="/img/profile.webp"
                 alt="Profile photo"
                 fill
-                className="object-cover object-[center_20%] drop-shadow-[0_5px_15px_white] dark:drop-shadow-[0_5px_15px_black]" 
+                className="object-cover object-[center_20%] drop-shadow-[0_5px_15px_white] dark:drop-shadow-[0_5px_15px_black] blur-sm hover:blur-none cursor-pointer" 
                 priority
             />
       </div>
