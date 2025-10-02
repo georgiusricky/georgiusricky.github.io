@@ -5,6 +5,7 @@ import About from './components/About'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import Playground from './components/Playground'
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <div id="skills"><Skills /></div>
       <Experience />
       <Projects />
+      <Playground />
       <div id="contact"><Contact /></div>
       <Footer />
     </main>
