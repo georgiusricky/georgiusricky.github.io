@@ -10,6 +10,7 @@ interface LoadingLinkProps {
   children: ReactNode;
   className?: string;
   target?: string;
+  style?: React.CSSProperties;
   onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
@@ -18,6 +19,7 @@ export default function LoadingLink({
   children, 
   className = "", 
   target,
+  style,
   onClick
 }: LoadingLinkProps) {
   const router = useRouter();
@@ -57,6 +59,7 @@ export default function LoadingLink({
       href={href} 
       className={className} 
       target={target}
+      style={style}
       onClick={handleClick}
     >
       {children}
