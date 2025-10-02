@@ -1,4 +1,4 @@
-import Link from "next/link";
+import LoadingLink from "./LoadingLink";
 import Image from "next/image";
 import { useState } from "react";
 import { ImageIcon } from "lucide-react";
@@ -14,7 +14,7 @@ export default function PlaygroundCard({ item }: { item: PlaygroundItem }) {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <Link
+    <LoadingLink
       href={`/playground/${item.id}`}
       className="p-4 border rounded-lg bg-card hover:bg-card-hover"
     >
@@ -43,6 +43,6 @@ export default function PlaygroundCard({ item }: { item: PlaygroundItem }) {
       </div>
 
       <p className="text-sm py-2 text-muted-foreground">{item.description}</p>
-    </Link>
+    </LoadingLink>
   );
 }

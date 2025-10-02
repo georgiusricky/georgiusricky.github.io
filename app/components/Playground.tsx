@@ -2,7 +2,7 @@
 
 import { playgroundItems } from "../playground/data";
 import PlaygroundCard from "./PlaygroundCard";
-import Link from "next/link"
+import LoadingLink from "./LoadingLink"
 import { Button } from '@/components/ui/button'
 import { ArrowRight } from 'lucide-react'
 
@@ -23,12 +23,12 @@ export default function Playground() {
             </div>
           </div>
           <div className="text-center mt-16">
-            <Link href="/playground">
+            <LoadingLink href="/playground">
               <Button variant="outline" className="dark:text-black text-white dark:border-black border-white dark:bg-white bg-black dark:hover:bg-black dark:hover:text-white hover:bg-white hover:text-black">
                 View All Playgrounds
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-            </Link>
+            </LoadingLink>
           </div>
         </div>
       </div>

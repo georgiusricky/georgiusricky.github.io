@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import Navigation from './components/Navigation'
 import LoadingOverlay from './components/LoadingOverlay'
+import LoadingStateManager from './components/LoadingStateManager'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -110,6 +111,7 @@ export default function RootLayout({
           <Navigation />
           <main>{children}</main>
           <LoadingOverlay />
+          <LoadingStateManager />
         </ThemeProvider>
       </body>
     </html>

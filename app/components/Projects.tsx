@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
+import LoadingLink from './LoadingLink'
 import { Button } from '@/components/ui/button'
 import { ArrowRight } from 'lucide-react'
 import { ProjectDialog } from './ProjectDialog'
@@ -57,12 +57,12 @@ export default function Projects() {
             ))}
           </div>
           <div className="text-center mt-16">
-            <Link href="/project">
+            <LoadingLink href="/project">
               <Button variant="outline" className="text-black dark:text-white border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black">
                 View All Projects
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-            </Link>
+            </LoadingLink>
           </div>
         </div>
       </div>
