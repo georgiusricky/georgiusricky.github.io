@@ -39,11 +39,8 @@ export default function Contact() {
     <section className="w-full py-16 bg-background">
       <div className="container px-4 md:px-6">
         <div className="space-y-3 text-center">
-          <h3 className="text-sm uppercase tracking-[0.3em] text-primary font-medium">
-            {`Let’s Connect`}
-          </h3>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-            Build Something Together
+           {`Let’s Connect`}
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto text-sm md:text-base">
             Whether you have a project in mind or just want to say hi, feel free to reach out.
