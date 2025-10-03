@@ -140,6 +140,24 @@ export const useGlobalStore = create<GlobalState>((set) => ({
     },
     {
       id: "02",
+      title: "Upvendo Kiosk and Admin Dashboard",
+      description:
+        "An online selling platform that supports both mobile browsers and kiosk machines, built with an integrated admin dashboard.",
+      fullDescription:
+        "This project was completed as a freelance job on Upwork, where I was responsible for developing the frontend of the Upvendo Kiosk Web. The application is an online selling platform designed to work seamlessly on mobile browsers as well as dedicated kiosk machines. It features a modern and intuitive interface for customers, while also including an admin dashboard for managing products, transactions, and kiosk operations. Built with Nuxt (Vue), TypeScript, and Vuetify, the system provides a responsive, user-friendly experience across different devices.",
+      technologies: ["Nuxt (Vue)", "TypeScript", "Vuetify"],
+      preview: "/img/projects/upvendo/upvendo2.webp",
+      assets: [
+        "/img/projects/upvendo/upvendo1.webp",
+        "/img/projects/upvendo/upvendo2.webp",
+        "/img/projects/upvendo/upvendo3.webp"
+      ],
+      githubLink: "",
+      demoLink: "",
+      liveLink: "https://upvendo.com/pages/self-service-kiosks"
+    },
+    {
+      id: "03",
       title: "Gachavista Website",
       description:
         "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",
@@ -158,7 +176,7 @@ export const useGlobalStore = create<GlobalState>((set) => ({
       liveLink: "https://gambajak.com"
     },
     {
-      id: "03",
+      id: "04",
       title: "Zuuonsol Website",
       description:
         "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",
@@ -172,7 +190,7 @@ export const useGlobalStore = create<GlobalState>((set) => ({
       liveLink: "https://zuuonsol.com"
     },
     {
-      id: "04",
+      id: "05",
       title: "Calt Supremacy Website",
       description:
         "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",
@@ -186,7 +204,7 @@ export const useGlobalStore = create<GlobalState>((set) => ({
       liveLink: "https://caltsupremacy.com/"
     },
     {
-      id: "05",
+      id: "06",
       title: "Mewlord Website",
       description:
         "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",
@@ -200,7 +218,7 @@ export const useGlobalStore = create<GlobalState>((set) => ({
       liveLink: "https://mewlord.fun"
     },
     {
-      id: "06",
+      id: "07",
       title: "Bun Website",
       description:
         "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",
@@ -218,7 +236,7 @@ export const useGlobalStore = create<GlobalState>((set) => ({
       liveLink: "https://bun.meme"
     },
     {
-      id: "07",
+      id: "08",
       title: "Rosiensta Website",
       description:
         "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",
