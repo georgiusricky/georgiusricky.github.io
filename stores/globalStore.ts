@@ -113,7 +113,7 @@ export const useGlobalStore = create<GlobalState>((set) => ({
       company: 'Edconnect Solusi Integrasi',
       logo: '/img/svg/edconnect.svg',
       title: 'Software Engineer - Fullstack',
-      period: { start: 'Sept 2019', end: 'Nov 2022' },
+      period: { start: 'Sept 2019', end: 'Nov 2021' },
       description:
         'Developed and maintained school management systems, designed databases using MySQL, and debugged and deployed applications. Created responsive websites with Vue.js and conducted research on new web technologies to recommend design and development improvements.',
     },
