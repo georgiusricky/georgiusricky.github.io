@@ -17,6 +17,7 @@ interface Skill {
 
 interface Experience {
   company: string
+  location: string
   logo: string
   title: string
   period: {
@@ -86,7 +87,17 @@ export const useGlobalStore = create<GlobalState>((set) => ({
   ],
   experiences: [
     {
+      company: 'Linkse',
+      location: 'Singapore',
+      logo: '/img/svg/linkse.svg',
+      title: 'Frontend Software Engineer',
+      period: { start: 'Oct 2025', end: 'Present' },
+      description:
+        'Develop and maintain frontend applications using Vue.js and Quasar Framework. Collaborate with cross-functional teams to deliver high-quality user interfaces and ensure seamless integration with backend services.',
+    },
+    {
       company: 'Indodax Nasional Indonesia',
+      location: 'Jakarta, Indonesia',
       logo: '/img/svg/indodax.svg',
       title: 'Frontend Software Engineer',
       period: { start: 'Oct 2023', end: 'Jun 2025' },
@@ -95,6 +106,7 @@ export const useGlobalStore = create<GlobalState>((set) => ({
     },
     {
       company: 'BPJS Ketenagakerjaan',
+      location: 'Jakarta, Indonesia',
       logo: '/img/svg/bpjstk.svg',
       title: 'Fullstack Engineer',
       period: { start: 'Oct 2022', end: 'Oct 2023' },
@@ -103,6 +115,7 @@ export const useGlobalStore = create<GlobalState>((set) => ({
     },
     {
       company: 'Citra Cantik Nusantara (Beautybell)',
+      location: 'Jakarta, Indonesia',
       logo: '/img/svg/beautybell.svg',
       title: 'Frontend Engineer',
       period: { start: 'Dec 2021', end: 'Jul 2022' },
@@ -111,6 +124,7 @@ export const useGlobalStore = create<GlobalState>((set) => ({
     },
     {
       company: 'Edconnect Solusi Integrasi',
+      location: 'Jakarta, Indonesia',
       logo: '/img/svg/edconnect.svg',
       title: 'Software Engineer - Fullstack',
       period: { start: 'Sept 2019', end: 'Nov 2021' },

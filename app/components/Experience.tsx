@@ -34,7 +34,7 @@ export default function Experience() {
                         />
                       </div>
                       <h2 className="text-md md:text-lg font-semibold text-white dark:text-black">
-                        {exp.company}
+                        {exp.company} <span className="font-normal text-gray-400 dark:text-gray-500">| {exp.location}</span>
                       </h2>
                     </div>
                   
