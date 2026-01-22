@@ -87,7 +87,7 @@ export const useGlobalStore = create<GlobalState>((set) => ({
   ],
   experiences: [
     {
-      company: 'Linkse',
+      company: 'Link SE',
       location: 'Singapore',
       logo: '/img/svg/linkse.svg',
       title: 'Frontend Software Engineer',
