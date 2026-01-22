@@ -22,28 +22,30 @@ export default function Experience() {
               >
                 <div className="flex flex-col gap-4">
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 sm:gap-0">
-                    <div className="flex items-center gap-4">
-                      <div className="w-8 h-8 relative">
+                    <div className="flex items-start gap-4">
+                      <div className="w-16 h-16 md:w-12 md:h-12 relative flex-shrink-0">
                         <Image
                           src={exp.logo}
                           alt={`${exp.company} logo`}
-                          width={30}
-                          height={30}
-                          sizes="32px"
+                          fill
+                          sizes="(min-width: 768px) 48px, 64px"
                           className="object-contain"
                         />
                       </div>
-                      <h2 className="text-md md:text-lg font-semibold text-white dark:text-black">
-                        {exp.company} <span className="font-normal text-gray-400 dark:text-gray-500">| {exp.location}</span>
-                      </h2>
+                      <div>
+                        <h2 className="text-md md:text-lg font-semibold text-white dark:text-black">
+                          {exp.company} <span className="hidden md:inline font-normal text-gray-400 dark:text-gray-500">| {exp.location}</span>
+                          <span className="block md:hidden font-normal text-gray-400 dark:text-gray-500 text-sm">{exp.location}</span>
+                        </h2>
+                        <span className="text-gray-300 dark:text-gray-600 text-sm">
+                          {exp.period.start} - {exp.period.end}
+                        </span>
+                      </div>
                     </div>
                   
                   </div>
-                  <div className="text-md font-semibold flex flex-col-reverse md:flex-row justify-between text-white/90 dark:text-black/90">
-                      <span>{exp.title}</span>
-                      <span className="text-gray-300 dark:text-gray-600 text-sm md:mt-0 mt-[-15px] pb-2 md:pb-0 pl-12">
-                        {exp.period.start} - {exp.period.end}
-                    </span>
+                  <div className="text-md font-semibold text-white/90 dark:text-black/90">
+                    <span>{exp.title}</span>
                   </div>
                   <p className="text-gray-300 dark:text-gray-700 leading-relaxed text-base">
                     {exp.description}
