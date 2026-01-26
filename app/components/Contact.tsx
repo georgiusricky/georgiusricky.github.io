@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from 'react'
-import { Linkedin, Mail, MessageSquare, Copy, Check } from 'lucide-react'
+import { Linkedin, Mail, MessageSquare, Copy, Check, SquareArrowOutUpRight } from 'lucide-react'
 import { useGlobalStore } from '@/stores/globalStore'
 
 export default function Contact() {
@@ -59,7 +59,10 @@ export default function Contact() {
               <div className="mb-4 flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
                 {item.icon}
               </div>
-              <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+              <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
+                {item.title}
+                <SquareArrowOutUpRight className="h-4 w-4" />
+              </h3>
               <div className="flex items-center gap-2 text-muted-foreground text-md">
                 <span className="select-text">{item.desc}</span>
                 <button

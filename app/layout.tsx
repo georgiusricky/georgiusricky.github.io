@@ -55,7 +55,7 @@ export const metadata = {
     description: 'Personal portfolio website of Ricky, a passionate Software Engineer specializing in React, Next.js, TypeScript, and modern web technologies.',
     images: [
       {
-        url: '/img/profile.webp',
+        url: '/img/underwater.webp',
         width: 1200,
         height: 630,
         alt: 'Ricky - Software Engineer Portfolio',
@@ -66,7 +66,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Ricky - Software Engineer & Full Stack Developer',
     description: 'Personal portfolio website of Ricky, a passionate Software Engineer specializing in React, Next.js, TypeScript, and modern web technologies.',
-    images: ['/img/profile.webp'],
+    images: ['/img/underwater.webp'],
     creator: '@ricky',
     site: '@ricky',
   },
