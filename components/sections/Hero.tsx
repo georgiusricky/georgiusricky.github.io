@@ -16,7 +16,7 @@ export default function Hero() {
   const totalExpYear = lastYear - firstYear
 
   return (
-    <section className="container mx-auto px-4 pt-56 pb-16">
+    <section className="container mx-auto px-4 pt-56 pb-16 md:pt-64 md:pb-32">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
         <div className="w-full md:w-6/12 mb-8 md:mb-0">
           <h1 className="text-4xl font-mono font-bold mb-4">
