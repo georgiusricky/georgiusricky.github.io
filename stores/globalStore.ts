@@ -135,6 +135,25 @@ export const useGlobalStore = create<GlobalState>((set) => ({
   projects: [
     {
       id: "01",
+      title: "POS System",
+      description:
+        "A full-stack Point of Sale system with PWA support, featuring barcode scanning, bill printing, and optional modules for booking, employee management, and customer membership.",
+      fullDescription:
+        "A comprehensive Point of Sale (POS) system built as a Progressive Web App (PWA) for seamless offline and online functionality. Core features include barcode scanner integration for quick product lookup and bill printing capability. Optional modules available: booking management system, employee attendance and shift management, and customer data with membership management. Built with React and TypeScript on the frontend, styled with TailwindCSS for a modern responsive UI, and powered by a Golang backend with PostgreSQL database for robust data management.",
+      technologies: ["React", "TypeScript", "PWA", "TailwindCSS", "Golang", "PostgreSQL"],
+      preview: "/img/projects/pos/1.webp",
+      assets: [
+        "/img/projects/pos/1.webp",
+        "/img/projects/pos/2.webp",
+        "/img/projects/pos/3.webp",
+        "/img/projects/pos/4.webp"
+      ],
+      githubLink: "",
+      demoLink: "",
+      liveLink: ""
+    },
+    {
+      id: "02",
       title: "Gambajak Website",
       description:
         "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",
@@ -153,7 +172,7 @@ export const useGlobalStore = create<GlobalState>((set) => ({
       liveLink: "https://gambajak.com"
     },
     {
-      id: "02",
+      id: "03",
       title: "Upvendo Kiosk and Admin Dashboard",
       description:
         "An online selling platform that supports both mobile browsers and kiosk machines, built with an integrated admin dashboard.",
@@ -171,7 +190,7 @@ export const useGlobalStore = create<GlobalState>((set) => ({
       liveLink: "https://upvendo.com/pages/self-service-kiosks"
     },
     {
-      id: "03",
+      id: "04",
       title: "Gachavista Website",
       description:
         "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",
@@ -190,7 +209,7 @@ export const useGlobalStore = create<GlobalState>((set) => ({
       liveLink: "https://gambajak.com"
     },
     {
-      id: "04",
+      id: "05",
       title: "Zuuonsol Website",
       description:
         "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",
@@ -204,7 +223,7 @@ export const useGlobalStore = create<GlobalState>((set) => ({
       liveLink: "https://zuuonsol.com"
     },
     {
-      id: "05",
+      id: "06",
       title: "Calt Supremacy Website",
       description:
         "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",
@@ -218,7 +237,7 @@ export const useGlobalStore = create<GlobalState>((set) => ({
       liveLink: "https://caltsupremacy.com/"
     },
     {
-      id: "06",
+      id: "07",
       title: "Mewlord Website",
       description:
         "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",
@@ -232,7 +251,7 @@ export const useGlobalStore = create<GlobalState>((set) => ({
       liveLink: "https://mewlord.fun"
     },
     {
-      id: "07",
+      id: "08",
       title: "Bun Website",
       description:
         "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",
@@ -250,7 +269,7 @@ export const useGlobalStore = create<GlobalState>((set) => ({
       liveLink: "https://bun.meme"
     },
     {
-      id: "08",
+      id: "09",
       title: "Rosiensta Website",
       description:
         "A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.",

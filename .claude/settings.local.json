@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(move \"d:\\\\Project\\\\georgiusricky.github.io\\\\1.webp\" \"d:\\\\Project\\\\georgiusricky.github.io\\\\public\\\\img\\\\projects\\\\pos\\\\1.webp\")",
+      "Bash(move \"d:\\\\Project\\\\georgiusricky.github.io\\\\2.webp\" \"d:\\\\Project\\\\georgiusricky.github.io\\\\public\\\\img\\\\projects\\\\pos\\\\2.webp\")",
+      "Bash(move \"d:\\\\Project\\\\georgiusricky.github.io\\\\3.webp\" \"d:\\\\Project\\\\georgiusricky.github.io\\\\public\\\\img\\\\projects\\\\pos\\\\3.webp\")",
+      "Bash(move \"d:\\\\Project\\\\georgiusricky.github.io\\\\4.webp\" \"d:\\\\Project\\\\georgiusricky.github.io\\\\public\\\\img\\\\projects\\\\pos\\\\4.webp\")"
+    ]
+  }
+}
