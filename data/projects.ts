@@ -24,9 +24,9 @@ export const projects: Project[] = [
     id: '02',
     title: 'Upvendo Kiosk and Admin Dashboard',
     description:
-      'An online selling platform that supports both mobile browsers and kiosk machines, built with an integrated admin dashboard.',
+      'A kiosk and mobile web selling platform with an integrated admin dashboard for managing products and transactions.',
     fullDescription:
-      'This project was completed as a freelance job on Upwork, where I was responsible for developing the frontend of the Upvendo Kiosk Web. The application is an online selling platform designed to work seamlessly on mobile browsers as well as dedicated kiosk machines. It features a modern and intuitive interface for customers, while also including an admin dashboard for managing products, transactions, and kiosk operations. Built with Nuxt (Vue), TypeScript, and Vuetify, the system provides a responsive, user-friendly experience across different devices.',
+      'Freelance project on Upwork developing the Upvendo Kiosk Web frontend. An online selling platform for mobile browsers and kiosk machines, featuring a customer interface and admin dashboard for products, transactions, and operations.',
     technologies: ['Nuxt (Vue)', 'TypeScript', 'Vuetify'],
     preview: '/img/projects/upvendo/upvendo2.webp',
     assets: [
@@ -42,9 +42,9 @@ export const projects: Project[] = [
     id: '03',
     title: 'Gambajak Website',
     description:
-      'A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.',
+      'A promotional landing page for a meme coin project with links to exchanges and social media.',
     fullDescription:
-      'This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.',
+      'A promotional website for a cryptocurrency meme coin. Features an engaging landing page with project information, tokenomics, and direct links to exchanges where the coin is listed.',
     technologies: ['Next.js', 'TypeScript', 'TailwindCSS'],
     preview: '/img/projects/gambajak/gambajak.webp',
     assets: [
@@ -61,9 +61,9 @@ export const projects: Project[] = [
     id: '04',
     title: 'Gachavista Website',
     description:
-      'A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.',
+      'A promotional landing page for a meme coin project with links to exchanges and social media.',
     fullDescription:
-      'This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.',
+      'A promotional website for a cryptocurrency meme coin. Features an engaging landing page with project information, tokenomics, and direct links to exchanges where the coin is listed.',
     technologies: ['Next.js', 'TypeScript', 'TailwindCSS'],
     preview: '/img/projects/gacha/gacha.webp',
     assets: [
@@ -80,9 +80,9 @@ export const projects: Project[] = [
     id: '05',
     title: 'Zuuonsol Website',
     description:
-      'A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.',
+      'A promotional landing page for a meme coin project with links to exchanges and social media.',
     fullDescription:
-      'This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.',
+      'A promotional website for a cryptocurrency meme coin. Features an engaging landing page with project information, tokenomics, and direct links to exchanges where the coin is listed.',
     technologies: ['Nuxt.js', 'Javascript', 'TailwindCSS'],
     preview: '/img/projects/zuuonsol/zuuonsol.webp',
     assets: ['/img/projects/zuuonsol/1.webp', '/img/projects/zuuonsol/2.webp'],
@@ -94,9 +94,9 @@ export const projects: Project[] = [
     id: '06',
     title: 'Calt Supremacy Website',
     description:
-      'A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.',
+      'A promotional landing page for a meme coin project with links to exchanges and social media.',
     fullDescription:
-      'This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.',
+      'A promotional website for a cryptocurrency meme coin. Features an engaging landing page with project information, tokenomics, and direct links to exchanges where the coin is listed.',
     technologies: ['Next.js', 'TypeScript', 'TailwindCSS'],
     preview: '/img/projects/calt/calt.webp',
     assets: ['/img/projects/calt/1.webp', '/img/projects/calt/2.webp'],
@@ -108,9 +108,9 @@ export const projects: Project[] = [
     id: '07',
     title: 'Mewlord Website',
     description:
-      'A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.',
+      'A promotional landing page for a meme coin project with links to exchanges and social media.',
     fullDescription:
-      'This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.',
+      'A promotional website for a cryptocurrency meme coin. Features an engaging landing page with project information, tokenomics, and direct links to exchanges where the coin is listed.',
     technologies: ['Next.js', 'TypeScript', 'TailwindCSS'],
     preview: '/img/projects/mewlord/mewlord.webp',
     assets: ['/img/projects/mewlord/1.webp'],
@@ -122,9 +122,9 @@ export const projects: Project[] = [
     id: '08',
     title: 'Bun Website',
     description:
-      'A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.',
+      'A promotional landing page for a meme coin project with links to exchanges and social media.',
     fullDescription:
-      'This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.',
+      'A promotional website for a cryptocurrency meme coin. Features an engaging landing page with project information, tokenomics, and direct links to exchanges where the coin is listed.',
     technologies: ['Next.js', 'TypeScript', 'TailwindCSS'],
     preview: '/img/projects/bun/bun.webp',
     assets: [
@@ -140,9 +140,9 @@ export const projects: Project[] = [
     id: '09',
     title: 'Rosiensta Website',
     description:
-      'A real-time cryptocurrency tracking application that helps users monitor market trends and set price alerts for their favorite coins.',
+      'A promotional landing page for a meme coin project with links to exchanges and social media.',
     fullDescription:
-      'This comprehensive cryptocurrency tracking platform provides real-time market data, price alerts, and advanced charting capabilities. Built with modern web technologies, it offers a seamless user experience for crypto enthusiasts and traders.',
+      'A promotional website for a cryptocurrency meme coin. Features an engaging landing page with project information, tokenomics, and direct links to exchanges where the coin is listed.',
     technologies: ['Nuxt.js', 'Javascript', 'TailwindCSS'],
     preview: '/img/projects/rosiensta/rosiensta.webp',
     assets: ['/img/projects/rosiensta/1.webp', '/img/projects/rosiensta/2.webp'],
