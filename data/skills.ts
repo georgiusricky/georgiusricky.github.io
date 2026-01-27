@@ -1,0 +1,26 @@
+import type { Skill } from '@/types'
+
+export const skills: Skill[] = [
+  { icon: '/img/svg/html.svg', name: 'HTML' },
+  { icon: '/img/svg/css.svg', name: 'CSS' },
+  { icon: '/img/svg/javascript.svg', name: 'Javascript' },
+  { icon: '/img/svg/typescript.svg', name: 'TypeScript' },
+  { icon: '/img/svg/github.svg', name: 'Github' },
+  { icon: '/img/svg/gitlab.svg', name: 'Gitlab' },
+  { icon: '/img/svg/bitbucket.svg', name: 'Bitbucket' },
+  { icon: '/img/svg/nodejs.svg', name: 'NodeJs' },
+  { icon: '/img/svg/mysql.svg', name: 'MySql' },
+  { icon: '/img/svg/vue.svg', name: 'Vue' },
+  { icon: '/img/svg/nuxtjs.svg', name: 'Nuxt' },
+  { icon: '/img/svg/react.svg', name: 'React' },
+  { icon: '/img/svg/nextjs.svg', name: 'Next' },
+  { icon: '/img/svg/angular.svg', name: 'Angular' },
+  { icon: '/img/svg/svelte.svg', name: 'Svelte' },
+  { icon: '/img/svg/bootstrap.svg', name: 'Bootstrap' },
+  { icon: '/img/svg/tailwind.svg', name: 'Tailwind' },
+  { icon: '/img/svg/socketio.svg', name: 'Socket.io' },
+  { icon: '/img/svg/java.svg', name: 'Java' },
+  { icon: '/img/svg/python.svg', name: 'Python' },
+  { icon: '/img/svg/cpp.svg', name: 'C++' },
+  { icon: '/img/svg/hourglass.svg', name: 'etc' },
+]

@@ -2,39 +2,39 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import LoadingLink from './LoadingLink'
+import LoadingLink from '@/components/shared/LoadingLink'
 import { Button } from '@/components/ui/button'
 import { ArrowRight } from 'lucide-react'
 import { ProjectDialog } from './ProjectDialog'
+import { SectionHeader } from '@/components/ui/SectionHeader'
 import { useGlobalStore } from '@/stores/globalStore'
+import type { Project } from '@/types'
 
 export default function Projects() {
   const projects = useGlobalStore((state) => state.projects).slice(0, 3)
-
-  const [selectedProject, setSelectedProject] = useState<any>(null)
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
 
   return (
     <section className="bg-white dark:bg-black py-16" id="projects">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl mb-16 text-center text-black dark:text-white">
-            <span className="font-light">Side </span>
-            <span className="font-extrabold">Hustles</span>
-          </h2>
+          <SectionHeader lightText="Side " boldText="Hustles" variant="dark" />
           <div className="space-y-24">
             {projects.map((project, index) => (
-              <div 
-                key={project.id} 
+              <div
+                key={project.id}
                 className={`flex flex-col ${
                   index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                 } gap-8 items-center`}
               >
                 <div className="w-full md:w-1/2">
                   <h3 className="text-gray-600 dark:text-gray-400 mb-2">{project.id}</h3>
-                  <h4 className="text-2xl font-bold text-black dark:text-white mb-4">{project.title}</h4>
+                  <h4 className="text-2xl font-bold text-black dark:text-white mb-4">
+                    {project.title}
+                  </h4>
                   <p className="text-gray-700 dark:text-gray-300 mb-6">{project.description}</p>
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     className="text-black dark:text-white border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
                     onClick={() => setSelectedProject(project)}
                   >
@@ -58,7 +58,10 @@ export default function Projects() {
           </div>
           <div className="text-center mt-16">
             <LoadingLink href="/project">
-              <Button variant="outline" className="text-black dark:text-white border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black">
+              <Button
+                variant="outline"
+                className="text-black dark:text-white border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
+              >
                 View All Projects
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -68,7 +71,7 @@ export default function Projects() {
       </div>
 
       {selectedProject && (
-        <ProjectDialog 
+        <ProjectDialog
           project={selectedProject}
           open={!!selectedProject}
           onOpenChange={() => setSelectedProject(null)}
@@ -77,4 +80,3 @@ export default function Projects() {
     </section>
   )
 }
-

@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
 import { Github, Linkedin } from 'lucide-react'
-import Link from 'next/link'
 import Image from 'next/image'
-import Polaroid from './Polaroid'
 import { useGlobalStore } from '@/stores/globalStore'
+import { SocialIconButton } from '@/components/ui/SocialIconButton'
+import Polaroid from '@/components/shared/Polaroid'
 
 export default function Hero() {
   const socials = useGlobalStore((state) => state.socials)
@@ -22,56 +22,53 @@ export default function Hero() {
           <h1 className="text-4xl font-mono font-bold mb-4">
             {`Hello I'm`} <span className="block text-6xl">Ricky</span>
           </h1>
-          <h2 className="text-3xl font-bold mb-4 font-mono">
-            Software Engineer
-          </h2>
+          <h2 className="text-3xl font-bold mb-4 font-mono">Software Engineer</h2>
           <p className="text-gray-600 dark:text-gray-400 mb-6">
             {`I'm a passionate web developer who began my journey in 2019. Over ${totalExpYear} years of experience, I've embraced modern development practices, continuously improving my skills to deliver exceptional user experiences. I thrive on taking on new challenges and enjoy learning something new to stay ahead in the ever-evolving tech landscape.`}
           </p>
           <div className="text-black dark:text-white mb-8 flex items-center font-semibold">
             <span>Based in Earth</span>
-             <Image
-                src="/img/gif/earth.gif"
-                alt="Earth"
-                width={50}
-                height={50}
-                sizes="50px"
-                className="w-[50px] h-[50px] object-contain"
-                priority={false}
-              />
+            <Image
+              src="/img/gif/earth.gif"
+              alt="Earth"
+              width={50}
+              height={50}
+              sizes="50px"
+              className="w-[50px] h-[50px] object-contain"
+              priority={false}
+            />
           </div>
           <div className="flex space-x-4">
-            <Link
+            <SocialIconButton
               href={socials.github}
-              target='_blank'
-              aria-label="Visit my GitHub profile"
-              className="p-2 border border-gray-300 dark:border-gray-700 rounded-sm hover:bg-gray-100 dark:hover:bg-gray-800"
-            >
-              <Github className="w-5 h-5" aria-hidden="true" />
-            </Link>
-            <Link
+              icon={<Github className="w-5 h-5" aria-hidden="true" />}
+              ariaLabel="Visit my GitHub profile"
+            />
+            <SocialIconButton
               href={socials.linkedin}
-              target='_blank'
-              aria-label="Visit my LinkedIn profile"
-              className="p-2 border border-gray-300 dark:border-gray-700 rounded-sm hover:bg-gray-100 dark:hover:bg-gray-800"
-            >
-              <Linkedin className="w-5 h-5" aria-hidden="true" />
-            </Link>
-            <Link
+              icon={<Linkedin className="w-5 h-5" aria-hidden="true" />}
+              ariaLabel="Visit my LinkedIn profile"
+            />
+            <SocialIconButton
               href={socials.upwork}
-              target='_blank'
-              aria-label="Visit my Upwork profile"
-              className="p-2 border border-gray-300 dark:border-gray-700 rounded-sm hover:bg-gray-100 dark:hover:bg-gray-800"
-            >
-              <Image src="/img/svg/upwork.svg" alt="upwork logo" width={50} height={50} className="w-5 h-5 dark:invert dark:brightness-100" aria-hidden="true" />
-            </Link>
+              icon={
+                <Image
+                  src="/img/svg/upwork.svg"
+                  alt="upwork logo"
+                  width={50}
+                  height={50}
+                  className="w-5 h-5 dark:invert dark:brightness-100"
+                  aria-hidden="true"
+                />
+              }
+              ariaLabel="Visit my Upwork profile"
+            />
           </div>
         </div>
         <div className="w-full md:w-5/12 max-w-md">
-          <Polaroid src="/img/underwater.webp" alt="underwater"/>
+          <Polaroid src="/img/underwater.webp" alt="underwater" />
         </div>
       </div>
     </section>
   )
 }
-

@@ -1,9 +1,9 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/components/ThemeProvider'
-import Navigation from './components/Navigation'
-import LoadingOverlay from './components/LoadingOverlay'
-import LoadingStateManager from './components/LoadingStateManager'
+import Navigation from '@/components/layout/Navigation'
+import LoadingOverlay from '@/components/shared/LoadingOverlay'
+import LoadingStateManager from '@/components/shared/LoadingStateManager'
 
 const inter = Inter({ subsets: ['latin'] })
 

@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { useGlobalStore } from '@/stores/globalStore'
+import { SectionHeader } from '@/components/ui/SectionHeader'
 
 export default function Skills() {
   const skills = useGlobalStore((state) => state.skills)
@@ -10,17 +11,12 @@ export default function Skills() {
     <section className="bg-white dark:bg-black py-32" id="skills">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl mb-16 text-center text-black dark:text-white">
-            <span className="font-light">Things </span>
-            <span className="font-extrabold">{`I'm Exploring`}</span>
-          </h2>
+          <SectionHeader lightText="Things " boldText="I'm Exploring" variant="dark" />
           <div className="grid grid-cols-5 md:grid-cols-8 gap-6">
             {skills.map((skill, index) => (
-              <div 
-                key={index} 
-                className={`aspect-square flex flex-col items-center justify-center p-2 md:p-6 border border-gray-200 dark:border-gray-800 
-                  hover:bg-black hover:text-white hover:dark:bg-white hover:dark:text-black transition-colors
-                `}
+              <div
+                key={index}
+                className="aspect-square flex flex-col items-center justify-center p-2 md:p-6 border border-gray-200 dark:border-gray-800 hover:bg-black hover:text-white hover:dark:bg-white hover:dark:text-black transition-colors"
               >
                 <div className="w-5/6 h-5/6 md:w-3/6 md:h-3/6 relative mb-4">
                   <Image
@@ -30,7 +26,7 @@ export default function Skills() {
                     className="object-contain dark:drop-shadow-[0_0_1px_white]"
                   />
                 </div>
-                <span className={`text-xs md:text-sm font-medium transition-colors group-hover:text-white group-hover:dark:text-black `}>
+                <span className="text-xs md:text-sm font-medium transition-colors group-hover:text-white group-hover:dark:text-black">
                   {skill.name}
                 </span>
               </div>
@@ -41,4 +37,3 @@ export default function Skills() {
     </section>
   )
 }
-

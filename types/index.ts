@@ -1,0 +1,5 @@
+export type { Socials } from './social'
+export type { Skill } from './skill'
+export type { Experience } from './experience'
+export type { Project } from './project'
+export type { PlaygroundItem } from './playground'
