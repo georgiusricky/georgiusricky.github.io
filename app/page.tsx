@@ -9,7 +9,7 @@ import Playground from './components/Playground'
 export default function Home() {
   return (
     <main className="bg-white dark:bg-black">
-      <Hero />
+      <div id="about"><Hero /></div>
       <div id="skills"><Skills /></div>
       <Experience />
       <Projects />
