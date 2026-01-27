@@ -1,7 +1,7 @@
 import LoadingLink from "./LoadingLink";
 import Image from "next/image";
 import { useState } from "react";
-import { ImageIcon } from "lucide-react";
+import { ImageIcon, ExternalLink } from "lucide-react";
 
 type PlaygroundItem = {
   id: string | number;
@@ -16,33 +16,51 @@ export default function PlaygroundCard({ item }: { item: PlaygroundItem }) {
   return (
     <LoadingLink
       href={`/playground/${item.id}`}
-      className="p-4 border rounded-lg bg-card hover:bg-card-hover"
+      className="group relative bg-zinc-50 dark:bg-zinc-900 rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300 hover:shadow-lg hover:shadow-zinc-200/50 dark:hover:shadow-zinc-900/50"
     >
-      <h2 className="text-lg font-semibold">{item.title}</h2>
-
-      <div className="relative w-full h-40 my-2 flex items-center justify-center rounded-md overflow-hidden">
+      {/* Image Container */}
+      <div className="relative aspect-[16/10] overflow-hidden bg-zinc-100 dark:bg-zinc-800">
         {item.thumbnail ? (
           <>
             {!loaded && (
-              <div className="absolute inset-0 bg-gray-200 dark:bg-gray-800 animate-pulse" />
+              <div className="absolute inset-0 bg-zinc-200 dark:bg-zinc-700 animate-pulse" />
             )}
             <Image
               src={item.thumbnail}
               alt={item.title}
               fill
-              style={{ objectFit: "cover" }}
-              className="rounded-md"
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+              className="object-cover group-hover:scale-105 transition-transform duration-500"
               onLoadingComplete={() => setLoaded(true)}
             />
           </>
         ) : (
-          <div className="w-full h-full flex items-center justify-center rounded-md bg-gray-200 dark:bg-gray-800">
-            <ImageIcon className="w-10 h-10 text-gray-500 dark:text-gray-400" />
+          <div className="w-full h-full flex items-center justify-center">
+            <ImageIcon className="w-12 h-12 text-zinc-400 dark:text-zinc-600" />
           </div>
         )}
+        {/* Hover Overlay */}
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+          <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="bg-white dark:bg-zinc-900 rounded-full p-3 shadow-lg">
+              <ExternalLink className="w-5 h-5 text-zinc-900 dark:text-white" />
+            </div>
+          </div>
+        </div>
       </div>
 
-      <p className="text-sm py-2 text-muted-foreground">{item.description}</p>
+      {/* Content */}
+      <div className="p-5">
+        {/* Title */}
+        <h2 className="text-lg font-semibold text-zinc-900 dark:text-white mb-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+          {item.title}
+        </h2>
+
+        {/* Description */}
+        <p className="text-sm text-zinc-600 dark:text-zinc-400 line-clamp-2">
+          {item.description}
+        </p>
+      </div>
     </LoadingLink>
   );
 }

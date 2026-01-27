@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from 'react'
-import { Linkedin, Mail, MessageSquare, Copy, Check, SquareArrowOutUpRight } from 'lucide-react'
+import { Linkedin, Mail, MessageSquare, Copy, Check, ArrowUpRight } from 'lucide-react'
 import { useGlobalStore } from '@/stores/globalStore'
 
 export default function Contact() {
@@ -16,73 +16,115 @@ export default function Contact() {
 
   const items = [
     {
-      icon: <MessageSquare className="h-7 w-7 text-primary" />,
-      title: 'Text or WhatsApp Me',
+      icon: <MessageSquare className="h-6 w-6" />,
+      title: 'WhatsApp',
       desc: `+${socials.wa}`,
       link: `https://wa.me/${socials.wa}`,
+      color: 'emerald',
     },
     {
-      icon: <Mail className="h-7 w-7 text-primary" />,
-      title: 'Send Me An Email',
+      icon: <Mail className="h-6 w-6" />,
+      title: 'Email',
       desc: socials.email,
       link: `mailto:${socials.email}`,
+      color: 'blue',
     },
     {
-      icon: <Linkedin className="h-7 w-7 text-primary" />,
-      title: 'Visit My LinkedIn',
+      icon: <Linkedin className="h-6 w-6" />,
+      title: 'LinkedIn',
       desc: socials.linkedin.replace(/^https?:\/\/(www\.)?/, ''),
       link: socials.linkedin,
+      color: 'sky',
     },
   ]
 
+  const colorClasses = {
+    emerald: {
+      bg: 'bg-emerald-500/10 dark:bg-emerald-500/20',
+      text: 'text-emerald-600 dark:text-emerald-400',
+      hover: 'group-hover:bg-emerald-500/20 dark:group-hover:bg-emerald-500/30',
+    },
+    blue: {
+      bg: 'bg-blue-500/10 dark:bg-blue-500/20',
+      text: 'text-blue-600 dark:text-blue-400',
+      hover: 'group-hover:bg-blue-500/20 dark:group-hover:bg-blue-500/30',
+    },
+    sky: {
+      bg: 'bg-sky-500/10 dark:bg-sky-500/20',
+      text: 'text-sky-600 dark:text-sky-400',
+      hover: 'group-hover:bg-sky-500/20 dark:group-hover:bg-sky-500/30',
+    },
+  }
+
   return (
-    <section className="w-full py-16 bg-background">
+    <section className="w-full py-32 bg-zinc-50 dark:bg-zinc-900/50">
       <div className="container px-4 md:px-6">
-        <div className="space-y-3 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-           {`Let’s Connect`}
+        {/* Header */}
+        <div className="mb-16 text-center">
+          <h2 className="text-4xl font-bold text-zinc-900 dark:text-white mb-3">
+            {`Let's Connect`}
           </h2>
-          <p className="text-muted-foreground max-w-lg mx-auto text-sm md:text-base">
+          <p className="text-zinc-600 dark:text-zinc-400 max-w-xl mx-auto">
             Whether you have a project in mind or just want to say hi, feel free to reach out.
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map((item, idx) => (
-            <a
-              key={idx}
-              href={item.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group bg-card hover:bg-card-hover backdrop-blur-sm border border-border rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6 flex flex-col items-center text-center"
-            >
-              <div className="mb-4 flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
-                {item.icon}
-              </div>
-              <h3 className="text-lg font-semibold mb-2 flex items-center gap-2">
-                {item.title}
-                <SquareArrowOutUpRight className="h-4 w-4" />
-              </h3>
-              <div className="flex items-center gap-2 text-muted-foreground text-md">
-                <span className="select-text">{item.desc}</span>
-                <button
-                  type="button"
-                  onClick={(e) => {
-                    e.preventDefault() 
-                    handleCopy(item.desc, idx)
-                  }}
-                  className="p-1 rounded hover:bg-primary/10"
-                  aria-label="Copy to clipboard"
-                >
-                  {copiedIndex === idx ? (
-                    <Check className="h-5 w-5 text-green-500" />
-                  ) : (
-                    <Copy className="h-5 w-5 text-muted-foreground" />
-                  )}
-                </button>
-              </div>
-            </a>
-          ))}
+        {/* Contact Cards */}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((item, idx) => {
+            const colors = colorClasses[item.color as keyof typeof colorClasses]
+            return (
+              <a
+                key={idx}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative bg-white dark:bg-zinc-900 rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300 hover:shadow-lg hover:shadow-zinc-200/50 dark:hover:shadow-zinc-900/50"
+              >
+                <div className="p-8">
+                  {/* Icon */}
+                  <div className="flex justify-center mb-5">
+                    <div className={`p-4 rounded-xl ${colors.bg} ${colors.hover} transition-colors duration-300`}>
+                      <span className={colors.text}>{item.icon}</span>
+                    </div>
+                  </div>
+
+                  {/* Title */}
+                  <div className="flex justify-center mb-2">
+                    <h3 className="text-lg font-semibold text-zinc-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors inline-flex items-center gap-1.5 pl-5">
+                      {item.title}
+                      <ArrowUpRight className="w-4 h-4 text-zinc-400 dark:text-zinc-600 opacity-0 -translate-y-0.5 translate-x-0.5 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300" />
+                    </h3>
+                  </div>
+
+                  {/* Description with Copy */}
+                  <div className="flex justify-center">
+                    <div className="inline-flex items-center gap-2">
+                      <span className="text-sm text-zinc-600 dark:text-zinc-400">
+                        {item.desc}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.preventDefault()
+                          e.stopPropagation()
+                          handleCopy(item.desc, idx)
+                        }}
+                        className="flex-shrink-0 p-1.5 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+                        aria-label="Copy to clipboard"
+                      >
+                        {copiedIndex === idx ? (
+                          <Check className="h-4 w-4 text-emerald-500" />
+                        ) : (
+                          <Copy className="h-4 w-4 text-zinc-400 dark:text-zinc-500" />
+                        )}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            )
+          })}
         </div>
       </div>
     </section>
