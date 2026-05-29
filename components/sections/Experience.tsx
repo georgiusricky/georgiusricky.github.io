@@ -21,7 +21,7 @@ export default function Experience() {
                 <div className="flex flex-col gap-4">
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 sm:gap-0">
                     <div className="flex items-start gap-4">
-                      <div className="w-16 h-16 md:w-12 md:h-12 relative flex-shrink-0">
+                      <div className="w-16 h-16 md:w-12 md:h-12 relative flex-shrink-0 rounded-xl overflow-hidden">
                         <Image
                           src={exp.logo}
                           alt={`${exp.company} logo`}

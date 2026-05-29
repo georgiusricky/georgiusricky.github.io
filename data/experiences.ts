@@ -3,12 +3,21 @@ import type { Experience } from '@/types'
 export const experiences: Experience[] = [
   {
     company: 'Link SE',
-    location: 'Singapore',
+    location: 'Singapore (Remote)',
     logo: '/img/svg/linkse.svg',
     title: 'Frontend Software Engineer',
     period: { start: 'Oct 2025', end: 'Present' },
     description:
-      'Develop and maintain frontend applications using Vue.js and Quasar Framework. Collaborate with cross-functional teams to deliver high-quality user interfaces and ensure seamless integration with backend services.',
+      'Develop and maintain the Quality Inspection Suite, a platform for managing quality control processes from raw materials to finished products. Build frontend applications using Vue.js and Quasar Framework, enabling real-time reporting, automatic alerts, and defect tracking for manufacturing clients across multiple countries.',
+  },
+  {
+    company: 'Pratesis (Geek Garden)',
+    location: 'Jakarta, Indonesia (Remote)',
+    logo: '/img/svg/pratesis.svg',
+    title: 'Frontend Engineer',
+    period: { start: 'Feb 2026', end: 'Apr 2026' },
+    description:
+      'Worked on Scylla X, a distribution management system for tracking sales, inventory, trade promotions, and execution KPIs. Built responsive user interfaces using Vue.js and Quasar Framework, integrated RESTful APIs for dynamic data rendering, and wrote unit tests to ensure code reliability.',
   },
   {
     company: 'Indodax Nasional Indonesia',
@@ -17,7 +26,7 @@ export const experiences: Experience[] = [
     title: 'Frontend Software Engineer',
     period: { start: 'Oct 2023', end: 'Jun 2025' },
     description:
-      'Manage the frontend web of projects using Vue.js, Nuxt, and CodeIgniter. Integrate frontend applications with backend APIs, work closely with the UI/UX team to implement designs, and convert Figma designs into responsive websites.',
+      'Worked on INDODAX, Indonesia\'s first and largest licensed crypto exchange serving 9.6M+ users with 450+ digital assets. Managed frontend web projects using Vue.js, Nuxt, and CodeIgniter, integrated with backend APIs, and collaborated with UI/UX teams to convert Figma designs into responsive interfaces.',
   },
   {
     company: 'BPJS Ketenagakerjaan',
@@ -26,7 +35,7 @@ export const experiences: Experience[] = [
     title: 'Fullstack Engineer',
     period: { start: 'Oct 2022', end: 'Oct 2023' },
     description:
-      'Handled backend development using Express.js and frontend development with Vue.js, React.js, and PHP. Conducted User Acceptance Testing (UAT) and fixed issues identified during testing and penetration testing. Worked on both internal core applications and external applications for BPJS.',
+      'Worked on internal procurement applications for BPJS Ketenagakerjaan, Indonesia\'s national social security agency for employment. Handled backend development using Express.js and frontend development with Vue.js, React.js, and PHP. Conducted User Acceptance Testing (UAT) and resolved issues from testing and penetration testing.',
   },
   {
     company: 'Citra Cantik Nusantara (Beautybell)',
@@ -35,7 +44,7 @@ export const experiences: Experience[] = [
     title: 'Frontend Engineer',
     period: { start: 'Dec 2021', end: 'Jul 2022' },
     description:
-      'Installed and set up web projects, developed dashboards using Vue.js (Nuxt.js) and AngularJS, and created website apps based on Figma designs. Integrated frontend applications with backend APIs for seamless functionality.',
+      'Worked on Beautybell, a beauty services platform connecting customers with verified beauty artists for premium at-home services. Developed dashboards using Vue.js (Nuxt.js) and AngularJS, created website apps based on Figma designs, and integrated frontend applications with backend APIs.',
   },
   {
     company: 'Edconnect Solusi Integrasi',
@@ -44,6 +53,6 @@ export const experiences: Experience[] = [
     title: 'Software Engineer - Fullstack',
     period: { start: 'Sept 2019', end: 'Nov 2021' },
     description:
-      'Developed and maintained school management systems, designed databases using MySQL, and debugged and deployed applications. Created responsive websites with Vue.js and conducted research on new web technologies to recommend design and development improvements.',
+      'Worked on edConnect, a cloud-based SaaS school and university management system covering registration, financing, inventory, staff management, and parent-teacher communication. Developed and maintained the platform using Vue.js, designed databases with MySQL, and deployed applications serving multiple educational institutions.',
   },
 ]
