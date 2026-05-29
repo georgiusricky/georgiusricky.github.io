@@ -31,9 +31,27 @@ export function ProjectDialog({ project, open, onOpenChange }: ProjectDialogProp
         <DialogContent className="max-w-5xl max-h-[95dvh] overflow-hidden bg-white dark:bg-zinc-900 border-0 p-0 rounded-2xl shadow-2xl">
           {/* Content Section */}
           <div className="p-6 pb-4 space-y-3">
-            <DialogTitle className="text-2xl font-bold text-zinc-900 dark:text-white">
-              {project.title}
-            </DialogTitle>
+            <div className="flex items-center gap-3">
+              <DialogTitle className="text-2xl font-bold text-zinc-900 dark:text-white">
+                {project.title}
+              </DialogTitle>
+              {project.liveLink && (
+                <Link href={project.liveLink} target="_blank">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white transition-colors">
+                    <ExternalLink className="w-3.5 h-3.5" />
+                    Live Site
+                  </span>
+                </Link>
+              )}
+              {!project.liveLink && project.demoLink && (
+                <Link href={project.demoLink} target="_blank">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg border border-zinc-300 dark:border-zinc-600 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
+                    <ExternalLink className="w-3.5 h-3.5" />
+                    Demo
+                  </span>
+                </Link>
+              )}
+            </div>
             <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
               {project.fullDescription}
             </p>
@@ -50,7 +68,7 @@ export function ProjectDialog({ project, open, onOpenChange }: ProjectDialogProp
           <div className="p-6 pt-4 space-y-3">
             <TechPills technologies={project.technologies} />
 
-            {hasLinks && (
+            {(project.githubLink || (project.demoLink && project.liveLink)) && (
               <>
                 <div className="border-t border-zinc-200 dark:border-zinc-700" />
                 <div className="flex flex-wrap gap-2">
@@ -62,19 +80,11 @@ export function ProjectDialog({ project, open, onOpenChange }: ProjectDialogProp
                       </button>
                     </Link>
                   )}
-                  {project.demoLink && (
+                  {project.demoLink && project.liveLink && (
                     <Link href={project.demoLink} target="_blank">
                       <button className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg border border-zinc-300 dark:border-zinc-600 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
                         <ExternalLink className="w-3.5 h-3.5" />
                         Demo
-                      </button>
-                    </Link>
-                  )}
-                  {project.liveLink && (
-                    <Link href={project.liveLink} target="_blank">
-                      <button className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white transition-colors">
-                        <ExternalLink className="w-3.5 h-3.5" />
-                        Live Site
                       </button>
                     </Link>
                   )}
