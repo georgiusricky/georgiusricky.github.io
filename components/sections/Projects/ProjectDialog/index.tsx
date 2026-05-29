@@ -23,8 +23,6 @@ export function ProjectDialog({ project, open, onOpenChange }: ProjectDialogProp
     setMounted(true)
   }, [])
 
-  const hasLinks = project.githubLink || project.demoLink || project.liveLink
-
   return (
     <>
       <Dialog open={open} onOpenChange={onOpenChange}>
