@@ -112,6 +112,17 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'Ricky - Software Engineer',
+              url: 'https://rickygeorgius.com',
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
               '@type': 'Person',
               name: 'Ricky',
               url: 'https://rickygeorgius.com',
