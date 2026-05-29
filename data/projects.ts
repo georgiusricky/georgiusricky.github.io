@@ -7,7 +7,7 @@ export const projects: Project[] = [
     description:
       'A fast, minimal POS app for small businesses in Indonesia. Manage sales, inventory, reports, and staff — all from your phone or tablet.',
     fullDescription:
-      'Maiuno is a free Android POS app built for small businesses in Indonesia. Features include fast checkout, multiple payment methods (cash, card, QRIS), inventory management across locations, real-time sales analytics, Bluetooth receipt printing, staff and shift management, multi-store support, discount campaigns, and booking/customer management. Designed with dedicated layouts for both phone and tablet. Built with React Native on the frontend and powered by a Golang backend with PostgreSQL.',
+      'Maiuno is a free Android POS app built for small businesses in Indonesia. Features include fast checkout, inventory management across locations, real-time sales analytics, Bluetooth receipt printing, staff and shift management, multi-store support, discount campaigns, and booking/customer management. Designed with dedicated layouts for both phone and tablet. Built with React Native on the frontend and powered by a Golang backend with PostgreSQL.',
     technologies: ['React Native', 'TypeScript', 'Golang', 'PostgreSQL'],
     preview: '/img/projects/maiuno/pos-full.webp',
     assets: [
