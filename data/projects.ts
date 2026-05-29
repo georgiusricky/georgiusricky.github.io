@@ -26,6 +26,20 @@ export const projects: Project[] = [
   },
   {
     id: '02',
+    title: 'PT Karya Tekstil Nasional',
+    description:
+      'A company profile website for a Jakarta-based garment manufacturer specializing in uniforms and custom workwear.',
+    fullDescription:
+      'A professional company profile website for PT Karya Tekstil Nasional, a garment manufacturer based in Jakarta. Features a product portfolio gallery with lightbox, video hero background on desktop, multi-language support, responsive design, WhatsApp integration, and SEO optimization. Built with React and Vite, styled with TailwindCSS, and animated with Framer Motion.',
+    technologies: ['React', 'Vite', 'TailwindCSS', 'Framer Motion'],
+    preview: '/img/projects/ktn/tab.webp',
+    assets: ['/img/projects/ktn/tab.webp', '/img/projects/ktn/mobile.webp'],
+    githubLink: '',
+    demoLink: '',
+    liveLink: 'https://karyatekstilnasional.com',
+  },
+  {
+    id: '03',
     title: 'Upvendo Kiosk and Admin Dashboard',
     description:
       'A kiosk and mobile web selling platform with an integrated admin dashboard for managing products and transactions.',
@@ -43,7 +57,7 @@ export const projects: Project[] = [
     liveLink: 'https://upvendo.com/pages/self-service-kiosks',
   },
   {
-    id: '03',
+    id: '04',
     title: 'Gambajak Website',
     description:
       'A promotional landing page for a meme coin project with links to exchanges and social media.',
@@ -62,7 +76,7 @@ export const projects: Project[] = [
     liveLink: 'https://gambajak.com',
   },
   {
-    id: '04',
+    id: '05',
     title: 'Gachavista Website',
     description:
       'A promotional landing page for a meme coin project with links to exchanges and social media.',
@@ -81,7 +95,7 @@ export const projects: Project[] = [
     liveLink: 'https://gambajak.com',
   },
   {
-    id: '05',
+    id: '06',
     title: 'Zuuonsol Website',
     description:
       'A promotional landing page for a meme coin project with links to exchanges and social media.',
@@ -95,7 +109,7 @@ export const projects: Project[] = [
     liveLink: 'https://zuuonsol.com',
   },
   {
-    id: '06',
+    id: '07',
     title: 'Calt Supremacy Website',
     description:
       'A promotional landing page for a meme coin project with links to exchanges and social media.',
@@ -109,7 +123,7 @@ export const projects: Project[] = [
     liveLink: 'https://caltsupremacy.com/',
   },
   {
-    id: '07',
+    id: '08',
     title: 'Mewlord Website',
     description:
       'A promotional landing page for a meme coin project with links to exchanges and social media.',
@@ -123,7 +137,7 @@ export const projects: Project[] = [
     liveLink: 'https://mewlord.fun',
   },
   {
-    id: '08',
+    id: '09',
     title: 'Bun Website',
     description:
       'A promotional landing page for a meme coin project with links to exchanges and social media.',
@@ -141,7 +155,7 @@ export const projects: Project[] = [
     liveLink: 'https://bun.meme',
   },
   {
-    id: '09',
+    id: '10',
     title: 'Rosiensta Website',
     description:
       'A promotional landing page for a meme coin project with links to exchanges and social media.',
