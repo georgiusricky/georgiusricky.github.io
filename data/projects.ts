@@ -3,22 +3,26 @@ import type { Project } from '@/types'
 export const projects: Project[] = [
   {
     id: '01',
-    title: 'POS System',
+    title: 'Maiuno',
     description:
-      'A full-stack Point of Sale system with PWA support, featuring barcode scanning, bill printing, and optional modules for booking, employee management, and customer membership.',
+      'A fast, minimal POS app for small businesses in Indonesia. Manage sales, inventory, reports, and staff — all from your phone or tablet.',
     fullDescription:
-      'A comprehensive Point of Sale (POS) system built as a Progressive Web App (PWA) for seamless offline and online functionality. Core features include barcode scanner integration for quick product lookup and bill printing capability. Optional modules available: booking management system, employee attendance and shift management, and customer data with membership management. Built with React and TypeScript on the frontend, styled with TailwindCSS for a modern responsive UI, and powered by a Golang backend with PostgreSQL database for robust data management.',
-    technologies: ['React', 'TypeScript', 'PWA', 'TailwindCSS', 'Golang', 'PostgreSQL'],
-    preview: '/img/projects/pos/1.webp',
+      'Maiuno is a free Android POS app built for small businesses in Indonesia. Features include fast checkout, multiple payment methods (cash, card, QRIS), inventory management across locations, real-time sales analytics, Bluetooth receipt printing, staff and shift management, multi-store support, discount campaigns, and booking/customer management. Designed with dedicated layouts for both phone and tablet. Built with React Native on the frontend and powered by a Golang backend with PostgreSQL.',
+    technologies: ['React Native', 'TypeScript', 'Golang', 'PostgreSQL'],
+    preview: '/img/projects/maiuno/pos-full.webp',
     assets: [
-      '/img/projects/pos/1.webp',
-      '/img/projects/pos/2.webp',
-      '/img/projects/pos/3.webp',
-      '/img/projects/pos/4.webp',
+      '/img/projects/maiuno/pos-full.webp',
+      '/img/projects/maiuno/menu.webp',
+      '/img/projects/maiuno/cart.webp',
+      '/img/projects/maiuno/payment.webp',
+      '/img/projects/maiuno/product.webp',
+      '/img/projects/maiuno/stats.webp',
+      '/img/projects/maiuno/payment-tablet.webp',
+      '/img/projects/maiuno/print-settings.webp',
     ],
     githubLink: '',
     demoLink: '',
-    liveLink: '',
+    liveLink: 'https://maiuno.app',
   },
   {
     id: '02',
